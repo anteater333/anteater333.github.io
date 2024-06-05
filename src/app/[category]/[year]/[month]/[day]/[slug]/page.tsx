@@ -8,9 +8,13 @@ import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
+import { joinURLToSlug, splitSlugForURL } from "@/lib/splitter";
 
 export default async function Post({ params }: Params) {
-  const post = getPostBySlug(params.slug);
+  const { category, year, month, day, slug } = params;
+  const post = getPostBySlug(
+    joinURLToSlug({ category, year, month, day, slug })
+  );
 
   if (!post) {
     return notFound();
@@ -39,12 +43,19 @@ export default async function Post({ params }: Params) {
 
 type Params = {
   params: {
+    year: string;
+    month: string;
+    day: string;
     slug: string;
+    category: string;
   };
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const post = getPostBySlug(params.slug);
+  const { category, year, month, day, slug } = params;
+  const post = getPostBySlug(
+    joinURLToSlug({ category, year, month, day, slug })
+  );
 
   if (!post) {
     return notFound();
@@ -56,7 +67,7 @@ export function generateMetadata({ params }: Params): Metadata {
     title,
     openGraph: {
       title,
-      images: [post.ogImage.url],
+      images: [post.ogImage?.url],
     },
   };
 }
@@ -64,7 +75,14 @@ export function generateMetadata({ params }: Params): Metadata {
 export async function generateStaticParams() {
   const posts = getAllPosts();
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  return posts.map((post) => {
+    const [year, month, day, realSlug] = splitSlugForURL(post.slug).split("/");
+    return {
+      year,
+      month,
+      day,
+      slug: realSlug,
+      category: post.category,
+    };
+  });
 }
