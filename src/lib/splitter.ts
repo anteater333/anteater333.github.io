@@ -20,5 +20,5 @@ export function joinURLToSlug({
   day: string;
   slug: string;
 }) {
-  return `${category}/${year}-${month}-${day}-${slug}.md`;
+  return `${category}/${year}-${month}-${day}-${slug.split(".html")[0]}.md`;
 }
