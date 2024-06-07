@@ -81,7 +81,7 @@ export async function generateStaticParams() {
       year,
       month,
       day,
-      slug: `${realSlug}.html`,
+      slug: realSlug,
       category: post.category,
     };
   });
