@@ -65,6 +65,8 @@ export function generateMetadata({ params }: Params): Metadata {
 
   return {
     title,
+    description: post.description,
+    keywords: post.tags?.join(", "),
     openGraph: {
       title,
       images: [post.ogImage?.url],
