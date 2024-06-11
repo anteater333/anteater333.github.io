@@ -11,8 +11,6 @@ import stringify from "rehype-stringify";
 export default async function markdownToHtml(markdown: string) {
   const result = await remark()
     .use(gfm)
-    .use(directive)
-    .use(attributeList)
     .use(rehype)
     .use(raw)
     .use(slug)
