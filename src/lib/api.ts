@@ -46,3 +46,17 @@ export function getAllPosts(): Post[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+export function getPostsByCategory(category: string): Post[] {
+  const slugs = getPostSlugsByCategory(category).map((slug) =>
+    join(category, slug)
+  );
+
+  const posts = slugs
+    .map((slug) => {
+      return getPostBySlug(slug);
+    })
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
+}
