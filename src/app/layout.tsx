@@ -8,8 +8,12 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: `Next.js Blog Example with ${CMS_NAME}`,
-  description: `A statically generated blog example using Next.js and ${CMS_NAME}.`,
+  title: `Anteater's laboratory`,
+  description: `anteater1056, anteater333, anteater's laboratory, anteater_lab, Anteater's laboratory, hack the, 소프트웨어 개발자, Anteater 이지훈, https://blog.anteater-lab.link/, 자잘한 도움말, Next.js SSG 블로그`,
+  authors: {
+    name: "Anteater",
+    url: "https://github.com/anteater333",
+  },
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -23,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Anteater's laboratory | CATCH PHRASE !!</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
