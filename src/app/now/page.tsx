@@ -16,10 +16,12 @@ export default async function AboutPage() {
       </p>
 
       <p>
-        용케도 여기를 찾아내셨습니다. Jekyll 기반 블로그를 운영해온지도 어느덧
-        3년째, 2024년 6월. 취직도 안되고... 살도 찌고... 매너리즘에 빠진 듯한
-        기분이라 Next.js로 블로그를 이전하는 사업을 진행 중이에요. 홈페이지를
-        보셨으면 알겠지만, 좀 휑합니다.
+        용케도 여기를 찾아내셨습니다. 지금보다 3살 더 어렸을 땐 내가 말을 저렇게
+        했었네요. Jekyll 기반 블로그를 운영해온지도 어느덧 3년째, 2024년 6월.
+        취직도 안되고... 살도 찌고... 그와중에 돈은 좀 벌어둬서 뭔가 쫒기는
+        느낌은 덜들고... 매너리즘에 빠진 듯한 기분이라 Next.js로 블로그를
+        이전하는 사업을 진행 중이에요. 홈페이지를 보셨으면 알겠지만, 좀
+        휑합니다.
       </p>
 
       <img src="/assets/blog/easter/egg.png" width="50%" />
@@ -41,6 +43,29 @@ export default async function AboutPage() {
           <img src="/assets/blog/easter/egg2.png" width="24px"></img>
         </a>
       </p>
+
+      <p>
+        그리고 혹시라도 개발자 필요하시면 마음껏 연락 부탁드립니다. 프론트엔드를
+        선호하고, Node.js 기반 백엔드도 할 줄 알아요.
+      </p>
+
+      <ul>
+        <li>anteater1056@gmail.com</li>
+        <li>010-4174-4150</li>
+        <li>
+          <a href="https://github.com/anteater333" target="_blank">
+            Github
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://past-silver-b67.notion.site/Lee-Jihoon-Anteater-42a1ebc80b2e44688f0dd99598f019de"
+            target="_blank"
+          >
+            포트폴리오
+          </a>
+        </li>
+      </ul>
     </>
   );
 }
