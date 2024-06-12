@@ -1,7 +1,5 @@
 import { remark } from "remark";
 import gfm from "remark-gfm";
-import directive from "remark-directive";
-import attributeList from "remark-attribute-list";
 import rehype from "remark-rehype";
 import raw from "rehype-raw";
 import slug from "rehype-slug";
