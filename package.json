@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next -p 4000",
     "build": "next build",
-    "start": "next start"
+    "serve": "npx serve@latest out"
   },
   "dependencies": {
     "classnames": "^2.5.1",
