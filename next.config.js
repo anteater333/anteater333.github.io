@@ -9,4 +9,6 @@ module.exports = {
   images: {
     unoptimized: true,
   },
+  basePath: "/Anteater_lab_v3",
+  distDir: process.env.BUILD_DIR || "out",
 };

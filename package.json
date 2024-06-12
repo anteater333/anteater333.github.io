@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next -p 4000",
     "build": "next build",
-    "serve": "npx serve@latest out"
+    "serve": "npx serve@latest out",
+    "build:dev": "BUILD_DIR=out/Anteater_lab_v3 next build&&yarn serve"
   },
   "dependencies": {
     "classnames": "^2.5.1",
