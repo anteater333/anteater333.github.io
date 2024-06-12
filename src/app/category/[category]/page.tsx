@@ -7,10 +7,7 @@ import { CATEGORIES, CMS_NAME } from "@/lib/constants";
 import { Metadata } from "next";
 
 export default async function IndexByCategory({ params }: Params) {
-  const category = params.category.split(".")[1];
-  const allPosts = getPostsByCategory(
-    category.charAt(0).toLowerCase() + category.slice(1)
-  );
+  const allPosts = getPostsByCategory(params.category);
 
   const heroPost = allPosts[0];
 
@@ -58,7 +55,7 @@ export function generateMetadata({ params }: Params): Metadata {
 export async function generateStaticParams() {
   return CATEGORIES.map((category, idx) => {
     return {
-      category: `${category}.html`,
+      category,
     };
   });
 }
