@@ -7,6 +7,7 @@
     "build:dev": "BUILD_DIR=out/Anteater_lab_v3 next build&&yarn serve",
     "dev:serve": "next dev -p 4000",
     "dev:watch": "node ./_scripts/watcher.js",
+    "post": "node ./_scripts/genFilenameToSlugMap.js"
   },
   "dependencies": {
     "@types/ws": "^8.5.10",
