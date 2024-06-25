@@ -1,4 +1,4 @@
-const { readFileSync, readdir, readdirSync, writeFileSync } = require("fs");
+const { readdir, readdirSync, writeFileSync } = require("fs");
 const { join } = require("path");
 
 const TARGET = "./_posts/";

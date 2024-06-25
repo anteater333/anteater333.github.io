@@ -20,9 +20,9 @@ urlList.forEach((item) => {
     return;
   }
 
-  map[URL] = {
-    to: `${URL.split("/")[0]}/${data.id}/${data.slug.split(" ").join("-")}`,
-  };
+  map[URL] = `${URL.split("/")[0]}/${data.id}/${data.slug
+    .split(" ")
+    .join("-")}`;
 });
 
 console.log(`generated ${urlList.length - noSlug.length} / ${urlList.length}`);
