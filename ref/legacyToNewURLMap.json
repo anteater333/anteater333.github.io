@@ -1,0 +1,10 @@
+{
+  "_posts/meta/2021-10-03-welcome-to-jekyll.md": {
+    "legacy": "meta/2021/10/03/welcome-to-jekyll.html",
+    "new": "meta/0/welcome-to-jekyll"
+  },
+  "_posts/meta/2022-03-09-thank-you-GSC.md": {
+    "legacy": "meta/2022/03/09/thank-you-GSC.html",
+    "new": "meta/1/thank-you-GSC"
+  }
+}
