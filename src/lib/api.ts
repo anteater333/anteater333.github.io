@@ -57,13 +57,13 @@ export function getAllPosts(): Post[] {
 }
 
 export function getPostsByCategory(category: string): Post[] {
-  const slugs = getPostFilenamesByCategory(category).map((slug) =>
-    join(category, slug)
+  const filenames = getPostFilenamesByCategory(category).map((filename) =>
+    join(category, filename)
   );
 
-  const posts = slugs
-    .map((slug) => {
-      return getPostBySlug(slug);
+  const posts = filenames
+    .map((filename) => {
+      return getPostBySlug(filenameToSlugMap[filename]);
     })
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
