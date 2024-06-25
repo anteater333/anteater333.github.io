@@ -25,6 +25,7 @@ export default async function IndexByCategory({ params }: Params) {
           slug={heroPost.slug}
           category={heroPost.category}
           excerpt={heroPost.excerpt}
+          id={heroPost.id}
         />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
