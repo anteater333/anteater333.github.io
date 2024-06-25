@@ -1,4 +1,4 @@
-const { readFileSync, readdir, readdirSync, writeFileSync } = require("fs");
+const { readFileSync, writeFileSync } = require("fs");
 const matter = require("gray-matter");
 
 const REF = "./ref/legacyURLList.json";
@@ -20,9 +20,8 @@ urlList.forEach((item) => {
     return;
   }
 
-  map[path] = {
-    legacy: URL,
-    new: `${URL.split("/")[0]}/${data.postId}/${data.urlTitle
+  map[URL] = {
+    to: `${URL.split("/")[0]}/${data.postId}/${data.urlTitle
       .split(" ")
       .join("-")}`,
   };
@@ -31,8 +30,11 @@ urlList.forEach((item) => {
 console.log(
   `generated ${urlList.length - noUrlTitle.length} / ${urlList.length}`
 );
-console.log("no title --");
-console.log(noUrlTitle.join("\n"));
+
+if (noUrlTitle.length > 0) {
+  console.log("no title --");
+  console.log(noUrlTitle.join("\n"));
+}
 
 console.log("writing JSON file...");
 writeFileSync(DEST, JSON.stringify(map, null, 2));
