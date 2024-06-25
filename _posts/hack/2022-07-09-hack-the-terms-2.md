@@ -5,8 +5,8 @@ description: Promsie, Javascript, Async, Async, 디자인 패턴, 자바스크�
 date: 2022-07-9 22:30:00 +0900
 categories: [Hack]
 
-postId: 2
-urlTitle: promise and javascript async programming
+id: 2
+slug: promise and javascript async programming
 tag: []
 ---
 

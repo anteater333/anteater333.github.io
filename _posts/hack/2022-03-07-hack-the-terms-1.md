@@ -5,8 +5,8 @@ description: 의존성 주입, Dependency Injection, 의존성 주입이란?, �
 date: 2022-03-07 18:50:00 +0900
 categories: [Hack]
 
-postId: 1
-urlTitle: dependency injection
+id: 1
+slug: dependency injection
 tag: []
 ---
 

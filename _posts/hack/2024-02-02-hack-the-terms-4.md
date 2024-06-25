@@ -5,8 +5,8 @@ description: Rendering, 렌더링, 웹 브라우저 렌더링, 브라우저 엔�
 date: 2024-02-03 01:24:00 +0900
 categories: [Hack]
 
-postId: 4
-urlTitle: rendering in web
+id: 4
+slug: rendering in web
 tag: []
 ---
 

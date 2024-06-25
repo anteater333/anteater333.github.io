@@ -5,8 +5,8 @@ description: GraphQL, Query Language, Apollo Server, Apollo Client, API, Graph Q
 date: 2023-06-22 21:08:00 +0900
 categories: [Hack]
 
-postId: 3
-urlTitle: graphql
+id: 3
+slug: graphql
 tag: []
 ---
 

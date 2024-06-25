@@ -5,8 +5,8 @@ date: 2024-03-27 10:00:00 +0900
 description: "도마도, 뽀모도로 타이머, domado, pomofocus, 뽀모도로, 프로젝트 회고록, React, yarn berry, recoil, vercel, yarn dlx @yarnpkg/sdks vscode, PWA, Progressive Web Application, Screen Wake Lock API, Notification API, 기술 부채, setTimeout, setInterval, 디스콰이엇"
 categories: [Memoir]
 
-postId: 3
-urlTitle: domado 1
+id: 3
+slug: domado 1
 tag: []
 ---
 

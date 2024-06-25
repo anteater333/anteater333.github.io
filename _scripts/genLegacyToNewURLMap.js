@@ -8,32 +8,28 @@ const urlList = JSON.parse(readFileSync(REF));
 
 const map = {};
 
-const noUrlTitle = [];
+const noSlug = [];
 
 urlList.forEach((item) => {
   const { URL, path } = item;
 
   const { data } = matter(readFileSync(path));
 
-  if (!data.urlTitle) {
-    noUrlTitle.push(path);
+  if (!data.slug) {
+    noSlug.push(path);
     return;
   }
 
   map[URL] = {
-    to: `${URL.split("/")[0]}/${data.postId}/${data.urlTitle
-      .split(" ")
-      .join("-")}`,
+    to: `${URL.split("/")[0]}/${data.id}/${data.slug.split(" ").join("-")}`,
   };
 });
 
-console.log(
-  `generated ${urlList.length - noUrlTitle.length} / ${urlList.length}`
-);
+console.log(`generated ${urlList.length - noSlug.length} / ${urlList.length}`);
 
-if (noUrlTitle.length > 0) {
-  console.log("no title --");
-  console.log(noUrlTitle.join("\n"));
+if (noSlug.length > 0) {
+  console.log("no slug --");
+  console.log(noSlug.join("\n"));
 }
 
 console.log("writing JSON file...");
