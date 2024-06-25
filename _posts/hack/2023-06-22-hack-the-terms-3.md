@@ -4,6 +4,10 @@ title: "Hack🪓 the #3 GraphQL"
 description: GraphQL, Query Language, Apollo Server, Apollo Client, API, Graph Query Language, GraphQL이란?
 date: 2023-06-22 21:08:00 +0900
 categories: [Hack]
+
+postId: 3
+urlTitle: graphql
+tag: []
 ---
 
 ## "전 HTML로 코딩합니다."

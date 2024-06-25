@@ -1,8 +1,12 @@
 ---
 layout: post
-title: 'Hack🪓 the terms'
+title: "Hack🪓 the terms"
 date: 2022-02-14 17:49:00 +0900
 categories: [Hack]
+
+postId: 0
+urlTitle: welcome to hack
+tag: []
 ---
 
 ## 용어를 뜯어보자
