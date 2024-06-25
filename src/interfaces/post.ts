@@ -14,5 +14,6 @@ export type Post = {
   description: string;
   tags: string[];
   content: string;
+  id: string;
   preview?: boolean;
 };

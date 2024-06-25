@@ -8,17 +8,13 @@ import Container from "@/app/_components/container";
 import Header from "@/app/_components/header";
 import { PostBody } from "@/app/_components/post-body";
 import { PostHeader } from "@/app/_components/post-header";
-import { joinURLToSlug, splitSlugForURL } from "@/lib/splitter";
 
 export default async function Post({ params }: Params) {
-  const { category, year, month, day, slug } = params;
-  const post = getPostBySlug(
-    joinURLToSlug({ category, year, month, day, slug })
-  );
+  const { category, id, slug } = params;
 
-  if (!post) {
-    return notFound();
-  }
+  const post = getPostBySlug(`${category}/${id}/${slug}`);
+
+  if (!post) return notFound();
 
   const content = await markdownToHtml(post.content || "");
 
@@ -43,23 +39,18 @@ export default async function Post({ params }: Params) {
 
 type Params = {
   params: {
-    year: string;
-    month: string;
-    day: string;
     slug: string;
+    id: string;
     category: string;
   };
 };
 
 export function generateMetadata({ params }: Params): Metadata {
-  const { category, year, month, day, slug } = params;
-  const post = getPostBySlug(
-    joinURLToSlug({ category, year, month, day, slug })
-  );
+  const { category, id, slug } = params;
 
-  if (!post) {
-    return notFound();
-  }
+  const post = getPostBySlug(`${category}/${id}/${slug}`);
+
+  if (!post) return notFound();
 
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
 
@@ -78,13 +69,11 @@ export async function generateStaticParams() {
   const posts = getAllPosts();
 
   return posts.map((post) => {
-    const [year, month, day, realSlug] = splitSlugForURL(post.slug).split("/");
+    const { category, id, slug } = post;
     return {
-      year,
-      month,
-      day,
-      slug: realSlug,
-      category: post.category,
+      category,
+      id: `${id}`,
+      slug,
     };
   });
 }

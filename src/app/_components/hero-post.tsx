@@ -3,7 +3,6 @@ import CoverImage from "@/app/_components/cover-image";
 import { type Author } from "@/interfaces/author";
 import Link from "next/link";
 import DateFormatter from "./date-formatter";
-import { splitSlugForURL } from "@/lib/splitter";
 
 type Props = {
   title: string;
@@ -13,6 +12,7 @@ type Props = {
   author: Author;
   slug: string;
   category: string;
+  id: string;
 };
 
 export function HeroPost({
@@ -23,6 +23,7 @@ export function HeroPost({
   author,
   slug,
   category,
+  id,
 }: Props) {
   return (
     <section>
@@ -32,13 +33,14 @@ export function HeroPost({
           src={coverImage}
           slug={slug}
           category={category}
+          id={id}
         />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link
-              href={`/${category}/${splitSlugForURL(slug)}`}
+              href={`/${category}/${id}/${slug}`}
               className="hover:underline"
             >
               {title}

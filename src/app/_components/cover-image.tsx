@@ -1,16 +1,16 @@
 import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
-import { splitSlugForURL } from "@/lib/splitter";
 
 type Props = {
   title: string;
   src: string;
   slug?: string;
   category?: string;
+  id?: string;
 };
 
-const CoverImage = ({ title, src, slug, category }: Props) => {
+const CoverImage = ({ title, src, slug, category, id }: Props) => {
   const image = (
     <Image
       src={src}
@@ -25,7 +25,7 @@ const CoverImage = ({ title, src, slug, category }: Props) => {
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <Link href={`/${category}/${splitSlugForURL(slug)}`} aria-label={title}>
+        <Link href={`/${category}/${id}/${slug}`} aria-label={title}>
           {image}
         </Link>
       ) : (
