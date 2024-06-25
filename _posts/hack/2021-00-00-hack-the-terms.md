@@ -2,11 +2,11 @@
 layout: post
 title: "Hack🪓 the terms"
 date: 2022-02-14 17:49:00 +0900
-categories: [Hack]
+category: hack
 
 id: 0
 slug: welcome to hack
-tag: []
+tags: []
 ---
 
 ## 용어를 뜯어보자

@@ -3,11 +3,11 @@ layout: post
 title: "회고록 #2 - 숲 (2)"
 date: 2023-10-28 23:17:00 +0900
 description: "숲, 나무위키 인기 검색어, 크롤링, 크롤러, 실검, 프로젝트 회고록, React, node, express, deno, 에이전트 프로그램, agent, 백조의 발, UX, alert 사용하지 않기, KISS 원칙, Keep It Simple Stupid, 테스트 러너"
-categories: [Memoir]
+category: memoir
 
 id: 2
 slug: soup 2
-tag: []
+tags: []
 ---
 
 ## 숲Soup - 나무위키 인기 검색어

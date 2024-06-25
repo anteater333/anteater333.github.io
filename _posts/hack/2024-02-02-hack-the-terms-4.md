@@ -3,11 +3,11 @@ layout: post
 title: "Hack🪓 the #4 Rendering"
 description: Rendering, 렌더링, 웹 브라우저 렌더링, 브라우저 엔진, 렌더링 엔진, DOM, CSSOM, Critical Rendering Pass, CRP, CSR, SSR, Client Side Rendering, Server Side Rendering, CSR vs SSR, 리페인트, Repaint, 리플로우, Reflow, CRP Composite, Layer, Compsite, script, defer, async, 소프트웨어 마에스트로 15기, CSS 알고 쓰자
 date: 2024-02-03 01:24:00 +0900
-categories: [Hack]
+category: hack
 
 id: 4
 slug: rendering in web
-tag: []
+tags: []
 ---
 
 ## 🖐️금손 작가, 컴퓨터

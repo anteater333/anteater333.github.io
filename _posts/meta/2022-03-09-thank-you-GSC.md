@@ -2,11 +2,11 @@
 layout: post
 title: Thx GSC 💔
 date: 2022-03-09 10:00:00 +0900
-categories: [Meta]
+category: meta
 
 id: 1
 slug: thank you GSC
-tag: []
+tags: []
 ---
 
 ## 환멸
