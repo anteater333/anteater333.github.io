@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "run-p dev:serve dev:watch",
+    "dev": "yarn post && run-p dev:serve dev:watch",
     "build": "next build",
     "serve": "npx serve@latest out",
     "build:dev": "BUILD_DIR=out/Anteater_lab_v3 next build&&yarn serve",
