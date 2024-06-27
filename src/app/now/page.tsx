@@ -24,7 +24,7 @@ export default async function AboutPage() {
         휑합니다.
       </p>
 
-      <img src="/assets/blog/easter/egg.png" width="50%" />
+      <img src="/Anteater_lab_v3/assets/blog/easter/egg.png" width="50%" />
 
       <p>
         이 감성으로 그냥 이대로 운영해볼까 싶기도 했는데, 이것도 벌써 5년 전
@@ -40,7 +40,10 @@ export default async function AboutPage() {
         받아들여도 되겠죠? 그런 의미에서, 제가 영화를 주제로 매주 소소하게
         가꾸고 있는 또다른 블로그가 있습니다. 거기도 한 번 찾아와 주십쇼..
         <a href="https://watchunduck.tistory.com/" target="_blank">
-          <img src="/assets/blog/easter/egg2.png" width="24px"></img>
+          <img
+            src="/Anteater_lab_v3//assets/blog/easter/egg2.png"
+            width="24px"
+          ></img>
         </a>
       </p>
 
