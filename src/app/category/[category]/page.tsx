@@ -2,8 +2,8 @@ import Container from "@/app/_components/container";
 import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
-import { getPostsByCategory } from "@/lib/api";
-import { CATEGORIES, CMS_NAME } from "@/lib/constants";
+import { getCategories, getPostsByCategory } from "@/lib/api";
+import { CMS_NAME } from "@/lib/constants";
 import { Metadata } from "next";
 
 export default async function IndexByCategory({ params }: Params) {
@@ -54,7 +54,9 @@ export function generateMetadata({ params }: Params): Metadata {
 }
 
 export async function generateStaticParams() {
-  return CATEGORIES.map((category, idx) => {
+  const categories = getCategories();
+
+  return categories.map((category, idx) => {
     return {
       category,
     };

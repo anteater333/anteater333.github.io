@@ -12,7 +12,7 @@ const slugToFilenameMap: Record<string, string> = JSON.parse(
 
 const postsDirectory = join(process.cwd(), "_posts");
 
-const getCategories = () =>
+export const getCategories = () =>
   fs
     .readdirSync(postsDirectory)
     .filter((file) => fs.lstatSync(join(postsDirectory, file)).isDirectory());
