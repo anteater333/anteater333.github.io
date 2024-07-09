@@ -1,7 +1,7 @@
-import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
+import Container from "@/app/_components/_legacy/container";
+import { HeroPost } from "@/app/_components/_legacy/hero-post";
+import { Intro } from "@/app/_components/_legacy/intro";
+import { MoreStories } from "@/app/_components/_legacy/more-stories";
 import { getCategories, getPostsByCategory } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import { Metadata } from "next";
