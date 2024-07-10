@@ -9,6 +9,9 @@ import Header from "@/app/_components/_legacy/header";
 import { PostBody } from "@/app/_components/_legacy/post-body";
 import { PostHeader } from "@/app/_components/_legacy/post-header";
 
+/**
+ * 블로그 게시글 페이지
+ */
 export default async function Post({ params }: Params) {
   const { category, id, slug } = params;
 

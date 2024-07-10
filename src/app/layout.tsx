@@ -1,10 +1,10 @@
-import Footer from "@/app/_components/_legacy/footer";
 import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
 import AutoRefresh from "./_components/dev/AutoRefresh";
+import Header from "./_components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,8 +63,8 @@ export default function RootLayout({
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </head>
         <body className={inter.className}>
+          <Header />
           <div className="min-h-screen">{children}</div>
-          <Footer />
         </body>
       </html>
     </AutoRefresh>

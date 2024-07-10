@@ -1,9 +1,9 @@
-import Container from "@/app/_components/_legacy/container";
-import { HeroPost } from "@/app/_components/_legacy/hero-post";
-import { Intro } from "@/app/_components/_legacy/intro";
-import { MoreStories } from "@/app/_components/_legacy/more-stories";
 import { getAllPosts } from "@/lib/api";
+import Container from "./_components/Container";
 
+/**
+ * 블로그 메인 페이지
+ */
 export default function Index() {
   const allPosts = getAllPosts();
 
@@ -14,6 +14,19 @@ export default function Index() {
   return (
     <main>
       <Container>
+        <HeroPost />
+        <div>
+          <Sidebar />
+          <div>
+            <Tags />
+            <p />
+            <PostList />
+          </div>
+        </div>
+      </Container>
+
+      {/* Legacy 코드 */}
+      {/* <Container>
         <Intro />
         <HeroPost
           title={heroPost.title}
@@ -26,7 +39,7 @@ export default function Index() {
           id={heroPost.id}
         />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
+      </Container> */}
     </main>
   );
 }

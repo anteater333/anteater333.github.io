@@ -6,6 +6,9 @@ import { getCategories, getPostsByCategory } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import { Metadata } from "next";
 
+/**
+ * 카테고리별 게시글 페이지
+ */
 export default async function IndexByCategory({ params }: Params) {
   const allPosts = getPostsByCategory(params.category);
 
