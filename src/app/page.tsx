@@ -18,9 +18,10 @@ export default function Index() {
         <div>
           <Sidebar />
           <div>
-            <Tags />
+            <TagFilter />
             <p />
             <PostList />
+            <Catchphrase />
           </div>
         </div>
       </Container>
