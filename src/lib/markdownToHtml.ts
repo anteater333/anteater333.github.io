@@ -9,9 +9,9 @@ import stringify from "rehype-stringify";
 export default async function markdownToHtml(markdown: string) {
   const result = await remark()
     .use(gfm)
-    .use(rehype)
-    .use(raw)
+    .use(rehype, { allowDangerousHtml: true })
     .use(slug)
+    .use(raw)
     .use(pretty)
     .use(stringify)
     .process(markdown);
