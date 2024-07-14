@@ -13,7 +13,7 @@ export default function Index() {
 
   return (
     <main>
-      <Container>
+      {/* <Container>
         <HeroPost />
         <div>
           <Sidebar />
@@ -24,7 +24,7 @@ export default function Index() {
             <Catchphrase />
           </div>
         </div>
-      </Container>
+      </Container> */}
 
       {/* Legacy 코드 */}
       {/* <Container>

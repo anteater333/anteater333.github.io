@@ -4,6 +4,7 @@ import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/Container";
+import { analyzePost } from "@/lib/postAnalyzer";
 
 /**
  * 블로그 게시글 페이지
@@ -17,9 +18,12 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
 
+  const postInfo = analyzePost(content);
+  console.log(postInfo);
+
   return (
     <main>
-      <Container>
+      {/* <Container>
         <div>
           <Sidebar />
           <article>
@@ -31,7 +35,7 @@ export default async function Post({ params }: Params) {
             <Catchphrase />
           </article>
         </div>
-      </Container>
+      </Container> */}
 
       {/* Legacy 코드 */}
       {/* <Alert preview={post.preview} />
