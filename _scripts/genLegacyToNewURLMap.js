@@ -1,37 +1,43 @@
-const { readFileSync, writeFileSync } = require("fs");
-const matter = require("gray-matter");
+module.exports = new Promise((resolve, reject) => {
+  const { readFileSync, writeFileSync } = require("fs");
+  const matter = require("gray-matter");
 
-const REF = "./ref/legacyURLList.json";
-const DEST = "./ref/legacyToNewURLMap.json";
+  const REF = "./ref/legacyURLList.json";
+  const DEST = "./ref/legacyToNewURLMap.json";
 
-const urlList = JSON.parse(readFileSync(REF));
+  const urlList = JSON.parse(readFileSync(REF));
 
-const map = {};
+  const map = {};
 
-const noSlug = [];
+  const noSlug = [];
 
-urlList.forEach((item) => {
-  const { URL, path } = item;
+  urlList.forEach((item) => {
+    const { URL, path } = item;
 
-  const { data } = matter(readFileSync(path));
+    const { data } = matter(readFileSync(path));
 
-  if (!data.slug) {
-    noSlug.push(path);
-    return;
+    if (!data.slug) {
+      noSlug.push(path);
+      return;
+    }
+
+    map[URL] = `${URL.split("/")[0]}/${data.id}/${data.slug
+      .split(" ")
+      .join("-")}`;
+  });
+
+  console.log(
+    `generated ${urlList.length - noSlug.length} / ${urlList.length}`
+  );
+
+  if (noSlug.length > 0) {
+    console.log("no slug --");
+    console.log(noSlug.join("\n"));
   }
 
-  map[URL] = `${URL.split("/")[0]}/${data.id}/${data.slug
-    .split(" ")
-    .join("-")}`;
+  console.log("writing JSON file...");
+  writeFileSync(DEST, JSON.stringify(map, null, 2));
+  console.log("DONE");
+
+  resolve();
 });
-
-console.log(`generated ${urlList.length - noSlug.length} / ${urlList.length}`);
-
-if (noSlug.length > 0) {
-  console.log("no slug --");
-  console.log(noSlug.join("\n"));
-}
-
-console.log("writing JSON file...");
-writeFileSync(DEST, JSON.stringify(map, null, 2));
-console.log("DONE");
