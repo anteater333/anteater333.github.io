@@ -16,4 +16,5 @@ export type Post = {
   content: string;
   id: string;
   preview?: boolean;
+  subtitle?: string;
 };
