@@ -18,3 +18,15 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+/**
+ * Remove Scrollbars
+ */
+
+* {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
