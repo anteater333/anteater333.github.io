@@ -1,5 +1,6 @@
 import { getAllPosts } from "@/lib/api";
 import Container from "./_components/Container";
+import HeroPost from "./_components/HeroPost";
 
 /**
  * 블로그 메인 페이지
@@ -13,18 +14,18 @@ export default function Index() {
 
   return (
     <main>
-      {/* <Container>
-        <HeroPost />
+      <Container>
+        <HeroPost posts={allPosts} />
         <div>
-          <Sidebar />
+          {/* <Sidebar />
           <div>
             <TagFilter />
             <p />
             <PostList />
             <Catchphrase />
-          </div>
+          </div> */}
         </div>
-      </Container> */}
+      </Container>
 
       {/* Legacy 코드 */}
       {/* <Container>
