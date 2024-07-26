@@ -9,7 +9,7 @@ import DateFormatter from "./DateFormatter";
 const HeroPostSection = styled.section`
   position: relative;
   width: 100vw;
-  height: 360px;
+  height: 388px;
   overflow: hidden;
 
   .hero-post-context-container {
