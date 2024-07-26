@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
+import { categoryConverter } from "@/lib/converter";
 
 const HeroPostSection = styled.section`
   position: relative;
@@ -138,7 +139,7 @@ const HeroPost = function ({ posts }: { posts: Post[] }) {
           <div className="hero-post-context">
             <p>
               <DateFormatter dateString={posts[cursor].date} /> |{" "}
-              {posts[cursor].category}
+              {categoryConverter(posts[cursor].category)}
             </p>
             <h1>{posts[cursor].title}</h1>
             <p>{posts[cursor].subtitle}</p>
