@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
+import "./fonts.css";
 import AutoRefresh from "./_components/dev/AutoRefresh";
 import Header from "./_components/Header";
 
