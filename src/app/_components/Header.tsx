@@ -34,13 +34,21 @@ const BlogHeader = styled.header`
     align-items: center;
     justify-content: center;
 
-    color: white;
     vertical-align: middle;
 
     font-size: 2rem;
     font-weight: bold;
 
     user-select: none;
+
+    > a {
+      line-height: 1.5;
+
+      background: linear-gradient(to right, #658bef 0%, #4cec8c 100%);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
   }
 
   .header-left {
@@ -60,11 +68,13 @@ export default function Header() {
   return (
     <BlogHeader>
       <div className="header-left">
-        <Link href={"/"}>
+        <Link href={"/now"}>
           <img src={"/assets/pictures/placeholder-blog-logo.png"} />
         </Link>
       </div>
-      <div className="header-title">{`Anteater's laboratory`}</div>
+      <div className="header-title">
+        <Link href={"/"}>{`Anteater's laboratory`}</Link>
+      </div>
       <div className="header-right">
         <a href="http://buymeacoffee.com/anteater333" target="_blank">
           <img src={"/assets/pictures/placeholder-bmc.png"} />
