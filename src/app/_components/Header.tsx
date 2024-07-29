@@ -7,7 +7,7 @@ const BlogHeader = styled.header`
   position: relative;
   display: flex;
   width: 100vw;
-  height: 3rem;
+  height: 2rem;
 
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -36,7 +36,7 @@ const BlogHeader = styled.header`
 
     vertical-align: middle;
 
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
 
     user-select: none;
