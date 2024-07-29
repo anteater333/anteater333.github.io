@@ -8,8 +8,14 @@ export const HOME_OG_IMAGE_URL =
  */
 export const WS_PORT = 35730;
 
-// Constants for Styled-components
+// #region Constants for Styled-components
+
 /** styled-component on-half, tablet */
 export const scOnHalf = "max-width: 1023px";
 /** styled-component on-palm, mobile */
 export const scOnPalm = "max-width: 767px";
+
+/** 공통 box-shadow 수치 */
+export const defaultBoxShadow = `box-shadow: 0 4px 4px 0px #d4d4d4`;
+
+// #endregion
