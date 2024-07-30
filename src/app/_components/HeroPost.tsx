@@ -36,7 +36,8 @@ const HeroPostSection = styled.section`
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: #00000099;
+      background-color: #000000;
+      opacity: 0.85;
     }
 
     .hero-image {
