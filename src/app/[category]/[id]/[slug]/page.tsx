@@ -5,11 +5,27 @@ import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
 import Container from "@/app/_components/Container";
 import { analyzePost } from "@/lib/postAnalyzer";
+import Sidebar from "@/app/_components/Sidebar";
+import { Category } from "@/interfaces/post";
 
 /**
  * 블로그 게시글 페이지
  */
 export default async function Post({ params }: Params) {
+  const allPosts = getAllPosts();
+
+  /** 카테고리 별 게시글 수 */
+  const categoriesCount: Record<Category, number> = {
+    meta: 0,
+    micro: 0,
+    hack: 0,
+    reddit: 0,
+    memoir: 0,
+    ndev: 0,
+    temp: 0,
+  };
+  allPosts.forEach((post) => categoriesCount[post.category]++);
+
   const { category, id, slug } = params;
 
   const post = getPostBySlug(`${category}/${id}/${slug}`);
@@ -23,6 +39,12 @@ export default async function Post({ params }: Params) {
 
   return (
     <main>
+      <Container>
+        <Sidebar
+          categoriesCount={categoriesCount}
+          recentPosts={allPosts.slice(0, 3)}
+        />
+      </Container>
       {/* <Container>
         <div>
           <Sidebar />

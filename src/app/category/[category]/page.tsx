@@ -1,8 +1,7 @@
-import Container from "@/app/_components/_legacy/container";
-import { HeroPost } from "@/app/_components/_legacy/hero-post";
-import { Intro } from "@/app/_components/_legacy/intro";
-import { MoreStories } from "@/app/_components/_legacy/more-stories";
-import { getCategories, getPostsByCategory } from "@/lib/api";
+import Container from "@/app/_components/Container";
+import Sidebar from "@/app/_components/Sidebar";
+import { Category } from "@/interfaces/post";
+import { getAllPosts, getCategories, getPostsByCategory } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import { Metadata } from "next";
 
@@ -10,27 +9,28 @@ import { Metadata } from "next";
  * 카테고리별 게시글 페이지
  */
 export default async function IndexByCategory({ params }: Params) {
-  const allPosts = getPostsByCategory(params.category);
+  const allPosts = getAllPosts();
+  /** 카테고리 별 게시글 수 */
+  const categoriesCount: Record<Category, number> = {
+    meta: 0,
+    micro: 0,
+    hack: 0,
+    reddit: 0,
+    memoir: 0,
+    ndev: 0,
+    temp: 0,
+  };
+  allPosts.forEach((post) => categoriesCount[post.category]++);
 
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
+  const catPosts = getPostsByCategory(params.category);
 
   return (
     <main>
       <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          category={heroPost.category}
-          excerpt={heroPost.excerpt}
-          id={heroPost.id}
+        <Sidebar
+          categoriesCount={categoriesCount}
+          recentPosts={allPosts.slice(0, 3)}
         />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
     </main>
   );
