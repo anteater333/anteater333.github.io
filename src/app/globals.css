@@ -19,6 +19,11 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 /**
  * Remove Scrollbars
  */
@@ -29,4 +34,8 @@ a {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.blog-main-container {
+  display: flex;
 }

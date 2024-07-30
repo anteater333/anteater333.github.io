@@ -65,7 +65,7 @@ export default function RootLayout({
         </head>
         <body className={inter.className}>
           <Header />
-          <div className="min-h-screen">{children}</div>
+          {children}
         </body>
       </html>
     </AutoRefresh>
