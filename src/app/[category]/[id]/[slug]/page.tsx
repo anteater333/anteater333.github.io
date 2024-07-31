@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-import Container from "@/app/_components/Container";
+import Container from "@/app/_components/containers/Container";
 import { analyzePost } from "@/lib/postAnalyzer";
 import Sidebar from "@/app/_components/Sidebar";
 import { Category } from "@/interfaces/post";

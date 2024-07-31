@@ -1,4 +1,5 @@
-import Container from "@/app/_components/Container";
+import Container from "@/app/_components/containers/Container";
+import PostListContainer from "@/app/_components/containers/PostListContainer";
 import Sidebar from "@/app/_components/Sidebar";
 import { Category } from "@/interfaces/post";
 import { getAllPosts, getCategories, getPostsByCategory } from "@/lib/api";

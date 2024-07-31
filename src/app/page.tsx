@@ -1,5 +1,5 @@
 import { getAllPosts } from "@/lib/api";
-import Container from "./_components/Container";
+import Container from "./_components/containers/Container";
 import HeroPost from "./_components/HeroPost";
 import Sidebar from "./_components/Sidebar";
 import { Category } from "@/interfaces/post";
