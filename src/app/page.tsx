@@ -3,6 +3,8 @@ import Container from "./_components/containers/Container";
 import HeroPost from "./_components/HeroPost";
 import Sidebar from "./_components/Sidebar";
 import { Category } from "@/interfaces/post";
+import PostList from "./_components/PostList";
+import PostListContainer from "./_components/containers/PostListContainer";
 
 /**
  * 블로그 메인 페이지
@@ -30,12 +32,11 @@ export default function Index() {
           categoriesCount={categoriesCount}
           recentPosts={allPosts.slice(0, 3)}
         />
-        {/* <div>
-            <TagFilter />
-            <p />
-            <PostList />
-            <Catchphrase />
-          </div> */}
+        <PostListContainer>
+          {/* <TagFilter /> */}
+          <PostList posts={allPosts} />
+          {/* <Catchphrase /> */}
+        </PostListContainer>
       </Container>
 
       {/* Legacy 코드 */}

@@ -1,5 +1,6 @@
 import Container from "@/app/_components/containers/Container";
 import PostListContainer from "@/app/_components/containers/PostListContainer";
+import PostList from "@/app/_components/PostList";
 import Sidebar from "@/app/_components/Sidebar";
 import { Category } from "@/interfaces/post";
 import { getAllPosts, getCategories, getPostsByCategory } from "@/lib/api";
@@ -32,6 +33,9 @@ export default async function IndexByCategory({ params }: Params) {
           categoriesCount={categoriesCount}
           recentPosts={allPosts.slice(0, 3)}
         />
+        <PostListContainer>
+          <PostList posts={catPosts} />
+        </PostListContainer>
       </Container>
     </main>
   );
