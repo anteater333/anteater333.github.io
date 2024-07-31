@@ -85,6 +85,8 @@ const HeroPostSection = styled.section`
 
     height: 100%;
     max-width: 52rem;
+
+    padding: 0 10rem;
     flex: 1 1 0;
 
     cursor: pointer;

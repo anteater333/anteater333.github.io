@@ -48,11 +48,10 @@ const BlogSidebar = styled.nav`
 
     overflow: hidden;
 
-    cursor: default;
+    cursor: pointer;
 
     img {
       ${defaultBoxShadow};
-      cursor: pointer;
     }
 
     .profile-bg {
@@ -192,15 +191,16 @@ export default function Sidebar({
 
   return (
     <BlogSidebar>
-      <div className="sidebar-profile-container">
+      <div
+        className="sidebar-profile-container"
+        onClick={() => router.push("/")}
+      >
         <img
           className="profile-bg"
-          onClick={() => router.push("/")}
           src={`/assets/pictures/sidebar/profile-bg-${today}.png`}
         />
         <img
           className="profile-pic"
-          onClick={() => router.push("/")}
           src={`/assets/pictures/sidebar/profile.png`}
         />
         <h1>Anteater</h1>
