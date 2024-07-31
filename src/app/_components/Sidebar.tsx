@@ -14,6 +14,8 @@ const BlogSidebar = styled.nav`
   align-items: center;
 
   width: 20rem;
+  min-width: 20rem;
+  max-width: 20rem;
 
   border-right: 1px solid #b0b0b0;
 
