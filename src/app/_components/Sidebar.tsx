@@ -17,6 +17,11 @@ const BlogSidebar = styled.nav`
 
   border-right: 1px solid #b0b0b0;
 
+  a {
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+  }
+
   a:hover {
     opacity: 0.75;
   }

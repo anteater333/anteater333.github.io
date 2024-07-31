@@ -21,6 +21,13 @@ const HeroPostSection = styled.section`
     align-items: center;
     z-index: 50;
     color: #ffffff;
+
+    background-color: rgba(0, 0, 0, 75%);
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+  }
+  .hero-post-context-container:hover {
+    background-color: rgba(0, 0, 0, 50%);
   }
 
   .hero-overlay {
@@ -30,15 +37,6 @@ const HeroPostSection = styled.section`
     right: 0;
     bottom: 0;
     height: 100%;
-
-    .darken {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000000;
-      opacity: 0.85;
-    }
 
     .hero-image {
       position: absolute;
@@ -68,6 +66,9 @@ const HeroPostSection = styled.section`
     height: 100%;
     font-size: 4rem;
     height: 100%;
+
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
   }
   .hero-arrow-button:hover {
     opacity: 0.75;
@@ -118,7 +119,6 @@ const HeroPost = function ({ posts }: { posts: Post[] }) {
             "/assets/pictures/placeholder-main-image.png"
           }
         />
-        <div className="darken" />
       </div>
       <div className="hero-post-context-container">
         <button
