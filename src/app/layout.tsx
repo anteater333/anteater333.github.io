@@ -1,13 +1,10 @@
 import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
 import "./globals.css";
 import "./fonts.css";
 import AutoRefresh from "./_components/dev/AutoRefresh";
 import Header from "./_components/Header";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
@@ -63,7 +60,7 @@ export default function RootLayout({
           <meta name="theme-color" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </head>
-        <body className={inter.className}>
+        <body>
           <Header />
           {children}
         </body>
