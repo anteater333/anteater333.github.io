@@ -9,7 +9,7 @@ import { defaultBoxShadow } from "@/lib/constants";
 
 const PostListUl = styled.ul`
   margin-top: 4rem;
-  width: 90%;
+  width: 100%;
 `;
 
 const PostListItemArticle = styled.article`
