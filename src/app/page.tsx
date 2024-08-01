@@ -5,6 +5,7 @@ import Sidebar from "./_components/Sidebar";
 import { Category } from "@/interfaces/post";
 import PostList from "./_components/PostList";
 import PostListContainer from "./_components/containers/PostListContainer";
+import Catchphrase from "./_components/Catchphrase";
 
 /**
  * 블로그 메인 페이지
@@ -35,7 +36,7 @@ export default function Index() {
         <PostListContainer>
           {/* <TagFilter /> */}
           <PostList posts={allPosts} />
-          {/* <Catchphrase /> */}
+          <Catchphrase />
         </PostListContainer>
       </Container>
 

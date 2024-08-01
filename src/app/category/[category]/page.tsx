@@ -1,3 +1,4 @@
+import Catchphrase from "@/app/_components/Catchphrase";
 import Container from "@/app/_components/containers/Container";
 import PostListContainer from "@/app/_components/containers/PostListContainer";
 import PostList from "@/app/_components/PostList";
@@ -35,6 +36,7 @@ export default async function IndexByCategory({ params }: Params) {
         />
         <PostListContainer>
           <PostList posts={catPosts} />
+          <Catchphrase category={params.category as Category} />
         </PostListContainer>
       </Container>
     </main>

@@ -7,6 +7,8 @@ import Container from "@/app/_components/containers/Container";
 import { analyzePost } from "@/lib/postAnalyzer";
 import Sidebar from "@/app/_components/Sidebar";
 import { Category } from "@/interfaces/post";
+import PostContainer from "@/app/_components/containers/PostContainer";
+import Catchphrase from "@/app/_components/Catchphrase";
 
 /**
  * 블로그 게시글 페이지
@@ -44,6 +46,9 @@ export default async function Post({ params }: Params) {
           categoriesCount={categoriesCount}
           recentPosts={allPosts.slice(0, 3)}
         />
+        <PostContainer>
+          <Catchphrase />
+        </PostContainer>
       </Container>
       {/* <Container>
         <div>
