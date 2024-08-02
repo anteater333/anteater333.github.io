@@ -6,7 +6,7 @@ import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { categoryConverter } from "@/lib/converter";
 
-const PostHeaderHeader = styled.header`
+const PostHeaderSection = styled.section`
   position: relative;
   width: 100%;
   height: 24rem;
@@ -96,7 +96,7 @@ const PostHeader = function ({
   readingData: PostAnalysis;
 }) {
   return (
-    <PostHeaderHeader>
+    <PostHeaderSection>
       <div className="overlay">
         <div className="darken" />
         <img
@@ -109,7 +109,7 @@ const PostHeader = function ({
           <div className="date-category-container">
             <DateFormatter dateString={date} />
             <p className="sep"> | </p>
-            <p>{categoryConverter(category)}</p>
+            <a href={`/category/${category}`}>{categoryConverter(category)}</a>
           </div>
           <div className="analysis-container">
             <img
@@ -140,7 +140,7 @@ const PostHeader = function ({
         <h1>{title}</h1>
         <p>{subtitle}</p>
       </div>
-    </PostHeaderHeader>
+    </PostHeaderSection>
   );
 };
 
