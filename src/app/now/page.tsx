@@ -1,7 +1,7 @@
 import { Category } from "@/interfaces/post";
 import { getAllPosts } from "@/lib/api";
 import { Metadata } from "next";
-import Container from "../_components/Container";
+import Container from "../_components/containers/Container";
 import Sidebar from "../_components/Sidebar";
 
 export default async function AboutPage() {
