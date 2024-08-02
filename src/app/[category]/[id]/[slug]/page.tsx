@@ -58,12 +58,15 @@ export default async function Post({ params }: Params) {
             subtitle={post.subtitle}
             date={post.date}
             category={post.category}
+            coverImage={post.coverImage}
             readingData={readingData}
           />
-          <PostBody content={content} />
-          <PostTags tags={post.tags} />
-          <Comment />
-          <Catchphrase />
+          <div className="post-body">
+            <PostBody content={content} />
+            <PostTags tags={post.tags} />
+            <Comment />
+            <Catchphrase />
+          </div>
         </PostContainer>
       </Container>
     </main>

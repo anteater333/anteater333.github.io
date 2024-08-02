@@ -41,6 +41,7 @@ ul {
  */
 .blog-main-container {
   display: flex;
+  width: 100%;
 }
 
 .postlist-container {
@@ -50,13 +51,25 @@ ul {
   padding: 0 5rem;
   margin-bottom: 6rem;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .post-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 5rem;
   margin-bottom: 6rem;
+  flex: 1;
+
+  min-width: 0;
+}
+
+.post-container > .post-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5rem;
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
 }
