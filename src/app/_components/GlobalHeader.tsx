@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const BlogHeader = styled.header`
+const GlobalHeaderHeader = styled.header`
   position: relative;
   display: flex;
   width: 100vw;
@@ -36,12 +36,13 @@ const BlogHeader = styled.header`
 
     vertical-align: middle;
 
-    font-size: 1.5rem;
-    font-weight: bold;
-
     user-select: none;
 
     > a {
+      font-family: "Galmuri7", sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+
       line-height: 1.5;
 
       background: linear-gradient(to right, #658bef 0%, #4cec8c 100%);
@@ -64,9 +65,9 @@ const BlogHeader = styled.header`
   }
 `;
 
-export default function Header() {
+export default function GlobalHeader() {
   return (
-    <BlogHeader>
+    <GlobalHeaderHeader>
       <div className="header-left">
         <Link href={"/now"}>
           <img src={"/assets/pictures/placeholder-blog-logo.png"} />
@@ -80,6 +81,6 @@ export default function Header() {
           <img src={"/assets/pictures/placeholder-bmc.png"} />
         </a>
       </div>
-    </BlogHeader>
+    </GlobalHeaderHeader>
   );
 }

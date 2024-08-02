@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./fonts.css";
 import AutoRefresh from "./_components/dev/AutoRefresh";
-import Header from "./_components/Header";
+import GlobalHeader from "./_components/GlobalHeader";
 
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
@@ -61,7 +61,7 @@ export default function RootLayout({
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </head>
         <body>
-          <Header />
+          <GlobalHeader />
           {children}
         </body>
       </html>
