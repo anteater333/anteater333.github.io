@@ -10,7 +10,7 @@ import { categoryConverter } from "@/lib/converter";
 const HeroPostSection = styled.section`
   position: relative;
   width: 100vw;
-  height: 388px;
+  height: 24rem;
   overflow: hidden;
 
   .hero-post-context-container {
