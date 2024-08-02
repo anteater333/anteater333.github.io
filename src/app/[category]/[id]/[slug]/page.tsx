@@ -9,6 +9,11 @@ import Sidebar from "@/app/_components/Sidebar";
 import { Category } from "@/interfaces/post";
 import PostContainer from "@/app/_components/containers/PostContainer";
 import Catchphrase from "@/app/_components/Catchphrase";
+import PostHeader from "@/app/_components/PostHeader";
+import ReadingHeader from "@/app/_components/ReadingHeader";
+import PostBody from "@/app/_components/PostBody";
+import PostTags from "@/app/_components/PostTags";
+import Comment from "@/app/_components/Comment";
 
 /**
  * 블로그 게시글 페이지
@@ -36,8 +41,8 @@ export default async function Post({ params }: Params) {
 
   const content = await markdownToHtml(post.content || "");
 
-  const postInfo = analyzePost(content);
-  console.log(postInfo);
+  const readingData = analyzePost(content);
+  console.log(readingData);
 
   return (
     <main>
@@ -47,37 +52,20 @@ export default async function Post({ params }: Params) {
           recentPosts={allPosts.slice(0, 3)}
         />
         <PostContainer>
+          <ReadingHeader title={post.title} date={post.date} />
+          <PostHeader
+            title={post.title}
+            subtitle={post.subtitle}
+            date={post.date}
+            category={post.category}
+            readingData={readingData}
+          />
+          <PostBody content={content} />
+          <PostTags tags={post.tags} />
+          <Comment />
           <Catchphrase />
         </PostContainer>
       </Container>
-      {/* <Container>
-        <div>
-          <Sidebar />
-          <article>
-            <ReadingHeader />
-            <PostHeader />
-            <PostBody />
-            <PostTags />
-            <Comment />
-            <Catchphrase />
-          </article>
-        </div>
-      </Container> */}
-
-      {/* Legacy 코드 */}
-      {/* <Alert preview={post.preview} />
-      <Container>
-        <Header />
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-          />
-          <PostBody content={content} />
-        </article>
-      </Container> */}
     </main>
   );
 }

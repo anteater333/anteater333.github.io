@@ -1,6 +1,6 @@
 import { JSDOM } from "jsdom";
 
-type PostAnalysis = {
+export type PostAnalysis = {
   numOfCodeBlocks: number;
   numOfWords: number;
   numOfImages: number;
