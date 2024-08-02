@@ -258,7 +258,7 @@ export default function Sidebar({
               <li key={`category-${cat}-${idx}`}>
                 <Link href={`/category/${cat}`}>
                   <p>{`${cat[0].toLocaleUpperCase()}${cat.substring(1)}`}</p>
-                  <p>({categoriesCount["meta"]})</p>
+                  <p>({categoriesCount[cat as Category]})</p>
                 </Link>
               </li>
             );
