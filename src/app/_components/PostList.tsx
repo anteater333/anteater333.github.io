@@ -9,6 +9,7 @@ import { defaultBoxShadow } from "@/lib/constants";
 
 const PostListUl = styled.ul`
   margin-top: 4rem;
+  margin-bottom: 0;
   width: 100%;
 `;
 
