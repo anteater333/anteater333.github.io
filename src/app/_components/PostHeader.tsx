@@ -134,7 +134,12 @@ const PostHeader = function ({
               className="analysis-icon"
               src="/assets/pictures/post/post-time.svg"
             />
-            <p>{readingData.estimatedTimeOfReading.toLocaleString()} 분</p>
+            <p>
+              {readingData.estimatedTimeOfReading < 1
+                ? "~1"
+                : readingData.estimatedTimeOfReading.toLocaleString()}{" "}
+              분
+            </p>
           </div>
         </div>
         <h1>{title}</h1>
