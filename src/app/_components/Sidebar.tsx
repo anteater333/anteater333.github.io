@@ -79,14 +79,19 @@ const BlogSidebar = styled.nav`
       margin: 0;
       font-weight: normal;
     }
-
     margin-bottom: 1rem;
   }
 
   .sidebar-hit-counter-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 1.5rem;
+
+    .daily-comment {
+      opacity: 0.5;
+      margin-top: 0.5rem;
+    }
   }
 
   .sidebar-links-container {
@@ -187,11 +192,7 @@ export default function Sidebar({
 }) {
   const router = useRouter();
 
-  const [today, setToday] = useState<number>(0);
-
-  useEffect(() => {
-    setToday(new Date().getDay());
-  }, []);
+  const [today, setToday] = useState<Date>(new Date());
 
   return (
     <BlogSidebar>
@@ -201,7 +202,7 @@ export default function Sidebar({
       >
         <img
           className="profile-bg"
-          src={`/assets/pictures/sidebar/profile-bg-${today}.png`}
+          src={`/assets/pictures/sidebar/profile-bg-${today.getDay()}.png`}
         />
         <img
           className="profile-pic"
@@ -228,6 +229,13 @@ export default function Sidebar({
             <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fanteater333.github.io%2F&count_bg=%236B6B6B&title_bg=%23000000&icon=&icon_color=%23E7E7E7&title=Hi&edge_flat=false" />
           </a>
         )}
+        <span className="daily-comment">
+          {today.getDay() >= 5 ? (
+            "즐거운 주말 보내세요!"
+          ) : (
+            <DateFormatter dateString={new Date().toDateString()} />
+          )}
+        </span>
       </div>
       <div className="border" />
       <div className="sidebar-links-container">
