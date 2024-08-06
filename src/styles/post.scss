@@ -1,4 +1,10 @@
+$content-text-color: #222222;
+$content-link-color: #6666ff;
+
 article .post-content {
+  color: $content-text-color;
+  font-weight: normal;
+
   h2 {
     @media screen and (max-width: $on-half) {
       font-size: 2rem;
@@ -8,5 +14,45 @@ article .post-content {
 
     font-size: 2.4rem;
     word-break: keep-all;
+  }
+
+  a {
+    background: linear-gradient(
+      to right,
+      #6666ff,
+      #35aeff,
+      #33de58,
+      #ff6021,
+      #6666ff
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+
+    color: $content-link-color;
+
+    background-size: 400% 100%;
+
+    &:hover {
+      animation: backgroundTransition 6s ease-in-out infinite;
+      color: transparent;
+    }
+    &:active {
+      animation: none;
+      color: lighten($content-text-color, 50%);
+    }
+  }
+}
+
+@keyframes backgroundTransition {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
   }
 }
