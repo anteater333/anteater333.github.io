@@ -25,10 +25,10 @@ ul {
 }
 
 h1 {
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: $on-half) {
     font-size: 2.5rem;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $on-palm) {
     font-size: 2rem;
   }
 
@@ -57,10 +57,10 @@ h1 {
 }
 
 .postlist-container {
-  @media screen and (max-width: 1023px) {
+  @media screen and (max-width: $on-half) {
     padding: 0 2rem;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: $on-palm) {
     padding: 0 1rem;
   }
 
@@ -89,10 +89,10 @@ h1 {
     min-width: 0;
 
     > .post-body {
-      @media screen and (max-width: 1023px) {
+      @media screen and (max-width: $on-half) {
         padding-left: 2rem;
       }
-      @media screen and (max-width: 767px) {
+      @media screen and (max-width: $on-palm) {
         padding-left: 1rem;
       }
       padding-left: 5rem;
