@@ -5,7 +5,7 @@ import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import Link from "next/link";
 import { categoryConverter } from "@/lib/converter";
-import { defaultBoxShadow } from "@/lib/constants";
+import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/lib/constants";
 
 const PostListUl = styled.ul`
   margin-top: 4rem;
@@ -36,6 +36,14 @@ const PostListItemArticle = styled.article`
       justify-content: space-between;
 
       .postlist-item-text {
+        @media screen and (${scOnHalf}) {
+          margin-right: 4rem;
+        }
+
+        @media screen and (${scOnHalf}) {
+          margin-right: 3rem;
+        }
+
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -52,6 +60,12 @@ const PostListItemArticle = styled.article`
         h1 {
           margin: 0;
           word-break: keep-all;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
         }
 
         .post-item-subtitle {
@@ -64,6 +78,16 @@ const PostListItemArticle = styled.article`
       }
 
       .postlist-item-img {
+        @media screen and (${scOnHalf}) {
+          width: 12.5rem;
+          height: 12.5rem;
+        }
+
+        @media screen and (${scOnPalm}) {
+          width: 10rem;
+          height: 10rem;
+        }
+
         width: 20rem;
         height: 20rem;
         object-fit: cover;

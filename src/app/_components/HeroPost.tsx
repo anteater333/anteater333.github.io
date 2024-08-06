@@ -6,6 +6,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { categoryConverter } from "@/lib/converter";
+import { scOnHalf, scOnPalm } from "@/lib/constants";
 
 const HeroPostSection = styled.section`
   position: relative;
@@ -78,6 +79,14 @@ const HeroPostSection = styled.section`
   }
 
   .hero-post-center {
+    @media screen and (${scOnHalf}) {
+      padding: 0 5rem;
+    }
+
+    @media screen and (${scOnPalm}) {
+      padding: 0 2.5rem;
+    }
+
     display: flex;
     flex-direction: column;
 
@@ -87,6 +96,7 @@ const HeroPostSection = styled.section`
     max-width: 52rem;
 
     padding: 0 10rem;
+
     flex: 1 1 0;
 
     cursor: pointer;
@@ -97,12 +107,20 @@ const HeroPostSection = styled.section`
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 5.75rem;
+    padding-top: 5rem;
     height: 12rem;
 
     * {
       margin: 0;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0rem;
+    }
+
+    h1 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 `;

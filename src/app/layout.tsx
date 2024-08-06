@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 import "../styles/fonts.css";
 import "../styles/globals.css";
-import "../styles/post.css";
+import "../styles/post.scss";
 
 import AutoRefresh from "./_components/dev/AutoRefresh";
 import GlobalHeader from "./_components/GlobalHeader";

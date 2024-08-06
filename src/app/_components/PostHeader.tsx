@@ -5,6 +5,7 @@ import { PostAnalysis } from "@/lib/postAnalyzer";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { categoryConverter } from "@/lib/converter";
+import { scOnHalf, scOnPalm } from "@/lib/constants";
 
 const PostHeaderSection = styled.section`
   position: relative;
@@ -20,7 +21,6 @@ const PostHeaderSection = styled.section`
     display: flex;
     flex-direction: column;
     position: relative;
-    height: 100%;
     color: #ffffff;
     z-index: 50;
 
@@ -77,6 +77,25 @@ const PostHeaderSection = styled.section`
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  @media screen and (${scOnHalf}) {
+    .context-container {
+      margin-top: 6rem;
+
+      .context-upper {
+        flex-direction: column-reverse;
+        gap: 0.5rem;
+        margin-bottom: 0.25rem !important;
+      }
+    }
+
+    h1 {
+      width: 95% !important;
+    }
+  }
+
+  @media screen and (${scOnPalm}) {
   }
 `;
 
