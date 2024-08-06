@@ -28,18 +28,16 @@ export default async function IndexByCategory({ params }: Params) {
   const catPosts = getPostsByCategory(params.category);
 
   return (
-    <main>
-      <Container>
-        <Sidebar
-          categoriesCount={categoriesCount}
-          recentPosts={allPosts.slice(0, 3)}
-        />
-        <PostListContainer>
-          <PostList posts={catPosts} />
-          <Catchphrase category={params.category as Category} />
-        </PostListContainer>
-      </Container>
-    </main>
+    <Container>
+      <Sidebar
+        categoriesCount={categoriesCount}
+        recentPosts={allPosts.slice(0, 3)}
+      />
+      <PostListContainer>
+        <PostList posts={catPosts} />
+        <Catchphrase category={params.category as Category} />
+      </PostListContainer>
+    </Container>
   );
 }
 

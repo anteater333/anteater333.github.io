@@ -2,7 +2,7 @@ import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 import "../styles/fonts.css";
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import "../styles/post.scss";
 
 import AutoRefresh from "./_components/dev/AutoRefresh";

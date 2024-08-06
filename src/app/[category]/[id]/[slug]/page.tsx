@@ -45,14 +45,14 @@ export default async function Post({ params }: Params) {
   console.log(readingData);
 
   return (
-    <main>
-      <Container>
-        <Sidebar
-          categoriesCount={categoriesCount}
-          recentPosts={allPosts.slice(0, 3)}
-        />
-        <PostContainer>
-          <ReadingHeader title={post.title} date={post.date} />
+    <Container>
+      <Sidebar
+        categoriesCount={categoriesCount}
+        recentPosts={allPosts.slice(0, 3)}
+      />
+      <PostContainer>
+        <ReadingHeader title={post.title} date={post.date} />
+        <article>
           <PostHeader
             title={post.title}
             subtitle={post.subtitle}
@@ -67,9 +67,9 @@ export default async function Post({ params }: Params) {
             <Comment />
             <Catchphrase />
           </div>
-        </PostContainer>
-      </Container>
-    </main>
+        </article>
+      </PostContainer>
+    </Container>
   );
 }
 

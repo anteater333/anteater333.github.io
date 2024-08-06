@@ -26,7 +26,7 @@ export default function Index() {
   allPosts.forEach((post) => categoriesCount[post.category]++);
 
   return (
-    <main>
+    <div className="blog-main-page">
       <HeroPost posts={allPosts} />
       <Container>
         <Sidebar
@@ -55,6 +55,6 @@ export default function Index() {
         />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container> */}
-    </main>
+    </div>
   );
 }
