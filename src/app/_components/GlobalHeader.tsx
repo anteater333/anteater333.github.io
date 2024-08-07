@@ -1,5 +1,6 @@
 "use client";
 
+import { rainbowColor, textBackgroundTransition } from "@/styles/values";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -45,10 +46,16 @@ const GlobalHeaderHeader = styled.header`
 
       line-height: 1.5;
 
-      background: linear-gradient(to right, #658bef 0%, #4cec8c 100%);
-      color: transparent;
-      background-clip: text;
+      background: ${rainbowColor};
+      background-size: 250% 100%;
       -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+
+      &:hover {
+        animation: ${textBackgroundTransition} 6s ease-in-out infinite;
+      }
     }
   }
 

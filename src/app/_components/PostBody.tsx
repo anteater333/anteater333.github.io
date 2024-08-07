@@ -20,8 +20,8 @@ const PostBodySection = styled.section`
   }
 
   a {
-    background-size: 400% 100%;
     background: ${rainbowColor};
+    background-size: 400% 100%;
     -webkit-background-clip: text;
     background-clip: text;
 
