@@ -5,7 +5,7 @@ import { PostAnalysis } from "@/lib/postAnalyzer";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { categoryConverter } from "@/lib/converter";
-import { scOnHalf, scOnPalm } from "@/lib/constants";
+import { scOnHalf, scOnPalm } from "@/styles/values";
 
 const PostHeaderSection = styled.section`
   position: relative;
@@ -79,7 +79,7 @@ const PostHeaderSection = styled.section`
     }
   }
 
-  @media screen and (${scOnHalf}) {
+  @media ${scOnHalf} {
     .context-container {
       margin-top: 6rem;
 
@@ -95,7 +95,7 @@ const PostHeaderSection = styled.section`
     }
   }
 
-  @media screen and (${scOnPalm}) {
+  @media ${scOnPalm} {
   }
 `;
 

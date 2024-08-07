@@ -1,19 +1,19 @@
 "use client";
 
 import { Category, Post } from "@/interfaces/post";
-import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/lib/constants";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { useRouter } from "next/navigation";
+import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
 
 const BlogSidebar = styled.nav`
-  @media screen and (${scOnHalf}) {
+  @media ${scOnHalf} {
     display: none;
   }
 
-  @media screen and (${scOnPalm}) {
+  @media ${scOnPalm} {
   }
 
   display: flex;

@@ -6,7 +6,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { categoryConverter } from "@/lib/converter";
-import { scOnHalf, scOnPalm } from "@/lib/constants";
+import { scOnHalf, scOnPalm } from "@/styles/values";
 
 const HeroPostSection = styled.section`
   position: relative;
@@ -79,11 +79,11 @@ const HeroPostSection = styled.section`
   }
 
   .hero-post-center {
-    @media screen and (${scOnHalf}) {
+    @media ${scOnHalf} {
       padding: 0 5rem;
     }
 
-    @media screen and (${scOnPalm}) {
+    @media ${scOnPalm} {
       padding: 0 2.5rem;
     }
 

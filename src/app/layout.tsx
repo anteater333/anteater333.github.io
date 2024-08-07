@@ -1,10 +1,11 @@
 import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
-import "../styles/initialize.scss";
+import "../styles/statics/initialize.scss";
 
 import AutoRefresh from "./_components/dev/AutoRefresh";
 import GlobalHeader from "./_components/GlobalHeader";
+import StyledComponentsRegistry from "@/lib/registry";
 
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
@@ -61,8 +62,10 @@ export default function RootLayout({
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </head>
         <body>
-          <GlobalHeader />
-          {children}
+          <StyledComponentsRegistry>
+            <GlobalHeader />
+            {children}
+          </StyledComponentsRegistry>
         </body>
       </html>
     </AutoRefresh>

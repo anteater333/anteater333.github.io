@@ -5,7 +5,7 @@ import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import Link from "next/link";
 import { categoryConverter } from "@/lib/converter";
-import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/lib/constants";
+import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
 
 const PostListUl = styled.ul`
   margin-top: 4rem;
@@ -36,11 +36,11 @@ const PostListItemArticle = styled.article`
       justify-content: space-between;
 
       .postlist-item-text {
-        @media screen and (${scOnHalf}) {
+        @media ${scOnHalf} {
           margin-right: 4rem;
         }
 
-        @media screen and (${scOnHalf}) {
+        @media ${scOnPalm} {
           margin-right: 3rem;
         }
 
@@ -78,12 +78,12 @@ const PostListItemArticle = styled.article`
       }
 
       .postlist-item-img {
-        @media screen and (${scOnHalf}) {
+        @media ${scOnHalf} {
           width: 12.5rem;
           height: 12.5rem;
         }
 
-        @media screen and (${scOnPalm}) {
+        @media ${scOnPalm} {
           width: 10rem;
           height: 10rem;
         }

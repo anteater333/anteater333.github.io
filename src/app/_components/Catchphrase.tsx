@@ -1,7 +1,7 @@
 "use client";
 
 import { Category } from "@/interfaces/post";
-import { scOnHalf, scOnPalm } from "@/lib/constants";
+import { scOnHalf, scOnPalm } from "@/styles/values";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -28,7 +28,7 @@ const CatchphraseDiv = styled.div`
     font-size: 2rem;
   }
 
-  @media screen and (${scOnHalf}) {
+  @media ${scOnHalf} {
     .title {
       font-size: 3rem;
     }
@@ -37,7 +37,7 @@ const CatchphraseDiv = styled.div`
     }
   }
 
-  @media screen and (${scOnPalm}) {
+  @media ${scOnPalm} {
     .title {
       font-size: 2rem;
     }
