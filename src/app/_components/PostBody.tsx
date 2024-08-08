@@ -11,17 +11,19 @@ import styled from "styled-components";
 
 const PostToCNav = styled.nav`
   @media ${scOnHalf} {
-    width: 16rem;
-    min-width: 16rem;
+    min-width: 12rem;
+    font-size: 0.8rem;
   }
   @media ${scOnPalm} {
     display: none;
   }
 
-  width: 18rem;
-  min-width: 18rem;
+  flex: 0 1 20rem;
+  min-width: 16rem;
 
   margin-left: 1rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
 
   .toc-core {
     position: sticky;
@@ -30,6 +32,7 @@ const PostToCNav = styled.nav`
     border-left: 4px solid #222222;
 
     padding-left: 0.75rem;
+    padding-right: 1rem;
 
     li {
       display: flex;
@@ -75,7 +78,18 @@ function PostToC({ headings }: { headings: ToCItem[] }) {
 const PostBodySection = styled.section`
   display: flex;
 
+  max-width: 100%;
+  width: 100%;
+
   .post-content {
+    @media ${scOnHalf} {
+    }
+    @media ${scOnPalm} {
+      max-width: 100%;
+    }
+    word-break: break-all;
+    flex: 0 1 auto;
+    max-width: 75%;
     min-width: 0;
 
     color: #222222;

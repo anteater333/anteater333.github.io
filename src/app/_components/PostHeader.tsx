@@ -24,7 +24,7 @@ const PostHeaderSection = styled.section`
     color: #ffffff;
     z-index: 50;
 
-    padding: 0 5rem;
+    padding: 0 3rem;
     margin-top: 7rem;
 
     .context-upper {
