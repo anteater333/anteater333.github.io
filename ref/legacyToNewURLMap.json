@@ -10,6 +10,7 @@
   "memoir/2024/03/27/memoir-domado-1.html": "memoir/3/domado-1",
   "meta/2021/10/03/welcome-to-jekyll.html": "meta/0/welcome-to-jekyll",
   "meta/2022/03/09/thank-you-GSC.html": "meta/1/thank-you-GSC",
+  "meta/2024/06/26/welcome-to-next.html": "meta/2/welcome-to-next",
   "micro/2021/00/00/micro-tip.html": "micro/0/welcome-to-micro",
   "micro/2021/11/22/micro-tip-1.html": "micro/1/jekyll-with-docker",
   "micro/2021/12/19/micro-tip-2.html": "micro/2/expo-with-wsl",
@@ -28,9 +29,13 @@
   "micro/2024/04/23/micro-tip-15.html": "micro/15/node-version-manager",
   "micro/2024/05/30/micro-tip-16.html": "micro/16/memo-a-component",
   "micro/2024/06/22/micro-tip-17.html": "micro/17/memo-a-function",
+  "micro/2024/07/25/micro-tip-18.html": "micro/18/git-push-force-with-lease",
   "ndev/2021/00/00/ndev.html": "ndev/0/welcome-to-ndev",
   "ndev/2021/12/29/ndev-1.html": "ndev/1/what-should-i-do",
   "ndev/2023/01/30/ndev-2.html": "ndev/2/identity-crisis",
   "reddit/2021/00/00/reddit.html": "reddit/0/welcome-to-reddit",
-  "reddit/2022/05/02/reddit-1.html": "reddit/1/clean-architecture"
+  "reddit/2022/05/02/reddit-1.html": "reddit/1/clean-architecture",
+  "temp/2024/00/00/dynamic-routing.html": "temp/0/dynamic-routing",
+  "temp/2024/00/00/hello-world.html": "temp/1/hello-world",
+  "temp/2024/00/00/preview.html": "temp/2/preview"
 }

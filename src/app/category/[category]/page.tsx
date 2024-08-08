@@ -1,35 +1,43 @@
-import Container from "@/app/_components/container";
-import { HeroPost } from "@/app/_components/hero-post";
-import { Intro } from "@/app/_components/intro";
-import { MoreStories } from "@/app/_components/more-stories";
-import { getCategories, getPostsByCategory } from "@/lib/api";
+import Catchphrase from "@/app/_components/Catchphrase";
+import Container from "@/app/_components/containers/Container";
+import PostListContainer from "@/app/_components/containers/PostListContainer";
+import PostList from "@/app/_components/PostList";
+import Sidebar from "@/app/_components/Sidebar";
+import { Category } from "@/interfaces/post";
+import { getAllPosts, getCategories, getPostsByCategory } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import { Metadata } from "next";
 
+/**
+ * 카테고리별 게시글 페이지
+ */
 export default async function IndexByCategory({ params }: Params) {
-  const allPosts = getPostsByCategory(params.category);
+  const allPosts = getAllPosts();
+  /** 카테고리 별 게시글 수 */
+  const categoriesCount: Record<Category, number> = {
+    meta: 0,
+    micro: 0,
+    hack: 0,
+    reddit: 0,
+    memoir: 0,
+    ndev: 0,
+    temp: 0,
+  };
+  allPosts.forEach((post) => categoriesCount[post.category]++);
 
-  const heroPost = allPosts[0];
-
-  const morePosts = allPosts.slice(1);
+  const catPosts = getPostsByCategory(params.category);
 
   return (
-    <main>
-      <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          category={heroPost.category}
-          excerpt={heroPost.excerpt}
-          id={heroPost.id}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
-    </main>
+    <Container>
+      <Sidebar
+        categoriesCount={categoriesCount}
+        recentPosts={allPosts.slice(0, 3)}
+      />
+      <PostListContainer>
+        <PostList posts={catPosts} />
+        <Catchphrase category={params.category as Category} />
+      </PostListContainer>
+    </Container>
   );
 }
 

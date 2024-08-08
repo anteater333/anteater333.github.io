@@ -1,8 +1,17 @@
 import { type Author } from "./author";
 
+export type Category =
+  | "meta"
+  | "hack"
+  | "memoir"
+  | "micro"
+  | "ndev"
+  | "reddit"
+  | "temp";
+
 export type Post = {
   slug: string;
-  category: string;
+  category: Category;
   title: string;
   date: string;
   coverImage: string;
@@ -16,4 +25,5 @@ export type Post = {
   content: string;
   id: string;
   preview?: boolean;
+  subtitle?: string;
 };

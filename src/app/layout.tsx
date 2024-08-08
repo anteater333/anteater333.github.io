@@ -1,12 +1,11 @@
-import Footer from "@/app/_components/footer";
 import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-import "./globals.css";
+import "../styles/statics/initialize.scss";
+
 import AutoRefresh from "./_components/dev/AutoRefresh";
-
-const inter = Inter({ subsets: ["latin"] });
+import GlobalHeader from "./_components/GlobalHeader";
+import StyledComponentsRegistry from "@/lib/registry";
 
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
@@ -62,9 +61,11 @@ export default function RootLayout({
           <meta name="theme-color" content="#000" />
           <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         </head>
-        <body className={inter.className}>
-          <div className="min-h-screen">{children}</div>
-          <Footer />
+        <body>
+          <StyledComponentsRegistry>
+            <GlobalHeader />
+            {children}
+          </StyledComponentsRegistry>
         </body>
       </html>
     </AutoRefresh>

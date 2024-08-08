@@ -9,5 +9,7 @@ export function getAllLegacyURL(): string[] {
 }
 
 export function getNewURL(legacy: string): string | undefined {
-  return `/${legacyToNewURLMap[legacy]}` ?? undefined;
+  return legacyToNewURLMap[legacy] !== undefined
+    ? `/${legacyToNewURLMap[legacy]}`
+    : undefined;
 }
