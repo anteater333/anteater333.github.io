@@ -29,15 +29,38 @@ const PostToCNav = styled.nav`
     position: sticky;
     top: 1rem;
 
+    height: 3rem;
+
     border-left: 4px solid #222222;
 
     padding-left: 0.75rem;
     padding-right: 1rem;
 
     li {
+      transition: font-size 0.2s, margin 0.2s;
+
       display: flex;
 
       margin-bottom: 0.5rem;
+
+      color: #797981;
+      word-break: keep-all;
+
+      &.current-heading {
+        @media ${scOnHalf} {
+          font-size: 0.95rem;
+        }
+        color: #222222;
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-top: 0.75rem;
+        margin-bottom: 0.75rem;
+      }
+
+      &:hover {
+        color: #222222;
+      }
+
       > p.toc-indent {
         margin: 0 0 0 1rem;
       }
@@ -52,24 +75,57 @@ type ToCItem = {
 };
 
 function PostToC({ headings }: { headings: ToCItem[] }) {
+  const [current, setCurrent] = useState(-1);
+
+  useEffect(() => {
+    if (headings.length === 0) return;
+
+    const headingEls = document.querySelectorAll(
+      headings.map((h) => `#${h.id}`).join(",")
+    );
+
+    // 현재 heading 강조 기능
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCurrent(headings.findIndex((h) => h.id === entry.target.id));
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0% 0% -66% 0%",
+        threshold: 1,
+      }
+    );
+
+    headingEls.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, [headings.length]);
+
   return (
     <PostToCNav className="toc-rail">
       <ul className="toc-core">
-        {headings.map((heading, idx) => {
-          return (
-            <li key={`post-toc-item-${idx}`}>
-              {Array.from(Array(heading.level), (e, jdx) => {
-                return (
-                  <p
-                    className="toc-indent"
-                    key={`toc-indent-${idx}-${jdx}`}
-                  ></p>
-                );
-              })}
-              <a href={`#${heading.id}`}>{heading.text}</a>
-            </li>
-          );
-        })}
+        {headings.length > 0
+          ? headings.map((heading, idx) => {
+              return (
+                <li
+                  key={`post-toc-item-${idx}`}
+                  className={`${idx === current ? "current-heading" : ""}`}
+                >
+                  {Array.from(Array(heading.level), (e, jdx) => {
+                    return (
+                      <p
+                        className="toc-indent"
+                        key={`toc-indent-${idx}-${jdx}`}
+                      ></p>
+                    );
+                  })}
+                  <a href={`#${heading.id}`}>{heading.text}</a>
+                </li>
+              );
+            })
+          : undefined}
       </ul>
     </PostToCNav>
   );
@@ -141,8 +197,8 @@ export function PostBody({ content }: { content: string }) {
   useEffect(() => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(content, "text/html");
-
     const headingEls = doc.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
     const buffer: ToCItem[] = [];
     headingEls.forEach((el) => {
       buffer.push({
@@ -151,7 +207,6 @@ export function PostBody({ content }: { content: string }) {
         level: +el.tagName.split("H")[1] - 2,
       });
     });
-
     setHeadings(buffer);
   }, []);
 
