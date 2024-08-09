@@ -233,10 +233,10 @@ export default function Sidebar({
           </a>
         )}
         <span className="daily-comment">
-          {today.getDay() >= 5 ? (
+          {[0, 6].includes(today.getDay()) ? (
             "즐거운 주말 보내세요!"
           ) : (
-            <DateFormatter dateString={new Date().toDateString()} />
+            <DateFormatter dateString={today.toDateString()} />
           )}
         </span>
       </div>
