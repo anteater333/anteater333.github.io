@@ -18,6 +18,7 @@ const PostToCNav = styled.nav`
     display: none;
   }
 
+  max-width: 20rem;
   flex: 0 1 20rem;
   min-width: 16rem;
 
@@ -146,6 +147,7 @@ const PostBodySection = styled.section`
     word-break: break-all;
     flex: 0 1 auto;
     max-width: 75%;
+    width: 75%;
     min-width: 0;
 
     color: #222222;
