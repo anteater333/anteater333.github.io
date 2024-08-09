@@ -78,14 +78,14 @@ type ToCItem = {
 function PostToC({ headings }: { headings: ToCItem[] }) {
   const [current, setCurrent] = useState(-1);
 
+  /* 현재 heading 강조 기능 */
   useEffect(() => {
     if (headings.length === 0) return;
 
     const headingEls = document.querySelectorAll(
-      headings.map((h) => `#${h.id}`).join(",")
+      headings.map((h) => `#${CSS.escape(h.id)}`).join(", ")
     );
 
-    // 현재 heading 강조 기능
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
