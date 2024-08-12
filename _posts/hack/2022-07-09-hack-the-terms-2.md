@@ -242,12 +242,12 @@ async function getDenoWithAwait() {
 다만, 의미는 같으나 문법은 달라졌다. 사용에 조금 주의를 요하는 부분이 있다. 다음 문제를 풀어보자. 각 코드의 결과는 어떠할까?
 
 [![전부문제같아~](https://i.postimg.cc/90YDkjHC/image.png)  
-클릭해서 보자](https://i.postimg.cc/wqSD76Wy/image.png){:target="\_blank"}  
+클릭해서 보자](https://i.postimg.cc/wqSD76Wy/image.png)
 {: .center}
 
 코드가 바뀌는 부분은 20번 라인 부터이며, 단 둘만이 같은 결과를 출력한다.
 
-[정답](https://i.postimg.cc/XV29wKvC/image.png){:target="\_blank"}  
+[정답](https://i.postimg.cc/XV29wKvC/image.png)  
 {: .center .big}
 
 간단하게 한 가지만 기억해두자. 정상적으로 `async`와 `await`을 사용했다면 우리가 받는 것은 **원했던 값**이며, 그 상황에서 프로미스에 대해선 알 필요가 없어진다.

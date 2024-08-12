@@ -22,7 +22,7 @@ tags: []
 민망하니 굳이 번역은 하지 않겠다.
 {: .center .rounded-edge-16 .w-3-quarter}
 
-사람들은 이 일꾼이 계산만 잘하는 게 아니라 그림도 잘 그릴 수 있다는 것을 깨닫는다. 그들은 컴퓨터에 그림을 그리는 데 특화된 도구(Graphics card, 그래픽 카드)를 쥐여주고, 그림 형태로 컴퓨터와 소통하는 방법(Graphical User Interface, GUI)을 체계화하기 시작한다. [수상할 정도로 돈이 많은 컴퓨터 사용자의 커미션에 힘입어](https://i.postimg.cc/Kcps0GjY/XCXROf-SCY-x-CINH-INLR96-F8xx-M8-Nl0l5-S9m1l7-Wip9-Jm-Me97fg-Q-S-i-LHu-F-DF11mpt-Bci-RBZ-G-Jho7-EM1-Sw.webp){:target="_blank"}{: .a-not-colored} 컴퓨터의 그림 실력은 일취월장하였고, 그렇게 **컴퓨터 그래픽(Computer Graphics)**은 오늘날의 수준에 이르렀다. 컴퓨터가 이 컴퓨터 그래픽을 구현하는 행위, 쉽게 말해 컴퓨터가 그림을 그리고 있음을 나타내는 단어. 그것이 바로 오늘의 주제 **렌더링(Rendering)**이다.
+사람들은 이 일꾼이 계산만 잘하는 게 아니라 그림도 잘 그릴 수 있다는 것을 깨닫는다. 그들은 컴퓨터에 그림을 그리는 데 특화된 도구(Graphics card, 그래픽 카드)를 쥐여주고, 그림 형태로 컴퓨터와 소통하는 방법(Graphical User Interface, GUI)을 체계화하기 시작한다. [수상할 정도로 돈이 많은 컴퓨터 사용자의 커미션에 힘입어](https://i.postimg.cc/Kcps0GjY/XCXROf-SCY-x-CINH-INLR96-F8xx-M8-Nl0l5-S9m1l7-Wip9-Jm-Me97fg-Q-S-i-LHu-F-DF11mpt-Bci-RBZ-G-Jho7-EM1-Sw.webp){: .a-not-colored} 컴퓨터의 그림 실력은 일취월장하였고, 그렇게 **컴퓨터 그래픽(Computer Graphics)**은 오늘날의 수준에 이르렀다. 컴퓨터가 이 컴퓨터 그래픽을 구현하는 행위, 쉽게 말해 컴퓨터가 그림을 그리고 있음을 나타내는 단어. 그것이 바로 오늘의 주제 **렌더링(Rendering)**이다.
 
 ## 렌더링(Rendering)
 
@@ -87,10 +87,10 @@ CS 단골 질문 중 하나다. 구글에 검색해 보면 여러 블로그에�
 
 앞서 웹 브라우저를 컴퓨터 안에 존재하는 또 다른 가상 컴퓨터라고 표현했다. 이 가상의 기계를 움직이게 만드는 가장 중요한 부품을 **브라우저 엔진(Browser Engine)**이라고 부른다. 웹 브라우저의 컴포넌트 중 브라우저 엔진이란 용어가 지칭하는 특정한 대상이 있지만, 상황에 따라 그것이 혼용되거나 오용되는 경우가 있어서 조금 헷갈릴 수 있다. 한번 정리해 보자.
 
-[![자바스크립트 엔진과는 다르다](https://i.postimg.cc/FR47Y2Rv/image.png)](https://en.wikipedia.org/wiki/Browser_engine){:target="_blank"}  
+[![자바스크립트 엔진과는 다르다](https://i.postimg.cc/FR47Y2Rv/image.png)](https://en.wikipedia.org/wiki/Browser_engine)  
 {: .center .rounded-edge-16 .w-half}
 
-일단 "웹 브라우저에 존재하는 엔진"이라는 의미에서 **자바스크립트 엔진(JavaScript Engine)**과 묶어 부르는 방식으로 오용될 수 있다. 위키피디아에서도 그러지 말라고 이렇게 손수 알려주고 있다. **브라우저 엔진은 화면을 그리고 UI를 제어하는 역할을 수행한다.** 반면 자바스크립트 엔진은 웹 페이지에 달린 자바스크립트 소스코드를 실행하는 인터프리터다. 둘은 소프트웨어 공학의 기본 설계 원칙인 관심사의 분리 원칙에 따라 서로 구분되었다. 그리고 사실, 둘이 서로 동등한 수준에서 취급되는 컴포넌트는 아니다. 최근 웹 페이지에서 자바스크립트의 중요도가 너무 높아졌기 때문에 체감하기 어려울지도 모르겠지만, [자바스크립트 엔진을 비활성화해도 사용자는 웹 페이지에 접속할 수 있다](https://www.google.com/search?q=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8+%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94){:target="_blank"}{: .a-not-colored}. 하지만 브라우저 엔진이 꺼진다면 웹 브라우저는 조금도 움직이지 않을 것이다.
+일단 "웹 브라우저에 존재하는 엔진"이라는 의미에서 **자바스크립트 엔진(JavaScript Engine)**과 묶어 부르는 방식으로 오용될 수 있다. 위키피디아에서도 그러지 말라고 이렇게 손수 알려주고 있다. **브라우저 엔진은 화면을 그리고 UI를 제어하는 역할을 수행한다.** 반면 자바스크립트 엔진은 웹 페이지에 달린 자바스크립트 소스코드를 실행하는 인터프리터다. 둘은 소프트웨어 공학의 기본 설계 원칙인 관심사의 분리 원칙에 따라 서로 구분되었다. 그리고 사실, 둘이 서로 동등한 수준에서 취급되는 컴포넌트는 아니다. 최근 웹 페이지에서 자바스크립트의 중요도가 너무 높아졌기 때문에 체감하기 어려울지도 모르겠지만, [자바스크립트 엔진을 비활성화해도 사용자는 웹 페이지에 접속할 수 있다](https://www.google.com/search?q=%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8+%EB%B9%84%ED%99%9C%EC%84%B1%ED%99%94){: .a-not-colored}. 하지만 브라우저 엔진이 꺼진다면 웹 브라우저는 조금도 움직이지 않을 것이다.
 
 ![컴포넌트들](https://i.postimg.cc/d1DbVNKB/layers.png)  
 웹 브라우저의 컴포넌트들
@@ -118,7 +118,7 @@ Webkit 엔진의 렌더링 과정
 
 #### 중요 렌더링 경로(Critical Rendering Path)
 
-웹 브라우저가 소스 코드 형태의 웹 페이지를 화면에 픽셀로 렌더링 하는 과정을 **[중요 렌더링 경로(Critical Rendering Path, CRP)](https://developer.mozilla.org/ko/docs/Web/Performance/Critical_rendering_path){:target="_blank"}**라고 부른다. CRP는 다음과 같은 공정으로 이루어져 결과물을 만들어낸다.
+웹 브라우저가 소스 코드 형태의 웹 페이지를 화면에 픽셀로 렌더링 하는 과정을 **[중요 렌더링 경로(Critical Rendering Path, CRP)](https://developer.mozilla.org/ko/docs/Web/Performance/Critical_rendering_path)**라고 부른다. CRP는 다음과 같은 공정으로 이루어져 결과물을 만들어낸다.
 
 **파싱(Parse) -> 부착(Attachment) -> 레이아웃(Layout) -> 페인트(Paint) -> 합성(Composite)**  
 {: .center .bold-middle}
@@ -184,7 +184,7 @@ CRP는 웹 페이지의 소스 코드를 화면에 그리는 일련의 과정이
 ![CSS 알고쓰자](https://i.postimg.cc/QCJYrkRL/7css.png)  
 {: .center}
 
-리플로우와 리페인트에 대한 설명을 보면 알 수 있듯이 CSS의 속성만 잘 써줘도 어느 정도 렌더링 과정의 최적화가 가능해진다. 기능 구현에 어떤 속성을 선택할지 고려할 때 그 속성이 렌더링 과정에서 어떻게 관여하는지를 이해하는 것이 중요하다. 앞서 언급했던 **[쌓임 맥락(Stacking Context)](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context){:target="_blank"}**에 따라 레이어를 생성하는 CSS 속성들을 숙지해 두면 도움이 될 것이다. 단순히 특정 속성을 쓰면 레이어가 생성되고 리플로우를 발생시키지 않을 수 있는 것이 아니라, 그럴 수 있는 조건이 만족해야 하므로 위 문서를 한 번 읽어 보는 것을 추천한다.
+리플로우와 리페인트에 대한 설명을 보면 알 수 있듯이 CSS의 속성만 잘 써줘도 어느 정도 렌더링 과정의 최적화가 가능해진다. 기능 구현에 어떤 속성을 선택할지 고려할 때 그 속성이 렌더링 과정에서 어떻게 관여하는지를 이해하는 것이 중요하다. 앞서 언급했던 **[쌓임 맥락(Stacking Context)](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context)**에 따라 레이어를 생성하는 CSS 속성들을 숙지해 두면 도움이 될 것이다. 단순히 특정 속성을 쓰면 레이어가 생성되고 리플로우를 발생시키지 않을 수 있는 것이 아니라, 그럴 수 있는 조건이 만족해야 하므로 위 문서를 한 번 읽어 보는 것을 추천한다.
 
 CSS에 대한 최적화는 이뿐만이 아니다. 다음과 같은 최적화 작업이 추가로 가능하다.
 
@@ -217,7 +217,7 @@ CSS에 대한 최적화는 이뿐만이 아니다. 다음과 같은 최적화 �
 ## CSR? SSR?
 
 [![엔지니어들이란](https://i.postimg.cc/Ss0gzJB6/ohman.png)  
-정말 엔지니어들은 용어를 맥락 따라 다르게 쓰는 걸 좋아한단 말이야.😒](https://stackoverflow.com/questions/46169376/whats-the-difference-between-a-browser-engine-and-rendering-engine){:target="_blank"}
+정말 엔지니어들은 용어를 맥락 따라 다르게 쓰는 걸 좋아한단 말이야.😒](https://stackoverflow.com/questions/46169376/whats-the-difference-between-a-browser-engine-and-rendering-engine)
 {: .center .rounded-edge-16 .w-3-quarter}
 
 지금까지 웹 브라우저의 렌더링 과정에 대해서 장황하게 설명을 해봤다. 여기서부턴 사족 혹은 여담에 가깝다. 위 내용들이 사실 이 글의 핵심이기도 하고. 아무튼, 웹 개발 분야에서 렌더링이란 단어가 다른 맥락에서 발견될 때가 있다. 
@@ -245,7 +245,7 @@ CSS에 대한 최적화는 이뿐만이 아니다. 다음과 같은 최적화 �
 
 ## 마무리
 
-[![뽀모도로](https://i.postimg.cc/VLFLykgd/pomodoro.png)](https://domado.vercel.app/){:target="_blank"}  
+[![뽀모도로](https://i.postimg.cc/VLFLykgd/pomodoro.png)](https://domado.vercel.app/)  
 틈새 끼워팔기
 {: .center .w-3-quarter .rounded-edge-16}
 
