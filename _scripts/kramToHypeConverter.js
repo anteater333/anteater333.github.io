@@ -109,6 +109,35 @@ function aTag(source) {
   return source;
 }
 
+/**
+ *
+ * @param {string} source
+ */
+function strong(source) {
+  output.push(`\n- strong:`);
+
+  const regex = /\*\*(.*?)\*\*/g;
+
+  const found = source.match(regex);
+
+  if (!found) return source;
+
+  const replaced = found.map((text) => {
+    const content = text.split("**")[1];
+
+    output.push(content);
+
+    return `<strong>${content}</strong>`;
+  });
+
+  found.forEach((preVal, index) => {
+    const newVal = replaced[index];
+    source = source.replace(preVal, newVal);
+  });
+
+  return source;
+}
+
 const fs = require("fs");
 const { join, resolve } = require("path");
 
@@ -124,7 +153,7 @@ function main() {
 
       const source = fs.readFileSync(join(target, subdir, mdFile), "utf-8");
 
-      const result = aTag(imgWithComment(imgWithoutComment(source)));
+      const result = strong(aTag(imgWithComment(imgWithoutComment(source))));
 
       fs.writeFileSync(join(dest, subdir, mdFile), result);
 
@@ -138,7 +167,7 @@ function main() {
 function test() {
   const target = "../_posts/hack/2022-03-07-hack-the-terms-1.md";
 
-  aTag(imgWithComment(fs.readFileSync(target, "utf8")));
+  strong(aTag(imgWithComment(fs.readFileSync(target, "utf8"))));
 
   console.log(output.join("\n"));
 }
