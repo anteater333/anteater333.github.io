@@ -44,17 +44,20 @@ const PostListItemArticle = styled.article`
           margin-right: 3rem;
         }
 
+        min-width: 0;
+        margin-right: 6rem;
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        margin-right: 6rem;
-
         .postlist-item-info {
           display: flex;
           gap: 0.3rem;
           margin: 0;
+          * {
+            flex-shrink: 0;
+          }
         }
 
         h1 {
@@ -79,6 +82,8 @@ const PostListItemArticle = styled.article`
 
       .postlist-item-img {
         @media ${scOnHalf} {
+          min-width: 0;
+          min-height: 0;
           width: 12.5rem;
           height: 12.5rem;
         }
@@ -88,8 +93,14 @@ const PostListItemArticle = styled.article`
           height: 10rem;
         }
 
-        width: 20rem;
-        height: 20rem;
+        max-width: 20rem;
+        max-height: 20rem;
+        min-width: 12.5rem;
+        min-height: 12.5rem;
+        width: 20vw;
+        height: 20vw;
+
+        align-self: center;
         object-fit: cover;
         border-radius: 2rem;
         ${defaultBoxShadow}
