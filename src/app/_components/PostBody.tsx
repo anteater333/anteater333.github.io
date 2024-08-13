@@ -144,6 +144,7 @@ const PostBodySection = styled.section`
     }
     @media ${scOnPalm} {
       max-width: 100%;
+      width: 100%;
     }
 
     margin-top: 0.5rem;
@@ -167,6 +168,7 @@ const PostBodySection = styled.section`
       @media ${scOnPalm} {
       }
 
+      line-height: initial;
       font-size: 2.4rem;
       word-break: keep-all;
       margin-bottom: 0.5rem;
@@ -178,12 +180,14 @@ const PostBodySection = styled.section`
     }
 
     h3 {
+      line-height: initial;
       font-size: 1.88rem;
       margin-top: 1rem;
       margin-bottom: 0.75rem;
     }
 
     h4 {
+      line-height: initial;
       font-size: 1.5rem;
       margin-top: 0rem;
       margin-bottom: 0.5rem;
@@ -191,6 +195,7 @@ const PostBodySection = styled.section`
 
     h5,
     h6 {
+      line-height: initial;
       margin: 0;
     }
 
