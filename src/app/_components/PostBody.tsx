@@ -146,6 +146,8 @@ const PostBodySection = styled.section`
       max-width: 100%;
     }
 
+    margin-top: 0.5rem;
+
     flex: 0 1 auto;
     max-width: 75%;
     width: 75%;
@@ -170,6 +172,9 @@ const PostBodySection = styled.section`
       margin-bottom: 0.5rem;
       padding-bottom: 1rem;
       border-bottom: 2px solid #797981;
+      &.center {
+        border-bottom: none;
+      }
     }
 
     h3 {
@@ -191,7 +196,7 @@ const PostBodySection = styled.section`
 
     /** 이미지 */
     img {
-      width: 100%;
+      max-width: 100%;
       object-fit: contain;
     }
 
@@ -217,6 +222,7 @@ const PostBodySection = styled.section`
       }
 
       &.a-not-colored {
+        background: none;
         color: #222222;
         &:hover {
           animation: none;
@@ -236,12 +242,19 @@ const PostBodySection = styled.section`
     }
 
     /** 인라인 코드 하이라이팅 */
-    p > code {
-      background-color: #22272e;
-      color: #adbac7;
+    p > code,
+    li > code,
+    a > code {
+      background-color: #22272e !important;
+      color: #adbac7 !important;
       padding: 0 0.25rem;
       margin: 0 0.1rem;
       border-radius: 0.33rem;
+    }
+    a:hover {
+      code {
+        text-decoration: underline;
+      }
     }
 
     /** 코드 블록 하이라이팅 */
@@ -282,6 +295,77 @@ const PostBodySection = styled.section`
           padding: 1rem;
         }
       }
+    }
+
+    blockquote {
+      color: #797981;
+      border-left: 4px solid #797981;
+      padding-left: 0.5rem;
+      font-size: 1.125rem;
+      letter-spacing: -1px;
+      font-style: italic;
+      margin: 0;
+    }
+
+    // 커스텀 클래스 스타일링
+    .center {
+      text-align: center;
+    }
+
+    /* font size */
+    .big {
+      font-size: 1.5rem;
+    }
+    .middle-big {
+      font-size: 1.25rem;
+    }
+    .middle-small {
+      font-size: 0.75rem;
+    }
+    .small {
+      font-size: 0.5rem;
+    }
+
+    /* image width */
+    .w-half img {
+      width: 50%;
+    }
+
+    .w-1-quarter img {
+      width: 25%;
+    }
+
+    .w-3-quarter img {
+      width: 75%;
+    }
+
+    .w-expand img {
+      width: 125%;
+    }
+
+    .w-expand-xl img {
+      width: 150%;
+    }
+
+    .w-code-half {
+      width: 50%;
+    }
+
+    /* rounded edge */
+    .rounded-edge img {
+      border-radius: 5%;
+    }
+
+    .rounded-edge-8 img {
+      border-radius: 8px;
+    }
+
+    .rounded-edge-16 img {
+      border-radius: 16px;
+    }
+
+    .line-through {
+      text-decoration: line-through;
     }
   }
 `;
