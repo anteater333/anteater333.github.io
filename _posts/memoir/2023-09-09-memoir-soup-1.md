@@ -14,29 +14,35 @@ tags: []
 
 그리고 사실 영화 리뷰 블로그를 하나 소박하게 운영하고 있는데, 영화 리뷰는 그렇게 열심히 하면서 내 프로젝트 리뷰는 왜 이렇게 등한시하고 있나 하는 생각도 들긴 했다. 아무튼 이제 카테고리의 첫 글 시작합니다.
 
-## 숲Soup - 나무위키 인기 검색어
-{: .center .big}
+<h2 id="숲soup---나무위키-인기-검색어" class="center">
+숲Soup - 나무위키 인기 검색어
+</h2>
 
-![Soup](https://raw.githubusercontent.com/anteater333/namu-soup/main/images/s1.png)  
-{: .center .rounded-edge-16}
+<p class="center rounded-edge-16">
+  <img src="https://raw.githubusercontent.com/anteater333/namu-soup/main/images/s1.png" alt="Soup"/>
+</p>
 
-> **[숲](https://blog.anteater-lab.link/namu-soup/)** 은 한국어 위키 사이트 [나무위키](https://namu.wiki/)의 실시간 검색어를 빠르게 확인할 수 있고, 왜 지금 이슈가 되고 있는지 모두가 함께 메모할 수 있는 웹 사이트입니다. ([소개 페이지](https://github.com/anteater333/namu-soup#readme))
+> <strong><a href="https://blog.anteater-lab.link/namu-soup/">숲</a></strong> 은 한국어 위키 사이트 <a href="https://namu.wiki/">나무위키</a>의 실시간 검색어를 빠르게 확인할 수 있고, 왜 지금 이슈가 되고 있는지 모두가 함께 메모할 수 있는 웹 사이트입니다. (<a href="https://github.com/anteater333/namu-soup#readme">소개 페이지</a>)
 
 ### 정보중독
 
 아무래도 나는 정보중독인가보다. 취미이자 특기로 당당하게 웹 서핑을 말할 수 있는 정도. 그래서 17~18년도 한창 이것저것 배울 때 이런 것도 만들어 봤었다.
 
-![CSNaverParser](https://i.postimg.cc/NfSjcTDb/image.png)  
-원시 고대 숲 프로젝트
-{: .center .rounded-edge-16 .w-3-quarter}
+<p class="center rounded-edge-16 w-3-quarter">
+  <img src="https://i.postimg.cc/NfSjcTDb/image.png" alt="CSNaverParser"/>
+  <br/>
+  원시 고대 숲 프로젝트
+</p>
 
-빌드가 되긴 하는구나. 이건 컴퓨터가 부팅할 때 자동 실행돼 네이버로부터 실시간 인기 검색어를 가져와 보여주는 간단한 윈도우 프로그램이다. 그리고 지금은 이렇게 에러 메세지 하나만 보여주고 있다. 포털 사이트의 실시간 검색어가 복잡한 이해관계의 충돌을 겪고 역사 속으로 사라졌기 때문. 하지만 그런 이해관계로부터 자유로워 보이는 한 사이트가 있으니, 바로 [나무위키](https://namu.wiki).
+빌드가 되긴 하는구나. 이건 컴퓨터가 부팅할 때 자동 실행돼 네이버로부터 실시간 인기 검색어를 가져와 보여주는 간단한 윈도우 프로그램이다. 그리고 지금은 이렇게 에러 메세지 하나만 보여주고 있다. 포털 사이트의 실시간 검색어가 복잡한 이해관계의 충돌을 겪고 역사 속으로 사라졌기 때문. 하지만 그런 이해관계로부터 자유로워 보이는 한 사이트가 있으니, 바로 <a href="https://namu.wiki">나무위키</a>.
 
 사용자들은 사실 복잡한 사정을 굳이 양해해주지 않는다. 없어진 네이버 실검의 위치를 이젠 나무위키가 어느 정도 대체했다고 보면 될 것 같다. 나 또한 "실검 없이 못살아 정말 못살아"로써 나무위키 실검을 꾸준히 들여다보고 있다. 하루에 100번도 더 보는 듯. 그리고 그만큼 눈에 밟히는 점도 생겼다.
 
-![왜](https://i.postimg.cc/266L8Wb6/image.png)  
-"이거 왜 실검 1위임?"
-{: .center .rounded-edge-16 .w-3-quarter}
+<p class="center rounded-edge-16 w-3-quarter">
+  <img src="https://i.postimg.cc/266L8Wb6/image.png" alt="왜"/>
+  <br/>
+  "이거 왜 실검 1위임?"
+</p>
 
 가끔 뜬금없는 키워드들이 실검에 올라올 때가 있다. 그 키워드 문서의 최신 변경 내역에 정보가 담겨있을 수도 있지만, 항상 그렇지는 않다. 인터넷 어디선가 이슈가 되고 있기는 한데 그게 어디인지를 모를 때. 그런 문제를 해결해 볼 수는 없을까?
 
@@ -49,16 +55,17 @@ tags: []
 
 크롤링이야 기능은 명확해서 구현할 사람이 알아서 해줄테고(기획자 마인드), 메모에 대해서 조금 더 고민을 해봤다. 나는 이 서비스의 메모가 가벼워지길 바랬다.
 
-![인스턴트 메모](https://raw.githubusercontent.com/anteater333/namu-soup/main/images/s3.png)  
-{: .center .rounded-edge-8 .w-3-quarter}
+<p class="center rounded-edge-8 w-3-quarter">
+  <img src="https://raw.githubusercontent.com/anteater333/namu-soup/main/images/s3.png" alt="인스턴트 메모"/>
+</p>
 
-**한정된 공간**, **경쟁적 작성**, **인스턴트 메모**. 주워들은 바에 따르면, 기획 단계에서 있어 보이는 말을 자주 써야 하더라(기획자 마인드 2). 
+<strong>한정된 공간</strong>, <strong>경쟁적 작성</strong>, <strong>인스턴트 메모</strong>. 주워들은 바에 따르면, 기획 단계에서 있어 보이는 말을 자주 써야 하더라(기획자 마인드 2). 
 
-- **한정된 공간** : 한 검색어당 메모를 작성할 수 있는 공간(슬롯)을 10개로 제한한다.
-- **경쟁적 작성** : 서로 다른 사용자가 동시에 같은 슬롯에 메모를 작성할 때 먼저 제출된 메모를 반영한다.
-- **인스턴트 메모** : 메모를 데이터베이스에 저장하지 않는다. 서버가 재가동되거나 검색어가 순위 밖으로 벗어날 경우 메모 또한 모두 사라진다.
+- <strong>한정된 공간</strong> : 한 검색어당 메모를 작성할 수 있는 공간(슬롯)을 10개로 제한한다.
+- <strong>경쟁적 작성</strong> : 서로 다른 사용자가 동시에 같은 슬롯에 메모를 작성할 때 먼저 제출된 메모를 반영한다.
+- <strong>인스턴트 메모</strong> : 메모를 데이터베이스에 저장하지 않는다. 서버가 재가동되거나 검색어가 순위 밖으로 벗어날 경우 메모 또한 모두 사라진다.
 
-멋진 이름도 정했다. **숲**. 영어로는 **Soup**. 숲은 굳이 설명 안 해도 바로 이해하리라 믿는다. 영어명 Soup은 BeautifulSoup과 JSoup에서 영향을 받았다. 결과적으로 이 라이브러리들을 사용하진 않았지만. 처음 이 아이디어를 떠올렸을 땐 막연히 저런 거로 크롤링하면 되겠지 라고 생각했었거든.
+멋진 이름도 정했다. <strong>숲</strong>. 영어로는 <strong>Soup</strong>. 숲은 굳이 설명 안 해도 바로 이해하리라 믿는다. 영어명 Soup은 BeautifulSoup과 JSoup에서 영향을 받았다. 결과적으로 이 라이브러리들을 사용하진 않았지만. 처음 이 아이디어를 떠올렸을 땐 막연히 저런 거로 크롤링하면 되겠지 라고 생각했었거든.
 
 ## 개발자의 시각
 
@@ -66,8 +73,9 @@ tags: []
 
 ### 서비스 구조
 
-![첫 구조](https://i.postimg.cc/MHVT9VXY/soup-archi.png)  
-{: .center}
+<p class="center">
+  <img src="https://i.postimg.cc/MHVT9VXY/soup-archi.png" alt="첫 구조"/>
+</p>
 
 숲의 첫 번째 모습은 아주 간단한 2계층 구조. 클라이언트와 서버. 프론트엔드와 백엔드. 사실 기획 단계에서 알 수 있듯 데이터베이스조차 없는 소규모 프로젝트긴 했다. 내가 그리 많은 경험을 한 것은 아니지만 무작정 새롭고 복잡한 기술을 적용하는 것보단 뺄셈을 잘하는 게 설계에 더 도움이 되더라고.
 
@@ -75,8 +83,9 @@ tags: []
 
 ### 기술 스택
 
-![첫 스택](https://i.postimg.cc/grFbCfjM/soup-tech.png)  
-{: .center}
+<p class="center">
+  <img src="https://i.postimg.cc/grFbCfjM/soup-tech.png" alt="첫 스택"/>
+</p>
 
 클라이언트는 웹 클라이언트로, 리액트를 사용하기로 했다. 적지 않은 사람들이 20년대 들어서 웹 프론트엔드 시작할 때 당연하게 리액트를 쓰고 있는 것 같다. 나도 물론 당시 가장 많은 정성을 쏟고 있던 프로젝트가 React Native를 사용 중이었고, 다분히 관성적인 선택이었다.
 
@@ -84,15 +93,19 @@ tags: []
 
 ### 개발과 배포, 그리고 맞닥뜨린 한계
 
-![그날의 흔적](https://i.postimg.cc/CxDj6YKQ/image.png)  
-그날의 흔적
-{: .center .rounded-edge-8 .w-3-quarter}
+<p class="center rounded-edge-8 w-3-quarter">
+  <img src="https://i.postimg.cc/CxDj6YKQ/image.png" alt="그날의 흔적"/>
+  <br/>
+  그날의 흔적
+</p>
 
 계속 말해왔듯이 프로젝트의 규모가 아주 작았다. 거의 과제 수준. 과제는 역시 하루 만에 해야지. 당시 아이디어를 떠올리고 신이 난 나는 "셀프 해커톤"을 시행하였다. 그냥 날 잡고 온종일 이것만 들여다봤다는 뜻. 회고록을 작성하는 김에 커밋 기록을 다시 봤다. 오전에 설계하고, 오후에 백엔드 만들고 밤에 프론트 시작해서 새벽에 끝났네. 이제 와서 보니까 커밋 수도 별로 안 된다. 여기까진 꽤 낭만적이었다. 프론트와 백엔드를 종횡무진하고, 생각한 기능들도 로컬에서 실행할 땐 잘 작동하고, 웹 페이지의 녹색 배경이 마음에 안정감을 주고...
 
-![현실](https://i.postimg.cc/1XNJsdSC/image.png)  
-현실
-{: .center}
+<p class="center">
+  <img src="https://i.postimg.cc/1XNJsdSC/image.png" alt="현실"/>
+  <br/>
+  현실
+</p>
 
 하지만 그 뒤에 이런 과정이 따르게 될 줄 누가 알았을까. 옆에 커밋 메시지를 가려놔서 막연히 열심히 했다고 생각할지도 모르겠지만, 이게 다 뜻대로 되지 않는 와중에 몸부림친 흔적이다. 열심히는 했겠으나 잘한 것은 아니지. 원인은 백엔드를 배포해 놓고 보니 자꾸 발생하는 크롤링 실패. 그 역사를 한번 정리해 보자.
 
@@ -106,16 +119,18 @@ tags: []
      - 메모리에 거의 웹 브라우저 하나가 더 올라가는 구조
    - 만들어 놓고 보니 내 처지에 이걸 돌릴 수 있는 배포 환경이 없었다.
 3. 그러다 홀린 듯 개발자 도구에서 나무위키가 사용하고 있는 API를 발견
-   - [https://search.namu.wiki/api/ranking](https://search.namu.wiki/api/ranking)
+   - <a href="https://search.namu.wiki/api/ranking">https://search.namu.wiki/api/ranking</a>
    - 왜 이 생각을 못했을까?
    - API 발견 후부터 구현은 더 쉬워졌다.
    - 별도 라이브러리 쓸 필요도 없이 node에서 cURL만 실행시켜도 기능 구현이 가능했다.
    - 이제 백엔드 서버를 무료 티어 인스턴스로도 충분히 돌릴 수 있게 되었다.
-4. 하지만 여전히 동작하지 않는 서비스. 서버에 직접 접속해 확인한 로그에서 발견한 문구, **Cloudflare**.  
+4. 하지만 여전히 동작하지 않는 서비스. 서버에 직접 접속해 확인한 로그에서 발견한 문구, <strong>Cloudflare</strong>.  
 
-![블레이드 러너 아는사람?](https://i.postimg.cc/Wbhb9f1S/image-3-5515787.webp)  
-어..?
-{: .center .rounded-edge-8 .w-half}
+<p class="center rounded-edge-8 w-half">
+  <img src="https://i.postimg.cc/Wbhb9f1S/image-3-5515787.webp" alt="블레이드 러너 아는사람?"/>
+  <br/>
+  어..?
+</p>
 
 ## 프로젝트 사망과 부검
 
@@ -137,8 +152,9 @@ API를 발견한 순간부터 cURL을 써도 됐고 그냥 아무 방식으로�
 
 ## 총평
 
-![무리수와 실수](https://i.postimg.cc/6Q0j4HWp/20220305-62232575ba559.jpg)  
-{: .center}
+<p class="center">
+  <img src="https://i.postimg.cc/6Q0j4HWp/20220305-62232575ba559.jpg" alt="무리수와 실수"/>
+</p>
 
 성공적으로 종료된 것은 아니지만 그래도 당돌함이 있었던 프로젝트였다. 1년에 한두 번씩 나조차도 믿기지 않는 집중력이 발휘되는 때가 있는데, 숲을 처음 개발할 때가 그랬던 것 같다. 이때의 기억이 좋아서 종종 "셀프 해커톤"을 다시 해볼까 생각해 보지만 항상 뜻대로 되진 않더라고. 어떻게 보면 무리수로 시작한 것일 수도 있고, 그 과정에 실수가 잦았지만, 그것이 인생 아니겠습니까 허허.
 
@@ -148,7 +164,8 @@ API를 발견한 순간부터 cURL을 써도 됐고 그냥 아무 방식으로�
 
 ---
 
-[하지만 숲은 지금도 동작 중이다.](https://blog.anteater-lab.link/namu-soup/)  
-{: .middle-big .center}
+<p class="middle-big center">
+<a href="https://blog.anteater-lab.link/namu-soup/">하지만 숲은 지금도 동작 중이다.</a>  
+</p>
 
-숲 프로젝트는 작년(2022년) 3월에 처음 떠올려 개발했던 프로젝트다. 이 회고록을 작성하는 2023년 기준으로 문제없이 계획한 기능들이 완성되어 밤낮없이 잘 돌아가고 있다(다만 세상에 알려지지 못했을 뿐). 사실 올해 초에 이 문제를 해결할 방법을 떠올렸었거든. 이 글 제목이 **숲 (1)**인 이유, 문제를 해결하기 위해 내가 떠올린 아이디어. 2부에서 계속됩니다...
+숲 프로젝트는 작년(2022년) 3월에 처음 떠올려 개발했던 프로젝트다. 이 회고록을 작성하는 2023년 기준으로 문제없이 계획한 기능들이 완성되어 밤낮없이 잘 돌아가고 있다(다만 세상에 알려지지 못했을 뿐). 사실 올해 초에 이 문제를 해결할 방법을 떠올렸었거든. 이 글 제목이 <strong>숲 (1)</strong>인 이유, 문제를 해결하기 위해 내가 떠올린 아이디어. 2부에서 계속됩니다...
