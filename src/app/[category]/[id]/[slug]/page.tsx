@@ -42,7 +42,6 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   const readingData = analyzePost(content);
-  console.log(readingData);
 
   return (
     <Container>
