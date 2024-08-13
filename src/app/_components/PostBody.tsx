@@ -242,12 +242,19 @@ const PostBodySection = styled.section`
     }
 
     /** 인라인 코드 하이라이팅 */
-    p > code {
-      background-color: #22272e;
-      color: #adbac7;
+    p > code,
+    li > code,
+    a > code {
+      background-color: #22272e !important;
+      color: #adbac7 !important;
       padding: 0 0.25rem;
       margin: 0 0.1rem;
       border-radius: 0.33rem;
+    }
+    a:hover {
+      code {
+        text-decoration: underline;
+      }
     }
 
     /** 코드 블록 하이라이팅 */
@@ -355,6 +362,10 @@ const PostBodySection = styled.section`
 
     .rounded-edge-16 img {
       border-radius: 16px;
+    }
+
+    .line-through {
+      text-decoration: line-through;
     }
   }
 `;
