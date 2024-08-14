@@ -110,5 +110,18 @@ h1 {
       min-width: 0;
       box-sizing: border-box;
     }
+    > .post-tail {
+      @media screen and (max-width: $on-half) {
+        padding: 0 2rem;
+      }
+      @media screen and (max-width: $on-palm) {
+        padding: 0 1rem;
+      }
+      padding-left: 3rem;
+      padding-right: 5rem;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
   }
 }

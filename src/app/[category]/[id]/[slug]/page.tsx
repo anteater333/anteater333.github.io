@@ -62,6 +62,8 @@ export default async function Post({ params }: Params) {
           />
           <div className="post-body">
             <PostBody content={content} />
+          </div>
+          <div className="post-tail">
             <PostTags tags={post.tags} />
             <Comment />
             <Catchphrase />
