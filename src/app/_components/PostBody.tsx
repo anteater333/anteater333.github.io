@@ -26,7 +26,7 @@ const PostToCNav = styled.nav`
   padding-top: 1rem;
   padding-left: 1rem;
 
-  .toc-core {
+  .toc-container {
     position: sticky;
     top: 1rem;
 
@@ -34,36 +34,43 @@ const PostToCNav = styled.nav`
 
     border-left: 4px solid #222222;
 
-    padding-left: 0.75rem;
-    padding-right: 1rem;
+    z-index: 50;
 
-    li {
-      transition: font-size 0.2s, margin 0.2s;
+    .toc-core {
+      background-color: #ffffff;
+      border-radius: 1rem;
 
-      display: flex;
+      padding-left: 0.75rem;
+      padding-right: 1rem;
 
-      margin-bottom: 0.5rem;
+      li {
+        transition: font-size 0.2s, margin 0.2s;
 
-      color: #797981;
-      word-break: keep-all;
+        display: flex;
 
-      &.current-heading {
-        @media ${scOnHalf} {
-          font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+
+        color: #797981;
+        word-break: keep-all;
+
+        &.current-heading {
+          @media ${scOnHalf} {
+            font-size: 0.95rem;
+          }
+          color: #222222;
+          font-weight: bold;
+          font-size: 1.1rem;
+          margin-top: 0.75rem;
+          margin-bottom: 0.75rem;
         }
-        color: #222222;
-        font-weight: bold;
-        font-size: 1.1rem;
-        margin-top: 0.75rem;
-        margin-bottom: 0.75rem;
-      }
 
-      &:hover {
-        color: #222222;
-      }
+        &:hover {
+          color: #222222;
+        }
 
-      > p.toc-indent {
-        margin: 0 0 0 1rem;
+        > p.toc-indent {
+          margin: 0 0 0 1rem;
+        }
       }
     }
   }
@@ -106,28 +113,30 @@ function PostToC({ headings }: { headings: ToCItem[] }) {
 
   return (
     <PostToCNav className="toc-rail">
-      <ul className="toc-core">
-        {headings.length > 0
-          ? headings.map((heading, idx) => {
-              return (
-                <li
-                  key={`post-toc-item-${idx}`}
-                  className={`${idx === current ? "current-heading" : ""}`}
-                >
-                  {Array.from(Array(heading.level), (e, jdx) => {
-                    return (
-                      <p
-                        className="toc-indent"
-                        key={`toc-indent-${idx}-${jdx}`}
-                      ></p>
-                    );
-                  })}
-                  <a href={`#${heading.id}`}>{heading.text}</a>
-                </li>
-              );
-            })
-          : undefined}
-      </ul>
+      <div className="toc-container">
+        <ul className="toc-core">
+          {headings.length > 0
+            ? headings.map((heading, idx) => {
+                return (
+                  <li
+                    key={`post-toc-item-${idx}`}
+                    className={`${idx === current ? "current-heading" : ""}`}
+                  >
+                    {Array.from(Array(heading.level), (e, jdx) => {
+                      return (
+                        <p
+                          className="toc-indent"
+                          key={`toc-indent-${idx}-${jdx}`}
+                        ></p>
+                      );
+                    })}
+                    <a href={`#${heading.id}`}>{heading.text}</a>
+                  </li>
+                );
+              })
+            : undefined}
+        </ul>
+      </div>
     </PostToCNav>
   );
 }
