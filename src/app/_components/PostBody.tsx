@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  defaultBoxShadow,
   rainbowColor,
   scOnHalf,
   scOnPalm,
@@ -212,6 +213,7 @@ const PostBodySection = styled.section`
     img {
       max-width: 100%;
       object-fit: contain;
+      ${defaultBoxShadow}
     }
 
     /** 링크 */
