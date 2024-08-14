@@ -215,23 +215,19 @@ export default function Sidebar({
         <h2>이지훈</h2>
       </div>
       <div className="sidebar-hit-counter-container">
-        {process.env.NEXT_PUBLIC_MODE === "development" ? (
-          <a
-            className="site-hits"
-            href="https://hits.seeyoufarm.com"
-            target="_blank"
-          >
-            <img src={`/assets/pictures/sidebar/placeholder-hit-counter.svg`} />
-          </a>
-        ) : (
-          <a
-            className="site-hits"
-            href="https://hits.seeyoufarm.com"
-            target="_blank"
-          >
-            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fanteater333.github.io%2F&count_bg=%236B6B6B&title_bg=%23000000&icon=&icon_color=%23E7E7E7&title=Hi&edge_flat=false" />
-          </a>
-        )}
+        <a
+          className="site-hits"
+          href="https://hits.seeyoufarm.com"
+          target="_blank"
+        >
+          <img
+            src={
+              process.env.NEXT_PUBLIC_MODE === "development"
+                ? `/assets/pictures/sidebar/placeholder-hit-counter.svg`
+                : "https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fanteater333.github.io%2F&count_bg=%236B6B6B&title_bg=%23000000&icon=&icon_color=%23E7E7E7&title=Hi&edge_flat=false"
+            }
+          />
+        </a>
         <span className="daily-comment">
           {[0, 6].includes(today.getDay()) ? (
             "즐거운 주말 보내세요!"
