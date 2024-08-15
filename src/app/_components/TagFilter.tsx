@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import TagItem from "./TagItem";
 import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const TagFilterDiv = styled.div`
   margin-top: 3rem;
@@ -26,23 +27,25 @@ const TagFilterDiv = styled.div`
 
 const TagFilter = function ({ tags }: { tags: string[] }) {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-  /** 컴포넌트 최초 로드 시 URL에 직접 입력한 Query Param을 필터 UI에 적용 */
+  /** URL의 Query Param 변화를 필터 UI에 적용 */
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const tags = urlParams.get("tags");
+    const tags = searchParams.get("tags");
 
-    if (!tags) return;
+    if (!tags) {
+      setSelectedTags(new Set());
+      return;
+    }
 
     const manuallySelected = new Set(tags.split(","));
     setSelectedTags(manuallySelected);
-  }, []);
+  }, [searchParams]);
 
   /** Query Param을 사용해 Filtering을 구현하기 위한 PJAX 영역 */
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const tags = urlParams.get("tags");
-
+    const tags = searchParams.get("tags");
     // 선택된 태그 없음 && 기존 Query Param도 없음 ==> 초기 상태
     // 불필요한 PJAX 방지
     if (selectedTags.size === 0 && !tags) {
@@ -50,9 +53,7 @@ const TagFilter = function ({ tags }: { tags: string[] }) {
     }
 
     // selectedTags의 변화를 Query Param에 적용
-    window.history.pushState(
-      {},
-      "",
+    router.push(
       selectedTags.size === 0
         ? "/"
         : `/?tags=${Array.from(selectedTags).join(",")}`
