@@ -27,8 +27,9 @@ export default function Index() {
   allPosts.forEach((post) => categoriesCount[post.category]++);
 
   /** 태그 목록 추출 */
-  const allTags: string[] = [];
-  allPosts.forEach((post) => allTags.push(...post.tags));
+  const allTagSet = new Set<string>();
+  allPosts.forEach((post) => post.tags.forEach((tag) => allTagSet.add(tag)));
+  const allTags = Array.from(allTagSet);
 
   return (
     <div className="blog-main-page">
