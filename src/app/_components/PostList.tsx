@@ -8,7 +8,7 @@ import { categoryConverter } from "@/lib/converter";
 import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
 
 const PostListUl = styled.ul`
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-bottom: 0;
   width: 100%;
 `;

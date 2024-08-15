@@ -6,6 +6,7 @@ import { Category } from "@/interfaces/post";
 import PostList from "./_components/PostList";
 import PostListContainer from "./_components/containers/PostListContainer";
 import Catchphrase from "./_components/Catchphrase";
+import TagFilter from "./_components/TagFilter";
 
 /**
  * 블로그 메인 페이지
@@ -25,6 +26,10 @@ export default function Index() {
   };
   allPosts.forEach((post) => categoriesCount[post.category]++);
 
+  /** 태그 목록 추출 */
+  const allTags: string[] = [];
+  allPosts.forEach((post) => allTags.push(...post.tags));
+
   return (
     <div className="blog-main-page">
       <HeroPost posts={allPosts} />
@@ -34,7 +39,7 @@ export default function Index() {
           recentPosts={allPosts.slice(0, 3)}
         />
         <PostListContainer>
-          {/* <TagFilter /> */}
+          <TagFilter tags={allTags} selectedList={[]} />
           <PostList posts={allPosts} />
           <Catchphrase />
         </PostListContainer>
