@@ -39,7 +39,7 @@ export default function Index() {
           recentPosts={allPosts.slice(0, 3)}
         />
         <PostListContainer>
-          <TagFilter tags={allTags} selectedList={[]} />
+          <TagFilter tags={allTags} />
           <PostList posts={allPosts} />
           <Catchphrase />
         </PostListContainer>
