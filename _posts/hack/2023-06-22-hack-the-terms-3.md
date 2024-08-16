@@ -8,6 +8,11 @@ category: hack
 id: 3
 slug: graphql
 tags: [🪓, GraphQL, Full-stack, Network]
+
+coverImage: "/assets/blog/coverImages/hack-3.jpg"
+
+ogImage:
+  url: "/assets/blog/coverImages/hack-3.jpg"
 ---
 
 <h2 id="전-html로-코딩합니다" class="center">"전 HTML로 코딩합니다."</h2>

@@ -98,7 +98,9 @@ export function generateMetadata({ params }: Params): Metadata {
     keywords: post.tags?.join(", "),
     openGraph: {
       title,
-      images: [post.ogImage?.url],
+      images: [
+        post.ogImage ? post.ogImage.url : "/assets/pictures/placeholder-og.png",
+      ],
     },
   };
 }

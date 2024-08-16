@@ -8,6 +8,11 @@ category: hack
 id: 2
 slug: promise and javascript async programming
 tags: [🪓, JavaScript, Asynchronous]
+
+coverImage: "/assets/blog/coverImages/hack-2.png"
+
+ogImage:
+  url: "/assets/blog/coverImages/hack-2.png"
 ---
 
 ## 내가 JS를 배운 방식

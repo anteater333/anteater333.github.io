@@ -2,7 +2,7 @@
 
 import { Post } from "@/interfaces/post";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { categoryConverter } from "@/lib/converter";
@@ -128,6 +128,10 @@ const HeroPostSection = styled.section`
 const HeroPost = function ({ posts }: { posts: Post[] }) {
   const [cursor, setCursor] = useState<number>(0);
   const router = useRouter();
+
+  useEffect(() => {
+    setCursor(Math.floor(Math.random() * posts.length));
+  }, []);
 
   return (
     <HeroPostSection>

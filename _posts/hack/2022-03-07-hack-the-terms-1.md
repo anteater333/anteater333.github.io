@@ -8,6 +8,11 @@ category: hack
 id: 1
 slug: dependency injection
 tags: [🪓, Software Engineering]
+
+coverImage: "/assets/blog/coverImages/hack-1.png"
+
+ogImage:
+  url: "/assets/blog/coverImages/hack-1.png"
 ---
 
 ## 신제품 출시 !!

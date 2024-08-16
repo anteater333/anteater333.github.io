@@ -8,6 +8,11 @@ category: hack
 id: 4
 slug: rendering in web
 tags: [🪓, Front-end, Web Browser]
+
+coverImage: "/assets/blog/coverImages/hack-4.png"
+
+ogImage:
+  url: "/assets/blog/coverImages/hack-4.png"
 ---
 
 ## 🖐️금손 작가, 컴퓨터
