@@ -57,6 +57,7 @@ export default async function Post({ params }: Params) {
             subtitle={post.subtitle}
             date={post.date}
             category={post.category}
+            tags={post.tags}
             coverImage={post.coverImage}
             readingData={readingData}
           />

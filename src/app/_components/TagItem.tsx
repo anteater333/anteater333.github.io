@@ -17,7 +17,7 @@ const TagSpan = styled.span<{ $isDark?: boolean; $isFilter?: boolean }>`
 
     color: ${({ $isDark }) => ($isDark ? "#ffffff" : "#222222")};
 
-    border: 2px solid #222222;
+    border: 2px solid ${({ $isDark }) => ($isDark ? "#ffffff" : "#222222")};
     border-radius: 0.5rem;
     padding: 0.1rem 0.5rem;
 
