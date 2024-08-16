@@ -4,8 +4,16 @@ import styled from "styled-components";
 import TagItem from "./TagItem";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { scOnHalf, scOnPalm } from "@/styles/values";
 
 const TagFilterDiv = styled.div`
+  @media ${scOnHalf} {
+  }
+  @media ${scOnPalm} {
+    gap: 1.25rem 0.5rem;
+    width: 90%;
+  }
+
   margin-top: 3rem;
   padding-bottom: 3rem;
 
@@ -19,8 +27,14 @@ const TagFilterDiv = styled.div`
   border-bottom: 2px solid #dcdcdc;
 
   .tag-item {
+    @media ${scOnHalf} {
+    }
+    @media ${scOnPalm} {
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+    }
     font-size: 1.5rem;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 2rem;
   }
 `;

@@ -1,10 +1,17 @@
 "use client";
 
+import { scOnHalf, scOnPalm } from "@/styles/values";
 import Link from "next/link";
 import styled from "styled-components";
 
 const TagSpan = styled.span<{ $isDark?: boolean; $isFilter?: boolean }>`
   > * {
+    @media ${scOnHalf} {
+    }
+    @media ${scOnPalm} {
+      font-size: 0.9rem;
+    }
+
     cursor: pointer;
     user-select: none;
 
@@ -13,6 +20,8 @@ const TagSpan = styled.span<{ $isDark?: boolean; $isFilter?: boolean }>`
     border: 2px solid #222222;
     border-radius: 0.5rem;
     padding: 0.1rem 0.5rem;
+
+    line-height: 1;
 
     -webkit-transition: background-color 0.25s, color 0.25s, opacity 0.25s;
     transition: background-color 0.25s, color 0.25s, opacity 0.25s;
