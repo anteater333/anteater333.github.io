@@ -6,6 +6,7 @@ import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { categoryConverter } from "@/lib/converter";
 import { scOnHalf, scOnPalm } from "@/styles/values";
+import TagItem from "./TagItem";
 
 const PostHeaderSection = styled.section`
   position: relative;
@@ -56,6 +57,15 @@ const PostHeaderSection = styled.section`
       max-width: 60rem;
       margin-bottom: 0.5rem;
     }
+
+    .subtitle {
+      margin-bottom: 1rem;
+    }
+
+    .tag-list-container {
+      display: flex;
+      gap: 0.5rem;
+    }
   }
 
   .overlay {
@@ -105,6 +115,7 @@ const PostHeader = function ({
   date,
   category,
   coverImage,
+  tags,
   readingData,
 }: {
   title: string;
@@ -112,6 +123,7 @@ const PostHeader = function ({
   date: string;
   category: Category;
   coverImage?: string;
+  tags: string[];
   readingData: PostAnalysis;
 }) {
   return (
@@ -162,7 +174,18 @@ const PostHeader = function ({
           </div>
         </div>
         <h1>{title}</h1>
-        <p>{subtitle}</p>
+        {subtitle ? <p className="subtitle">{subtitle}</p> : undefined}
+        <div className="tag-list-container">
+          {tags.map((tag, idx) => {
+            return (
+              <TagItem
+                key={`post-header-tag-item-${idx}`}
+                tag={tag}
+                isDark={true}
+              />
+            );
+          })}
+        </div>
       </div>
     </PostHeaderSection>
   );

@@ -57,11 +57,14 @@ export default async function Post({ params }: Params) {
             subtitle={post.subtitle}
             date={post.date}
             category={post.category}
+            tags={post.tags}
             coverImage={post.coverImage}
             readingData={readingData}
           />
           <div className="post-body">
             <PostBody content={content} />
+          </div>
+          <div className="post-tail">
             <PostTags tags={post.tags} />
             <Comment />
             <Catchphrase />
@@ -95,7 +98,9 @@ export function generateMetadata({ params }: Params): Metadata {
     keywords: post.tags?.join(", "),
     openGraph: {
       title,
-      images: [post.ogImage?.url],
+      images: [
+        post.ogImage ? post.ogImage.url : "/assets/pictures/placeholder-og.png",
+      ],
     },
   };
 }

@@ -6,11 +6,32 @@ import DateFormatter from "./DateFormatter";
 import Link from "next/link";
 import { categoryConverter } from "@/lib/converter";
 import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const PostListUl = styled.ul`
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-bottom: 0;
   width: 100%;
+
+  .message-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #b0b0b0;
+    margin-bottom: 2rem;
+
+    .message-for-exhausted-tag-condition {
+      font-family: "Galmuri7", sans-serif;
+      font-size: 2.5rem;
+      margin-top: 3rem;
+      margin-bottom: 6rem;
+      width: 100%;
+      text-align: center;
+      opacity: 1;
+    }
+  }
 `;
 
 const PostListItemArticle = styled.article`
@@ -44,17 +65,20 @@ const PostListItemArticle = styled.article`
           margin-right: 3rem;
         }
 
+        min-width: 0;
+        margin-right: 6rem;
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-        margin-right: 6rem;
-
         .postlist-item-info {
           display: flex;
           gap: 0.3rem;
           margin: 0;
+          * {
+            flex-shrink: 0;
+          }
         }
 
         h1 {
@@ -79,6 +103,8 @@ const PostListItemArticle = styled.article`
 
       .postlist-item-img {
         @media ${scOnHalf} {
+          min-width: 0;
+          min-height: 0;
           width: 12.5rem;
           height: 12.5rem;
         }
@@ -88,8 +114,14 @@ const PostListItemArticle = styled.article`
           height: 10rem;
         }
 
-        width: 20rem;
-        height: 20rem;
+        max-width: 20rem;
+        max-height: 20rem;
+        min-width: 12.5rem;
+        min-height: 12.5rem;
+        width: 20vw;
+        height: 20vw;
+
+        align-self: center;
         object-fit: cover;
         border-radius: 2rem;
         ${defaultBoxShadow}
@@ -117,11 +149,41 @@ const PostListItemArticle = styled.article`
 `;
 
 const PostList = function ({ posts }: { posts: Post[] }) {
+  const [tagsString, setTagsString] = useState<string | null>(null);
+  const [postsByTags, setPostsByTags] = useState<Post[]>(posts);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    setTagsString(searchParams.get("tags"));
+  }, [searchParams]);
+
+  useEffect(() => {
+    if (!tagsString) {
+      setPostsByTags(posts);
+      return;
+    }
+
+    const selectedTagsList = tagsString.split(",");
+    setPostsByTags(() => {
+      return posts.filter((post) =>
+        selectedTagsList.every((tag) => post.tags.includes(tag))
+      );
+    });
+  }, [tagsString]);
+
   return (
     <PostListUl>
-      {posts.map((post, idx) => (
-        <PostListItem key={`postlist-${post.slug}-${idx}`} post={post} />
-      ))}
+      {postsByTags.length === 0 ? (
+        <li className="message-container">
+          <label className="message-for-exhausted-tag-condition">
+            그런 태그를 가진 게시글은 없어요...🥺
+          </label>
+        </li>
+      ) : (
+        postsByTags.map((post, idx) => (
+          <PostListItem key={`postlist-${post.slug}-${idx}`} post={post} />
+        ))
+      )}
     </PostListUl>
   );
 };

@@ -7,7 +7,12 @@ category: memoir
 
 id: 2
 slug: soup 2
-tags: []
+tags: [🗃️, 숲Soup, Full-stack, Refactoring]
+
+coverImage: "/assets/blog/coverImages/memoir-soup.png"
+
+ogImage:
+  url: "/assets/blog/coverImages/memoir-soup.png"
 ---
 
 <h2 id="숲soup---나무위키-인기-검색어" class="center">

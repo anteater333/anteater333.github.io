@@ -7,7 +7,12 @@ category: memoir
 
 id: 1
 slug: soup 1
-tags: []
+tags: [🗃️, 숲Soup, Full-stack, Network]
+
+coverImage: "/assets/blog/coverImages/memoir-soup.png"
+
+ogImage:
+  url: "/assets/blog/coverImages/memoir-soup.png"
 ---
 
 블로그에 새로운 카테고리를 추가했다. 소프트웨어를 만든다는 건 사실 시작은 있으나 정확한 끝은 없는 경우가 많다. 나는 쉽게 공상에 빠지는 성격이라 재밌어 보이는 게 있으면 즉흥적으로 날을 잡아 프로젝트를 시작하곤 했다. 그리고 지금까지 진행했던, "나만의 작은 웹사이트" 수준의 개인 프로젝트들은 최소한의 형태만 갖춘 다음 수많은 가능성만을 남긴 채 대부분 흐지부지 중단되어 버리더라. 이제 와서 돌아보니 내가 그들을 위해 제대로 된 회고의 자리를 마련하지 않았던 것 같다. 이곳에서는 프로젝트를 진행하면서 무엇이 부족했고, 앞으로 어떻게 하면 좋을지 되짚어 볼 수 있도록 하자.

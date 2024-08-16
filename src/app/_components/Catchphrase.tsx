@@ -56,7 +56,7 @@ const randomPhrases = [
   "취미는 게임입니다.",
   "Lorem ipsum dol...",
   "도움이 됐을까요?",
-  "",
+  "돈이 될까?",
   "I'm sorry Dave, I'm afraid I can't do that.",
   "웅나?",
   "난, 해적왕이 될 거야!",

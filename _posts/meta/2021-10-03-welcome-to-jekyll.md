@@ -6,7 +6,7 @@ category: meta
 
 id: 0
 slug: welcome to jekyll
-tags: []
+tags: [ℹ️]
 ---
 
 ## Welcome to Anteater's laboratory

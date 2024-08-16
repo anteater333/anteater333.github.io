@@ -6,7 +6,7 @@ category: meta
 
 id: 2
 slug: welcome to next
-tags: []
+tags: [ℹ️]
 ---
 
 ## Anteater's laboratory, ver.3. Next.js 이전 작업 중
