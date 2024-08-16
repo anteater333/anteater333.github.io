@@ -7,7 +7,7 @@ category: hack
 
 id: 3
 slug: graphql
-tags: []
+tags: [🪓, GraphQL, Full-stack, Network]
 ---
 
 <h2 id="전-html로-코딩합니다" class="center">"전 HTML로 코딩합니다."</h2>

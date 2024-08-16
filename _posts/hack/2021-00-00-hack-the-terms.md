@@ -6,7 +6,7 @@ category: hack
 
 id: 0
 slug: welcome to hack
-tags: []
+tags: [🪓]
 ---
 
 ## 용어를 뜯어보자

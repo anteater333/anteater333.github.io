@@ -7,7 +7,7 @@ category: hack
 
 id: 4
 slug: rendering in web
-tags: []
+tags: [🪓, Front-end, Web Browser]
 ---
 
 ## 🖐️금손 작가, 컴퓨터

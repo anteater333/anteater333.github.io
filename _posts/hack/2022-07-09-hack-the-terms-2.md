@@ -7,7 +7,7 @@ category: hack
 
 id: 2
 slug: promise and javascript async programming
-tags: []
+tags: [🪓, JavaScript, Asynchronous]
 ---
 
 ## 내가 JS를 배운 방식

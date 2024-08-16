@@ -7,7 +7,7 @@ category: hack
 
 id: 1
 slug: dependency injection
-tags: []
+tags: [🪓, Software Engineering]
 ---
 
 ## 신제품 출시 !!

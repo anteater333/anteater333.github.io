@@ -6,7 +6,7 @@ category: meta
 
 id: 1
 slug: thank you GSC
-tags: []
+tags: [ℹ️]
 ---
 
 ## 환멸
