@@ -7,6 +7,7 @@ import PostList from "./_components/PostList";
 import PostListContainer from "./_components/containers/PostListContainer";
 import Catchphrase from "./_components/Catchphrase";
 import TagFilter from "./_components/TagFilter";
+import { Suspense } from "react";
 
 /**
  * 블로그 메인 페이지
@@ -40,8 +41,10 @@ export default function Index() {
           recentPosts={allPosts.slice(0, 3)}
         />
         <PostListContainer>
-          <TagFilter tags={allTags} />
-          <PostList posts={allPosts} />
+          <Suspense>
+            <TagFilter tags={allTags} />
+            <PostList posts={allPosts} />
+          </Suspense>
           <Catchphrase />
         </PostListContainer>
       </Container>

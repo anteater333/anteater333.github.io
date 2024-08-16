@@ -7,6 +7,7 @@ import { Category } from "@/interfaces/post";
 import { getAllPosts, getCategories, getPostsByCategory } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 /**
  * 카테고리별 게시글 페이지
@@ -34,7 +35,9 @@ export default async function IndexByCategory({ params }: Params) {
         recentPosts={allPosts.slice(0, 3)}
       />
       <PostListContainer>
-        <PostList posts={catPosts} />
+        <Suspense>
+          <PostList posts={catPosts} />
+        </Suspense>
         <Catchphrase category={params.category as Category} />
       </PostListContainer>
     </Container>

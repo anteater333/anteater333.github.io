@@ -13,7 +13,12 @@ import PostHeader from "@/app/_components/PostHeader";
 import ReadingHeader from "@/app/_components/ReadingHeader";
 import PostBody from "@/app/_components/PostBody";
 import PostTags from "@/app/_components/PostTags";
-import Comment from "@/app/_components/Comment";
+import dynamic from "next/dynamic";
+
+// 내부적으로 브라우저 API(document 객체)를 사용하기 때문에 동적 임포트
+const Comment = dynamic(() => import("@/app/_components/Comment"), {
+  ssr: false,
+});
 
 /**
  * 블로그 게시글 페이지
