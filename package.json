@@ -12,6 +12,7 @@
     "migrate": "node ./_scripts/migrate.js"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.5",
     "@types/ws": "^8.5.10",
     "chokidar": "^3.6.0",
     "classnames": "^2.5.1",
