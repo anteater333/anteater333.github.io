@@ -9,7 +9,7 @@ const WS_PORT = 35730;
 const wss = new WebSocketServer({ port: WS_PORT });
 const watchCallbacks = [];
 
-chokidar.watch("./_posts").on("all", (event) => {
+chokidar.watch(["./_posts", "./_now"]).on("all", (event) => {
   if (event === "change") {
     watchCallbacks.forEach((cb) => cb());
   }

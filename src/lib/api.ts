@@ -1,7 +1,7 @@
 import { Post } from "@/interfaces/post";
 import fs, { readFileSync } from "fs";
 import matter from "gray-matter";
-import { join, sep } from "path";
+import { join } from "path";
 
 const filenameToSlugMap: Record<string, string> = JSON.parse(
   readFileSync("ref/filenameToSlug.json").toString()
@@ -68,4 +68,8 @@ export function getPostsByCategory(category: string): Post[] {
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
+}
+
+export function getNowPage() {
+  return fs.readFileSync(join(process.cwd(), "_now/now.md")).toString();
 }
