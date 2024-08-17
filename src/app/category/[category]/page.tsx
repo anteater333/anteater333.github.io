@@ -22,7 +22,6 @@ export default async function IndexByCategory({ params }: Params) {
     reddit: 0,
     memoir: 0,
     ndev: 0,
-    temp: 0,
   };
   allPosts.forEach((post) => categoriesCount[post.category]++);
 

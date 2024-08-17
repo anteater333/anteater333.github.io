@@ -1,13 +1,6 @@
 import { type Author } from "./author";
 
-export type Category =
-  | "meta"
-  | "hack"
-  | "memoir"
-  | "micro"
-  | "ndev"
-  | "reddit"
-  | "temp";
+export type Category = "meta" | "hack" | "memoir" | "micro" | "ndev" | "reddit";
 
 export type Post = {
   slug: string;

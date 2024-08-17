@@ -87,7 +87,6 @@ const categoryPhrases: Record<Category, string> = {
   memoir: "- 후회중독 -",
   ndev: "- 개발자 출입 금지 -",
   reddit: "- I read it ! -",
-  temp: "",
 };
 
 const Catchphrase = function ({ category }: { category?: Category }) {
