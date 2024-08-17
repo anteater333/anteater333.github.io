@@ -1,0 +1,127 @@
+/**
+ * Smooth
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inehrit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+h1 {
+  @media screen and (max-width: $on-half) {
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: $on-palm) {
+    font-size: 2rem;
+  }
+
+  font-size: 3rem;
+  word-break: keep-all;
+}
+
+/**
+ * Remove Scrollbars
+ */
+
+* {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/**
+ * Containers
+ */
+.blog-main-container {
+  display: flex;
+  width: 100%;
+}
+
+.postlist-container {
+  @media screen and (max-width: $on-half) {
+    padding: 0 2rem;
+  }
+  @media screen and (max-width: $on-palm) {
+    padding: 0 1rem;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 5rem;
+  margin-bottom: 6rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.post-container {
+  margin-bottom: 6rem;
+  flex: 1;
+
+  min-width: 0;
+  box-sizing: border-box;
+
+  > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+
+    > .post-body {
+      @media screen and (max-width: $on-half) {
+        padding-left: 2rem;
+      }
+      @media screen and (max-width: $on-palm) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      padding-left: 3rem;
+
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    > .post-tail {
+      @media screen and (max-width: $on-half) {
+        padding: 0 2rem;
+      }
+      @media screen and (max-width: $on-palm) {
+        padding: 0 1rem;
+      }
+      padding-left: 3rem;
+      padding-right: 5rem;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+  }
+}
