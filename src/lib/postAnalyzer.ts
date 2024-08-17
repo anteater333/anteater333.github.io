@@ -10,7 +10,7 @@ export type PostAnalysis = {
 /** 성인 평균 분당 단어 읽기 수 ref. https://www.jkos.org/upload/pdf/JKOS057-04-17.pdf */
 const WPM = 202.3; // Words Per Minute
 /** 분당 코드 블록 읽기 수 (추정치) */
-const CbPM = 1; // Code-blocks per Minute
+const CbPM = 1.5; // Code-blocks per Minute
 
 /**
  *
@@ -36,8 +36,8 @@ export function analyzePost(htmlContent: string): PostAnalysis {
   result.numOfCodeBlocks =
     nativeCodeBlocks.length + thirdPartyCodeBlocks.length;
 
-  nativeCodeBlocks.forEach((cbEl) => cbEl.remove());
-  thirdPartyCodeBlocks.forEach((cbEl) => cbEl.remove());
+  nativeCodeBlocks.forEach((cbEl: Element) => cbEl.remove());
+  thirdPartyCodeBlocks.forEach((cbEl: Element) => cbEl.remove());
 
   // 이미지 수 계산
   result.numOfImages = contentEl.querySelectorAll("img").length;
