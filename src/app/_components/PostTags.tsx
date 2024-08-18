@@ -4,6 +4,8 @@ import styled from "styled-components";
 import TagItem from "./TagItem";
 
 const PostTagsDiv = styled.div`
+  overflow-x: scroll;
+
   border-bottom: 2px solid #dcdcdc;
 
   padding: 1rem 0;
