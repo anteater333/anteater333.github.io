@@ -26,6 +26,8 @@ const TagSpan = styled.span<{ $isDark?: boolean; $isFilter?: boolean }>`
     -webkit-transition: background-color 0.25s, color 0.25s, opacity 0.25s;
     transition: background-color 0.25s, color 0.25s, opacity 0.25s;
 
+    white-space: pre;
+
     &:hover {
       background-color: ${({ $isDark }) => ($isDark ? "#ffffff" : "#222222")};
       color: ${({ $isDark }) => ($isDark ? "#222222" : "#ffffff")};

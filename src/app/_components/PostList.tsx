@@ -36,6 +36,13 @@ const PostListUl = styled.ul`
 
 const PostListItemArticle = styled.article`
   .postlist-item {
+    @media ${scOnHalf} {
+    }
+
+    @media ${scOnPalm} {
+      margin: 1rem 1rem;
+    }
+
     position: relative;
 
     margin: 2rem 2.5rem;
@@ -62,7 +69,7 @@ const PostListItemArticle = styled.article`
         }
 
         @media ${scOnPalm} {
-          margin-right: 3rem;
+          margin-right: 0.5rem;
         }
 
         min-width: 0;
@@ -76,12 +83,21 @@ const PostListItemArticle = styled.article`
           display: flex;
           gap: 0.3rem;
           margin: 0;
+          flex-wrap: wrap;
           * {
             flex-shrink: 0;
           }
         }
 
         h1 {
+          @media ${scOnHalf} {
+          }
+
+          @media ${scOnPalm} {
+            word-break: break-all;
+            font-size: 1.25rem;
+          }
+
           margin: 0;
           word-break: keep-all;
 
@@ -93,6 +109,14 @@ const PostListItemArticle = styled.article`
         }
 
         .post-item-subtitle {
+          @media ${scOnHalf} {
+          }
+
+          @media ${scOnPalm} {
+            word-break: break-all;
+            font-size: 0.75rem;
+          }
+
           margin: 0;
         }
 
@@ -110,8 +134,10 @@ const PostListItemArticle = styled.article`
         }
 
         @media ${scOnPalm} {
-          width: 10rem;
-          height: 10rem;
+          width: 5rem;
+          height: 5rem;
+          border-radius: 1rem;
+          align-self: flex-end;
         }
 
         max-width: 20rem;
@@ -141,6 +167,13 @@ const PostListItemArticle = styled.article`
   }
 
   .border {
+    @media ${scOnHalf} {
+    }
+
+    @media ${scOnPalm} {
+      margin-bottom: 1rem;
+    }
+
     width: 100%;
     border-top: 1px solid #b0b0b0;
 

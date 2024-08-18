@@ -9,6 +9,13 @@ import { categoryConverter } from "@/lib/converter";
 import { scOnHalf, scOnPalm } from "@/styles/values";
 
 const HeroPostSection = styled.section`
+  @media ${scOnHalf} {
+  }
+
+  @media ${scOnPalm} {
+    height: 20rem;
+  }
+
   position: relative;
   width: 100vw;
   height: 24rem;
@@ -48,9 +55,6 @@ const HeroPostSection = styled.section`
     }
   }
 
-  .hero-arrow-button {
-  }
-
   .hero-arrow-left {
     text-align: left;
     padding-left: 2rem;
@@ -63,6 +67,14 @@ const HeroPostSection = styled.section`
   }
 
   .hero-arrow-button {
+    @media ${scOnHalf} {
+      font-size: 3rem;
+    }
+
+    @media ${scOnPalm} {
+      font-size: 1.5rem;
+    }
+
     flex: 0.1;
     height: 100%;
     font-size: 4rem;
@@ -84,7 +96,7 @@ const HeroPostSection = styled.section`
     }
 
     @media ${scOnPalm} {
-      padding: 0 2.5rem;
+      padding: 0 0;
     }
 
     display: flex;
@@ -103,6 +115,12 @@ const HeroPostSection = styled.section`
   }
 
   .hero-post-context {
+    @media ${scOnHalf} {
+    }
+    @media ${scOnPalm} {
+      padding-top: 2.5rem;
+    }
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

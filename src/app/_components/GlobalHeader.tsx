@@ -1,6 +1,11 @@
 "use client";
 
-import { rainbowColor, textBackgroundTransition } from "@/styles/values";
+import {
+  rainbowColor,
+  scOnHalf,
+  scOnPalm,
+  textBackgroundTransition,
+} from "@/styles/values";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -40,11 +45,19 @@ const GlobalHeaderHeader = styled.header`
     user-select: none;
 
     > a {
+      @media ${scOnHalf} {
+      }
+      @media ${scOnPalm} {
+        font-size: 1.1rem;
+        line-height: 2;
+      }
+
       font-family: "Galmuri7", sans-serif;
       font-size: 1.5rem;
       font-weight: bold;
 
       line-height: 1.5;
+      white-space: nowrap;
 
       background: ${rainbowColor};
       background-size: 250% 100%;

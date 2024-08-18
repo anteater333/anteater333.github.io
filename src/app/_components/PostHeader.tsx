@@ -9,6 +9,13 @@ import { scOnHalf, scOnPalm } from "@/styles/values";
 import TagItem from "./TagItem";
 
 const PostHeaderSection = styled.section`
+  @media ${scOnHalf} {
+  }
+
+  @media ${scOnPalm} {
+    height: 20rem;
+  }
+
   position: relative;
   width: 100%;
   height: 24rem;
@@ -19,6 +26,13 @@ const PostHeaderSection = styled.section`
   }
 
   .context-container {
+    @media ${scOnHalf} {
+    }
+
+    @media ${scOnPalm} {
+      padding: 0 1rem;
+    }
+
     display: flex;
     flex-direction: column;
     position: relative;
@@ -29,6 +43,13 @@ const PostHeaderSection = styled.section`
     margin-top: 7rem;
 
     .context-upper {
+      @media ${scOnHalf} {
+      }
+
+      @media ${scOnPalm} {
+        font-size: 0.75rem;
+      }
+
       display: flex;
       justify-content: space-between;
 
@@ -41,12 +62,26 @@ const PostHeaderSection = styled.section`
 
       .analysis-container {
         img.analysis-icon {
+          @media ${scOnHalf} {
+          }
+
+          @media ${scOnPalm} {
+            height: 0.8rem;
+            margin-right: 0.25rem;
+          }
+
           margin-right: 0.5rem;
           height: 1.2rem;
         }
       }
 
       p.sep {
+        @media ${scOnHalf} {
+        }
+
+        @media ${scOnPalm} {
+          margin: 0 0.25rem;
+        }
         margin: 0 0.5rem;
       }
     }
@@ -65,6 +100,8 @@ const PostHeaderSection = styled.section`
     .tag-list-container {
       display: flex;
       gap: 0.5rem;
+
+      flex-wrap: wrap;
     }
   }
 
@@ -91,6 +128,13 @@ const PostHeaderSection = styled.section`
 
   @media ${scOnHalf} {
     .context-container {
+      @media ${scOnHalf} {
+      }
+
+      @media ${scOnPalm} {
+        margin-top: 3rem;
+      }
+
       margin-top: 6rem;
 
       .context-upper {
