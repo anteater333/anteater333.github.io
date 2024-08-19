@@ -2,11 +2,14 @@ import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 import "../styles/statics/initialize.scss";
+import "react-toastify/dist/ReactToastify.css";
 
 import AutoRefresh from "./_components/dev/AutoRefresh";
 import GlobalHeader from "./_components/GlobalHeader";
 import StyledComponentsRegistry from "@/lib/registry";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import PageUtilities from "./_components/PageUtilities";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
@@ -88,7 +91,9 @@ export default function RootLayout({
           <StyledComponentsRegistry>
             <GlobalHeader />
             {children}
+            <PageUtilities />
           </StyledComponentsRegistry>
+          <ToastContainer />
         </body>
       </html>
     </AutoRefresh>
