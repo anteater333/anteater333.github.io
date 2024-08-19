@@ -63,9 +63,11 @@ const PageUtilitiesDiv = styled.div`
       transition: all 0.1s ease-in-out;
     }
 
-    &:hover::before {
-      opacity: 0.8;
-      transform: translateX(-2rem);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover::before {
+        opacity: 0.8;
+        transform: translateX(-2rem);
+      }
     }
   }
 `;
