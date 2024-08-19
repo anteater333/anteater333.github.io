@@ -29,7 +29,7 @@ const PostToCNav = styled.nav`
 
   .toc-container {
     position: sticky;
-    top: 1rem;
+    top: 7.5rem;
 
     max-height: 3rem;
 
