@@ -69,12 +69,14 @@ const ReadingHeaderHeader = styled.header`
       }
     }
 
-    transition: all 0.2s ease-in-out;
+    transition: all 0.33s ease-in-out;
   }
 
+  transition: all 0.33s ease-in-out;
   &.hidden {
+    transform: translateY(-100%);
     .container {
-      transform: translateY(-50%);
+      transform: translateY(-100%);
       opacity: 0;
     }
   }
