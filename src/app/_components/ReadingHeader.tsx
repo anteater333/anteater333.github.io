@@ -1,7 +1,130 @@
 "use client";
 
-const ReadingHeader = function ({}: { title: string; date: string }) {
-  return <></>;
+import styled from "styled-components";
+import DateFormatter from "./DateFormatter";
+import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
+import { useEffect, useState } from "react";
+
+const ReadingHeaderHeader = styled.header`
+  @media ${scOnHalf} {
+    width: 100%;
+  }
+  @media ${scOnPalm} {
+  }
+
+  justify-content: center;
+  z-index: 100;
+
+  position: fixed;
+  width: calc(100% - 20rem);
+  top: 1rem;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 1.5rem;
+
+    height: 4.25rem;
+
+    margin: 0 1rem;
+    flex: 1;
+
+    ${defaultBoxShadow};
+
+    background-color: #ffffffc7;
+
+    .header-left {
+      padding-left: 1rem;
+      width: 20%;
+
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    .header-title {
+      width: 40%;
+      h1 {
+        @media ${scOnHalf} {
+        }
+
+        @media ${scOnPalm} {
+          font-size: 1rem;
+        }
+
+        font-size: 1.25rem;
+        text-align: center;
+      }
+    }
+
+    .header-right {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 1rem;
+      width: 20%;
+
+      img {
+        height: 2.5rem;
+      }
+    }
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  &.hidden {
+    .container {
+      transform: translateY(-50%);
+      opacity: 0;
+    }
+  }
+
+  &.visible {
+    .container {
+      opacity: 0.9;
+    }
+  }
+`;
+
+const ReadingHeader = function ({
+  title,
+  date,
+}: {
+  title: string;
+  date: string;
+}) {
+  const [isVisible, setIsVisible] = useState(window.scrollY > 400);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <ReadingHeaderHeader className={isVisible ? "visible" : "hidden"}>
+      <div className="container">
+        <div className="header-left">
+          <DateFormatter dateString={date} />
+        </div>
+        <div className="header-title">
+          <h1>{title}</h1>
+        </div>
+        {/* TBD: 화려한 커피좀 사주세요 버튼으로 구현하기 */}
+        <div className="header-right">
+          <a href="http://buymeacoffee.com/anteater333" target="_blank">
+            <img src={"/assets/pictures/placeholder-bmc.png"} />
+          </a>
+        </div>
+      </div>
+    </ReadingHeaderHeader>
+  );
 };
 
 export default ReadingHeader;
