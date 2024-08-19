@@ -383,6 +383,13 @@ const PostBodySection = styled.section`
     .line-through {
       text-decoration: line-through;
     }
+
+    /* 유튜브 임베드 코드 */
+    .youtube-iframe {
+      max-width: 40rem;
+      min-width: 0;
+      width: 100%;
+    }
   }
 `;
 
