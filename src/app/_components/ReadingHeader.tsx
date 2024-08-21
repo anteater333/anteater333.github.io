@@ -95,7 +95,7 @@ const ReadingHeader = function ({
   title: string;
   date: string;
 }) {
-  const [isVisible, setIsVisible] = useState(window.scrollY > 400);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
