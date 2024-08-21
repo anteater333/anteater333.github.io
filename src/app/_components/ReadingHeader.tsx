@@ -55,6 +55,7 @@ const ReadingHeaderHeader = styled.header`
 
         font-size: 1.25rem;
         text-align: center;
+        line-height: 1;
       }
     }
 
