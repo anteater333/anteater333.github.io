@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^14.2.5",
+    "@types/hast": "^3.0.4",
     "@types/ws": "^8.5.10",
     "chokidar": "^3.6.0",
     "classnames": "^2.5.1",
@@ -35,6 +36,7 @@
     "sass": "^1.77.8",
     "shiki": "^1.6.2",
     "styled-components": "^6.1.11",
+    "unist-util-visit": "^5.0.0",
     "ws": "^8.17.0"
   },
   "devDependencies": {

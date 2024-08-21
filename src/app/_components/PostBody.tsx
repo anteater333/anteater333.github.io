@@ -8,6 +8,7 @@ import {
   textBackgroundTransition,
 } from "@/styles/values";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 
 const PostToCNav = styled.nav`
@@ -311,6 +312,39 @@ const PostBodySection = styled.section`
           padding: 1rem;
         }
       }
+
+      &.has-mouse > .code-copy-btn {
+        opacity: 0.8;
+      }
+      .code-copy-btn {
+        @media ${scOnPalm} {
+          opacity: 1;
+          width: 1.75rem;
+          font-size: 1rem;
+        }
+        z-index: 75;
+
+        opacity: 0;
+        position: absolute;
+        top: 0.4rem;
+        right: 1rem;
+        font-size: 1.2rem;
+        width: 2.5rem;
+
+        border-radius: 0.5rem;
+        border: none;
+
+        background-color: #797981;
+
+        transition: opacity 0.2s;
+
+        &:hover {
+          opacity: 1;
+        }
+        &:active {
+          opacity: 0.5;
+        }
+      }
     }
 
     blockquote {
@@ -411,6 +445,20 @@ export function PostBody({ content }: { content: string }) {
       });
     });
     setHeadings(buffer);
+  }, []);
+
+  useEffect(() => {
+    const toastHandler = () => {
+      toast("코드를 복사했습니다.", {
+        position: "bottom-center",
+        autoClose: 1000,
+      });
+    };
+
+    document.addEventListener("toast", toastHandler);
+    return () => {
+      document.removeEventListener("toast", toastHandler);
+    };
   }, []);
 
   return (
