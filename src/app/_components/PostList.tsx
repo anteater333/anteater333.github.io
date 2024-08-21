@@ -23,7 +23,7 @@ const PostListUl = styled.ul`
     margin-bottom: 2rem;
 
     .message-for-exhausted-tag-condition {
-      font-family: "Galmuri7", sans-serif;
+      font-family: Galmuri7, sans-serif;
       font-size: 2.5rem;
       margin-top: 3rem;
       margin-bottom: 6rem;

@@ -52,7 +52,7 @@ const GlobalHeaderHeader = styled.header`
         line-height: 2;
       }
 
-      font-family: "Galmuri7", sans-serif;
+      font-family: Galmuri7, sans-serif;
       font-size: 1.5rem;
       font-weight: bold;
 

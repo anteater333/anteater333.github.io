@@ -13,7 +13,7 @@ const CatchphraseDiv = styled.div`
   width: 100%;
 
   * {
-    font-family: "Galmuri7", sans-serif;
+    font-family: Galmuri7, sans-serif;
     text-align: right;
     opacity: 0.05;
     user-select: none;
