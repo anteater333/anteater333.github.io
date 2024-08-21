@@ -99,8 +99,19 @@ const ReadingHeader = function ({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const threshold = 100;
+    let prevScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 400);
+      const currentScrollY = window.scrollY;
+
+      if (Math.abs(currentScrollY - prevScrollY) < threshold) {
+        return;
+      }
+
+      const result = currentScrollY > prevScrollY;
+      setIsVisible(result && currentScrollY > 400);
+      prevScrollY = Math.max(currentScrollY, 0);
     };
 
     window.addEventListener("scroll", handleScroll);
