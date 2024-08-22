@@ -35,7 +35,18 @@ const PageUtilitiesDiv = styled.div`
       height: 100%;
     }
 
+    &.menu {
+      @media ${scOnHalf} {
+        display: unset;
+      }
+      display: none;
+      padding: 0.25rem;
+    }
+
     &.share {
+      @media ${scOnHalf} {
+        border-top: solid 1px #797981;
+      }
       padding: 0.25rem;
     }
 
@@ -77,6 +88,17 @@ export default function PageUtilities() {
 
   return (
     <PageUtilitiesDiv>
+      <button
+        data-hint={"메뉴"}
+        className="util-button menu"
+        onClick={() => {
+          // <Sidebar/> 컴포넌트에서 이 이벤트를 감지
+          document.dispatchEvent(new Event("menu"));
+        }}
+      >
+        <img src="/assets/pictures/utils/menu.svg" />
+      </button>
+
       <button
         data-hint={"공유"}
         className="util-button share"
