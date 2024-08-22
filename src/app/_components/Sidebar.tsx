@@ -2,15 +2,30 @@
 
 import { Category, Post } from "@/interfaces/post";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { useRouter } from "next/navigation";
 import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
 
-const BlogSidebar = styled.nav`
+const BlogSidebar = styled.nav<{ $isMenuVisible: boolean }>`
   @media ${scOnHalf} {
-    display: none;
+    display: ${({ $isMenuVisible }) => ($isMenuVisible ? "flex" : "none")};
+
+    overflow: scroll;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 150;
+    width: 100vw;
+    max-width: unset;
+    min-width: unset;
+
+    background-color: #fffffff2;
   }
 
   @media ${scOnPalm} {
@@ -49,6 +64,10 @@ const BlogSidebar = styled.nav`
   }
 
   .sidebar-profile-container {
+    @media ${scOnHalf} {
+      overflow: visible;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,10 +81,18 @@ const BlogSidebar = styled.nav`
     }
 
     .profile-bg {
+      @media ${scOnHalf} {
+        display: none;
+      }
+
       width: 100%;
     }
 
     .profile-pic {
+      @media ${scOnHalf} {
+        display: none;
+      }
+
       width: 7.5rem;
       border-radius: 100%;
 
@@ -74,6 +101,10 @@ const BlogSidebar = styled.nav`
     }
 
     h1 {
+      @media ${scOnHalf} {
+        margin-top: 1rem;
+      }
+
       margin: 0;
       font-size: 2rem;
     }
@@ -184,6 +215,23 @@ const BlogSidebar = styled.nav`
 
     text-align: center;
   }
+
+  .close-button {
+    @media ${scOnHalf} {
+      display: unset;
+    }
+
+    display: none;
+    position: absolute;
+    right: 0;
+
+    top: 1.25rem;
+    right: 1.25rem;
+
+    img {
+      width: 2.25rem;
+    }
+  }
 `;
 
 export default function Sidebar({
@@ -197,8 +245,23 @@ export default function Sidebar({
 
   const [today, setToday] = useState<Date>(new Date());
 
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleMenuVisibility = () => {
+      setIsMenuVisible((prev) => !prev);
+    };
+
+    document.addEventListener("menu", toggleMenuVisibility);
+
+    return () => document.removeEventListener("menu", toggleMenuVisibility);
+  }, []);
+
   return (
-    <BlogSidebar>
+    <BlogSidebar $isMenuVisible={isMenuVisible}>
+      <button className="close-button" onClick={() => setIsMenuVisible(false)}>
+        <img src="/assets/pictures/sidebar/close.svg" />
+      </button>
       <div
         className="sidebar-profile-container"
         onClick={() => router.push("/")}
