@@ -295,7 +295,7 @@ export default function Sidebar({
           {[0, 6].includes(today.getDay()) ? (
             "즐거운 주말 보내세요!"
           ) : (
-            <DateFormatter dateString={today.toDateString()} />
+            <DateFormatter dateString={today.toISOString()} />
           )}
         </span>
       </div>
