@@ -1,5 +1,6 @@
 "use client";
 
+import useStore from "@/lib/store";
 import { scOnHalf, scOnPalm } from "@/styles/values";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -43,15 +44,21 @@ const PageUtilitiesDiv = styled.div`
       padding: 0.25rem;
     }
 
-    &.share {
+    &.lumin {
       @media ${scOnHalf} {
         border-top: solid 1px #797981;
       }
       padding: 0.25rem;
     }
 
+    &.share {
+      padding: 0.25rem;
+      border-top: solid 1px #797981;
+    }
+
     &.upper {
       img {
+        /* ::before 위치로 인해 별도 조정 */
         box-sizing: border-box;
         padding: 0.5rem;
       }
@@ -63,7 +70,7 @@ const PageUtilitiesDiv = styled.div`
       content: attr(data-hint);
       position: absolute;
       right: 50%;
-      width: 2rem;
+      width: 2.75rem;
       opacity: 0;
       margin-top: 0.5rem;
 
@@ -86,6 +93,8 @@ const PageUtilitiesDiv = styled.div`
 export default function PageUtilities() {
   const router = useRouter();
 
+  const { isDarkMode, toggleDark } = useStore();
+
   return (
     <PageUtilitiesDiv>
       <button
@@ -98,7 +107,21 @@ export default function PageUtilities() {
       >
         <img src="/assets/pictures/utils/menu.svg" />
       </button>
-
+      <button
+        data-hint={isDarkMode ? "밝게" : "어둡게"}
+        className="util-button lumin"
+        onClick={() => {
+          toggleDark();
+        }}
+      >
+        <img
+          src={
+            isDarkMode
+              ? "/assets/pictures/utils/light.svg"
+              : "/assets/pictures/utils/dark.svg"
+          }
+        />
+      </button>
       <button
         data-hint={"공유"}
         className="util-button share"
