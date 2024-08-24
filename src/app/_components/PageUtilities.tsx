@@ -1,6 +1,6 @@
 "use client";
 
-import useStore from "@/lib/store";
+import { useDarkMode } from "@/lib/store";
 import { scOnHalf, scOnPalm } from "@/styles/values";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -93,7 +93,7 @@ const PageUtilitiesDiv = styled.div`
 export default function PageUtilities() {
   const router = useRouter();
 
-  const { isDarkMode, toggleDark } = useStore();
+  const { isDarkMode, toggleDark } = useDarkMode();
 
   return (
     <PageUtilitiesDiv>
