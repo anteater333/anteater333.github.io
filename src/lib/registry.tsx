@@ -2,7 +2,14 @@
 
 import React, { useState } from "react";
 import { useServerInsertedHTML } from "next/navigation";
-import { ServerStyleSheet, StyleSheetManager } from "styled-components";
+import {
+  createGlobalStyle,
+  ServerStyleSheet,
+  StyleSheetManager,
+  ThemeProvider,
+} from "styled-components";
+import { useDarkMode } from "./store";
+import GlobalStyle, { darkTheme, lightTheme } from "@/styles/theme";
 
 export default function StyledComponentsRegistry({
   children,
@@ -19,11 +26,24 @@ export default function StyledComponentsRegistry({
     return <>{styles}</>;
   });
 
-  if (typeof window !== "undefined") return <>{children}</>;
+  const { isDarkMode } = useDarkMode();
+
+  if (typeof window !== "undefined")
+    return (
+      <>
+        <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+          <GlobalStyle />
+          {children}
+        </ThemeProvider>
+      </>
+    );
 
   return (
     <StyleSheetManager sheet={styledComponentsStyleSheet.instance}>
-      {children}
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        {children}
+      </ThemeProvider>
     </StyleSheetManager>
   );
 }
