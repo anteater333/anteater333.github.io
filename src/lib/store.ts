@@ -15,8 +15,8 @@ const useStore = create<Store>()((set) => {
   };
 });
 
-export const useDarkMode = () => {
-  const { isDarkMode, toggleDark, setIsDarkMode } = useStore();
+export const useMatchMedia = () => {
+  const { setIsDarkMode } = useStore();
 
   // useStore에서 바로 window 객체의 존재 여부를 파악하며 isDarkMode를 결정지을 경우
   // 서버사이드 렌더링과 클라이언트 사이드 렌더링의 초기 상태 차이로 인해 오류를 발생시킴
@@ -38,6 +38,10 @@ export const useDarkMode = () => {
       mediaQueryList.removeEventListener("change", updateDarkMode);
     };
   }, []);
+};
+
+export const useDarkMode = () => {
+  const { isDarkMode, toggleDark } = useStore();
 
   return { isDarkMode, toggleDark };
 };
