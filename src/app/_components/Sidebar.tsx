@@ -46,9 +46,7 @@ const BlogSidebar = styled.nav<{
   min-width: 20rem;
   max-width: 20rem;
 
-  border-right: 1px solid #b0b0b0;
-
-  color: var(--text-color-main);
+  border-right: 1px solid var(--border-color);
 
   a {
     -webkit-transition: opacity 0.2s;
@@ -69,7 +67,7 @@ const BlogSidebar = styled.nav<{
 
   .border {
     width: 75%;
-    border-top: 1px solid #b0b0b0;
+    border-top: 1px solid var(--border-color);
   }
 
   .sidebar-profile-container {
@@ -271,11 +269,18 @@ export default function Sidebar({
   return (
     <BlogSidebar $isMenuVisible={isMenuVisible}>
       <button className="close-button" onClick={() => setIsMenuVisible(false)}>
-        <img src="/assets/pictures/sidebar/close.svg" />
+        <img
+          src={`/assets/pictures/sidebar/close-${
+            isDarkMode ? "white" : "black"
+          }.svg`}
+        />
       </button>
       <div
         className="sidebar-profile-container"
-        onClick={() => router.push("/")}
+        onClick={() => {
+          router.push("/");
+          setIsMenuVisible(false);
+        }}
       >
         <img
           className="profile-bg"
@@ -317,21 +322,33 @@ export default function Sidebar({
           href="https://past-silver-b67.notion.site/Lee-Jihoon-Anteater-42a1ebc80b2e44688f0dd99598f019de"
           target="_blank"
         >
-          <img src="/assets/pictures/sidebar/link-notion-black.svg" />
+          <img
+            src={`/assets/pictures/sidebar/link-notion-${
+              isDarkMode ? "white" : "black"
+            }.svg`}
+          />
         </a>
         <a
           className="link-button"
           href="https://blog.anteater-lab.link/portfolio/"
           target="_blank"
         >
-          <img src="/assets/pictures/sidebar/link-person-black.svg" />
+          <img
+            src={`/assets/pictures/sidebar/link-person-${
+              isDarkMode ? "white" : "black"
+            }.svg`}
+          />
         </a>
         <a
           className="link-button"
           href="https://github.com/anteater333"
           target="_blank"
         >
-          <img src="/assets/pictures/sidebar/link-gh-black.svg" />
+          <img
+            src={`/assets/pictures/sidebar/link-gh-${
+              isDarkMode ? "white" : "black"
+            }.svg`}
+          />
         </a>
       </div>
       <div className="border" />

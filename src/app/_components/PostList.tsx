@@ -19,7 +19,7 @@ const PostListUl = styled.ul`
     align-items: center;
     justify-content: center;
 
-    border-bottom: 1px solid #b0b0b0;
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: 2rem;
 
     .message-for-exhausted-tag-condition {
@@ -175,7 +175,7 @@ const PostListItemArticle = styled.article`
     }
 
     width: 100%;
-    border-top: 1px solid #b0b0b0;
+    border-top: 1px solid var(--border-color);
 
     margin-bottom: 2rem;
   }

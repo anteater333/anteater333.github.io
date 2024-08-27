@@ -20,13 +20,13 @@ const PageUtilitiesDiv = styled.div`
   display: flex;
   flex-direction: column;
 
-  border: solid 1px #797981;
+  border: solid 1px var(--border-color);
   border-radius: 0.25rem;
   overflow: visible;
 
   opacity: 0.33;
 
-  background-color: #ffffff;
+  background-color: var(--static-white);
 
   .util-button {
     height: 2.5rem;
@@ -46,14 +46,14 @@ const PageUtilitiesDiv = styled.div`
 
     &.lumin {
       @media ${scOnHalf} {
-        border-top: solid 1px #797981;
+        border-top: solid 1px var(--border-color);
       }
       padding: 0.25rem;
     }
 
     &.share {
       padding: 0.25rem;
-      border-top: solid 1px #797981;
+      border-top: solid 1px var(--border-color);
     }
 
     &.upper {
@@ -62,7 +62,7 @@ const PageUtilitiesDiv = styled.div`
         box-sizing: border-box;
         padding: 0.5rem;
       }
-      border-top: solid 1px #797981;
+      border-top: solid 1px var(--border-color);
     }
 
     &::before {
@@ -74,8 +74,8 @@ const PageUtilitiesDiv = styled.div`
       opacity: 0;
       margin-top: 0.5rem;
 
-      background-color: #ffffff;
-      border: solid 1px #797981;
+      background-color: var(--bg-color-main);
+      border: solid 1px var(--border-color);
       border-radius: 0.25rem;
 
       transition: all 0.1s ease-in-out;

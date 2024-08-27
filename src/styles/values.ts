@@ -1,4 +1,4 @@
-import { keyframes } from "styled-components";
+import { css, keyframes } from "styled-components";
 
 /** styled-component on-half, tablet */
 export const scOnHalf = "screen and (max-width: 1023px)";
@@ -6,7 +6,9 @@ export const scOnHalf = "screen and (max-width: 1023px)";
 export const scOnPalm = "screen and (max-width: 767px)";
 
 /** 공통 box-shadow 수치 */
-export const defaultBoxShadow = `box-shadow: 0 4px 4px 0px #d4d4d4`;
+export const defaultBoxShadow = css`
+  box-shadow: 0 4px 4px 0px var(--shadow-color);
+`;
 
 export const textBackgroundTransition = keyframes`
     0%,

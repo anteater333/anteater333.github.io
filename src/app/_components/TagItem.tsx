@@ -15,9 +15,12 @@ const TagSpan = styled.span<{ $isDark?: boolean; $isFilter?: boolean }>`
     cursor: pointer;
     user-select: none;
 
-    color: ${({ $isDark }) => ($isDark ? "#ffffff" : "#222222")};
+    color: ${({ $isDark }) =>
+      $isDark ? "var(--static-white)" : "var(--text-color-main)"};
 
-    border: 2px solid ${({ $isDark }) => ($isDark ? "#ffffff" : "#222222")};
+    border: 2px solid
+      ${({ $isDark }) =>
+        $isDark ? "var(--static-white)" : "var(--text-color-main)"};
     border-radius: 0.5rem;
     padding: 0.1rem 0.5rem;
 
@@ -29,15 +32,19 @@ const TagSpan = styled.span<{ $isDark?: boolean; $isFilter?: boolean }>`
     white-space: pre;
 
     &:hover {
-      background-color: ${({ $isDark }) => ($isDark ? "#ffffff" : "#222222")};
-      color: ${({ $isDark }) => ($isDark ? "#222222" : "#ffffff")};
+      background-color: ${({ $isDark }) =>
+        $isDark ? "var(--static-white)" : "var(--text-color-main)"};
+      color: ${({ $isDark }) =>
+        $isDark ? "var(--static-black)" : "var(--bg-color-main)"};
 
-      opacity: ${({ $isFilter }) => ($isFilter ? ".3" : "1")};
+      opacity: ${({ $isFilter }) => ($isFilter ? ".75" : "1")};
     }
 
     &.selected {
-      background-color: ${({ $isDark }) => ($isDark ? "#ffffff" : "#222222")};
-      color: ${({ $isDark }) => ($isDark ? "#222222" : "#ffffff")};
+      background-color: ${({ $isDark }) =>
+        $isDark ? "var(--static-white)" : "var(--text-color-main)"};
+      color: ${({ $isDark }) =>
+        $isDark ? "var(--static-black)" : "var(--bg-color-main)"};
 
       opacity: 1;
     }

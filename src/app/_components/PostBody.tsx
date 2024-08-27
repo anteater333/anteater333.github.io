@@ -34,12 +34,12 @@ const PostToCNav = styled.nav`
 
     max-height: 3rem;
 
-    border-left: 4px solid #222222;
+    border-left: 4px solid var(--text-color-main);
 
     z-index: 50;
 
     .toc-core {
-      background-color: #ffffff;
+      background-color: var(--bg-color-main);
       border-radius: 1rem;
 
       padding-left: 0.75rem;
@@ -52,14 +52,14 @@ const PostToCNav = styled.nav`
 
         margin-bottom: 0.5rem;
 
-        color: #797981;
+        color: var(--text-color-sub);
         word-break: keep-all;
 
         &.current-heading {
           @media ${scOnHalf} {
             font-size: 0.95rem;
           }
-          color: #222222;
+          color: var(--text-color-main);
           font-weight: bold;
           font-size: 1.1rem;
           margin-top: 0.75rem;
@@ -67,7 +67,7 @@ const PostToCNav = styled.nav`
         }
 
         &:hover {
-          color: #222222;
+          color: var(--text-color-main);
         }
 
         > p.toc-indent {
@@ -165,7 +165,7 @@ const PostBodySection = styled.section`
     width: 75%;
     min-width: 0;
 
-    color: #222222;
+    color: var(--text-color-main);
     font-weight: normal;
 
     word-break: break-all;
@@ -184,7 +184,7 @@ const PostBodySection = styled.section`
       word-break: keep-all;
       margin-bottom: 0.5rem;
       padding-bottom: 1rem;
-      border-bottom: 2px solid #797981;
+      border-bottom: 2px solid var(--border-color);
       &.center {
         border-bottom: none;
       }
@@ -235,15 +235,15 @@ const PostBodySection = styled.section`
       }
       &:active {
         animation: none;
-        color: lighten(#222222, 50%);
+        color: lighten(var(--text-color-main), 50%);
       }
 
       &.a-not-colored {
         background: none;
-        color: #222222;
+        color: var(--text-color-main);
         &:hover {
           animation: none;
-          color: #222222;
+          color: var(--text-color-main);
         }
       }
     }
@@ -262,8 +262,8 @@ const PostBodySection = styled.section`
     p > code,
     li > code,
     a > code {
-      background-color: #22272e !important;
-      color: #adbac7 !important;
+      background-color: var(--bg-color-inline) !important;
+      color: var(--text-color-inline) !important;
       padding: 0 0.25rem;
       margin: 0 0.1rem;
       border-radius: 0.33rem;
@@ -279,7 +279,7 @@ const PostBodySection = styled.section`
       margin-left: 0;
       margin-right: 0;
 
-      box-shadow: 0px 8px 6px -6px #1b1b1b;
+      box-shadow: 0px 8px 6px -6px var(--shadow-color);
       position: relative;
 
       border-radius: 1rem;
@@ -348,8 +348,8 @@ const PostBodySection = styled.section`
     }
 
     blockquote {
-      color: #797981;
-      border-left: 4px solid #797981;
+      color: var(--text-color-sub);
+      border-left: 4px solid var(--text-color-sub);
       padding-left: 0.5rem;
       font-size: 1.125rem;
       letter-spacing: -1px;

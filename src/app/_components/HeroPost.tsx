@@ -28,7 +28,7 @@ const HeroPostSection = styled.section`
     justify-content: space-between;
     align-items: center;
     z-index: 50;
-    color: #ffffff;
+    color: var(--static-white);
 
     background-color: rgba(0, 0, 0, 75%);
     -webkit-transition: background-color 1s;
