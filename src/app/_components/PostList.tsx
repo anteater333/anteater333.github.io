@@ -29,7 +29,7 @@ const PostListUl = styled.ul`
       margin-bottom: 6rem;
       width: 100%;
       text-align: center;
-      opacity: 1;
+      opacity: 0.8;
     }
   }
 `;

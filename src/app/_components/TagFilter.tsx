@@ -14,13 +14,13 @@ const TagFilterDiv = styled.div`
     width: 90%;
   }
 
-  margin-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  margin-top: 2.5rem;
+  padding-bottom: 2.5rem;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2.5rem 1rem;
+  gap: 2rem 1rem;
 
   width: 75%;
 
@@ -33,7 +33,7 @@ const TagFilterDiv = styled.div`
       font-size: 1rem;
       padding: 0.25rem 0.5rem;
     }
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1rem;
     border-radius: 2rem;
   }
@@ -70,7 +70,8 @@ const TagFilter = function ({ tags }: { tags: string[] }) {
     router.push(
       selectedTags.size === 0
         ? "/"
-        : `/?tags=${Array.from(selectedTags).join(",")}`
+        : `/?tags=${Array.from(selectedTags).join(",")}`,
+      { scroll: false }
     );
   }, [selectedTags]);
 
