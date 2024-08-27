@@ -7,10 +7,13 @@ import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
 import { useRouter } from "next/navigation";
 import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
+import { useDarkMode } from "@/lib/store";
 
-const BlogSidebar = styled.nav<{ $isMenuVisible: boolean }>`
+const BlogSidebar = styled.nav<{
+  $isMenuVisible: boolean;
+}>`
   @media ${scOnHalf} {
-    display: ${({ $isMenuVisible }) => ($isMenuVisible ? "flex" : "none")};
+    display: flex;
 
     overflow: scroll;
 
@@ -20,12 +23,16 @@ const BlogSidebar = styled.nav<{ $isMenuVisible: boolean }>`
     right: 0;
     bottom: 0;
 
-    z-index: 150;
+    -webkit-transition: opacity 0.33s;
+    transition: opacity 0.33s;
+
+    z-index: ${({ $isMenuVisible }) => ($isMenuVisible ? "150" : "-50")};
+    opacity: ${({ $isMenuVisible }) => ($isMenuVisible ? "1" : "0")};
     width: 100vw;
     max-width: unset;
     min-width: unset;
 
-    background-color: #fffffff2;
+    background-color: color-mix(in srgb, var(--bg-color-main) 95%, transparent);
   }
 
   @media ${scOnPalm} {
@@ -39,7 +46,7 @@ const BlogSidebar = styled.nav<{ $isMenuVisible: boolean }>`
   min-width: 20rem;
   max-width: 20rem;
 
-  border-right: 1px solid #b0b0b0;
+  border-right: 1px solid var(--border-color);
 
   a {
     -webkit-transition: opacity 0.2s;
@@ -60,7 +67,7 @@ const BlogSidebar = styled.nav<{ $isMenuVisible: boolean }>`
 
   .border {
     width: 75%;
-    border-top: 1px solid #b0b0b0;
+    border-top: 1px solid var(--border-color);
   }
 
   .sidebar-profile-container {
@@ -247,6 +254,8 @@ export default function Sidebar({
 
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
+  const { isDarkMode } = useDarkMode();
+
   useEffect(() => {
     const toggleMenuVisibility = () => {
       setIsMenuVisible((prev) => !prev);
@@ -260,11 +269,18 @@ export default function Sidebar({
   return (
     <BlogSidebar $isMenuVisible={isMenuVisible}>
       <button className="close-button" onClick={() => setIsMenuVisible(false)}>
-        <img src="/assets/pictures/sidebar/close.svg" />
+        <img
+          src={`/assets/pictures/sidebar/close-${
+            isDarkMode ? "white" : "black"
+          }.svg`}
+        />
       </button>
       <div
         className="sidebar-profile-container"
-        onClick={() => router.push("/")}
+        onClick={() => {
+          router.push("/");
+          setIsMenuVisible(false);
+        }}
       >
         <img
           className="profile-bg"
@@ -306,21 +322,33 @@ export default function Sidebar({
           href="https://past-silver-b67.notion.site/Lee-Jihoon-Anteater-42a1ebc80b2e44688f0dd99598f019de"
           target="_blank"
         >
-          <img src="/assets/pictures/sidebar/link-notion-black.svg" />
+          <img
+            src={`/assets/pictures/sidebar/link-notion-${
+              isDarkMode ? "white" : "black"
+            }.svg`}
+          />
         </a>
         <a
           className="link-button"
           href="https://blog.anteater-lab.link/portfolio/"
           target="_blank"
         >
-          <img src="/assets/pictures/sidebar/link-person-black.svg" />
+          <img
+            src={`/assets/pictures/sidebar/link-person-${
+              isDarkMode ? "white" : "black"
+            }.svg`}
+          />
         </a>
         <a
           className="link-button"
           href="https://github.com/anteater333"
           target="_blank"
         >
-          <img src="/assets/pictures/sidebar/link-gh-black.svg" />
+          <img
+            src={`/assets/pictures/sidebar/link-gh-${
+              isDarkMode ? "white" : "black"
+            }.svg`}
+          />
         </a>
       </div>
       <div className="border" />

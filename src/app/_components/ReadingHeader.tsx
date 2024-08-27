@@ -33,7 +33,7 @@ const ReadingHeaderHeader = styled.header`
 
     ${defaultBoxShadow};
 
-    background-color: #ffffffc7;
+    background-color: color-mix(in srgb, var(--bg-color-main) 75%, transparent);
 
     .header-left {
       padding-left: 1rem;

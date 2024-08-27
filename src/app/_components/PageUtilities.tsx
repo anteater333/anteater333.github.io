@@ -1,5 +1,6 @@
 "use client";
 
+import { useDarkMode } from "@/lib/store";
 import { scOnHalf, scOnPalm } from "@/styles/values";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
@@ -19,13 +20,13 @@ const PageUtilitiesDiv = styled.div`
   display: flex;
   flex-direction: column;
 
-  border: solid 1px #797981;
+  border: solid 1px var(--border-color);
   border-radius: 0.25rem;
   overflow: visible;
 
   opacity: 0.33;
 
-  background-color: #ffffff;
+  background-color: var(--static-white);
 
   .util-button {
     height: 2.5rem;
@@ -43,19 +44,25 @@ const PageUtilitiesDiv = styled.div`
       padding: 0.25rem;
     }
 
-    &.share {
+    &.lumin {
       @media ${scOnHalf} {
-        border-top: solid 1px #797981;
+        border-top: solid 1px var(--border-color);
       }
       padding: 0.25rem;
     }
 
+    &.share {
+      padding: 0.25rem;
+      border-top: solid 1px var(--border-color);
+    }
+
     &.upper {
       img {
+        /* ::before 위치로 인해 별도 조정 */
         box-sizing: border-box;
         padding: 0.5rem;
       }
-      border-top: solid 1px #797981;
+      border-top: solid 1px var(--border-color);
     }
 
     &::before {
@@ -63,12 +70,12 @@ const PageUtilitiesDiv = styled.div`
       content: attr(data-hint);
       position: absolute;
       right: 50%;
-      width: 2rem;
+      width: 2.75rem;
       opacity: 0;
       margin-top: 0.5rem;
 
-      background-color: #ffffff;
-      border: solid 1px #797981;
+      background-color: var(--bg-color-main);
+      border: solid 1px var(--border-color);
       border-radius: 0.25rem;
 
       transition: all 0.1s ease-in-out;
@@ -86,6 +93,8 @@ const PageUtilitiesDiv = styled.div`
 export default function PageUtilities() {
   const router = useRouter();
 
+  const { isDarkMode, toggleDark } = useDarkMode();
+
   return (
     <PageUtilitiesDiv>
       <button
@@ -98,7 +107,21 @@ export default function PageUtilities() {
       >
         <img src="/assets/pictures/utils/menu.svg" />
       </button>
-
+      <button
+        data-hint={isDarkMode ? "밝게" : "어둡게"}
+        className="util-button lumin"
+        onClick={() => {
+          toggleDark();
+        }}
+      >
+        <img
+          src={
+            isDarkMode
+              ? "/assets/pictures/utils/light.svg"
+              : "/assets/pictures/utils/dark.svg"
+          }
+        />
+      </button>
       <button
         data-hint={"공유"}
         className="util-button share"

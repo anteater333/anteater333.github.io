@@ -36,7 +36,7 @@ const PostHeaderSection = styled.section`
     display: flex;
     flex-direction: column;
     position: relative;
-    color: #ffffff;
+    color: var(--static-white);
     z-index: 50;
 
     padding: 0 3rem;

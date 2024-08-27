@@ -14,8 +14,8 @@ const TagFilterDiv = styled.div`
     width: 90%;
   }
 
-  margin-top: 3rem;
-  padding-bottom: 3rem;
+  margin-top: 4.5rem;
+  padding-bottom: 4.5rem;
 
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +24,7 @@ const TagFilterDiv = styled.div`
 
   width: 75%;
 
-  border-bottom: 2px solid #dcdcdc;
+  border-bottom: 2px solid var(--border-color);
 
   .tag-item {
     @media ${scOnHalf} {
