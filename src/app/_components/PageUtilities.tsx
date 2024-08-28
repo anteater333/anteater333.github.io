@@ -10,7 +10,7 @@ const PageUtilitiesDiv = styled.div`
   @media ${scOnHalf} {
   }
   @media ${scOnPalm} {
-    opacity: 0.2;
+    opacity: 0.33;
   }
 
   z-index: 100;
@@ -24,9 +24,9 @@ const PageUtilitiesDiv = styled.div`
   border-radius: 0.25rem;
   overflow: visible;
 
-  opacity: 0.33;
+  opacity: 0.5;
 
-  background-color: var(--static-white);
+  background-color: var(--bg-color-main);
 
   .util-button {
     height: 2.5rem;
@@ -57,11 +57,7 @@ const PageUtilitiesDiv = styled.div`
     }
 
     &.upper {
-      img {
-        /* ::before 위치로 인해 별도 조정 */
-        box-sizing: border-box;
-        padding: 0.5rem;
-      }
+      padding: 0.25rem;
       border-top: solid 1px var(--border-color);
     }
 
@@ -105,7 +101,11 @@ export default function PageUtilities() {
           document.dispatchEvent(new Event("menu"));
         }}
       >
-        <img src="/assets/pictures/utils/menu.svg" />
+        <img
+          src={`/assets/pictures/utils/menu-${
+            isDarkMode ? "white" : "black"
+          }.svg`}
+        />
       </button>
       <button
         data-hint={isDarkMode ? "밝게" : "어둡게"}
@@ -135,7 +135,11 @@ export default function PageUtilities() {
           });
         }}
       >
-        <img src="/assets/pictures/utils/share.svg" />
+        <img
+          src={`/assets/pictures/utils/share-${
+            isDarkMode ? "white" : "black"
+          }.svg`}
+        />
       </button>
       <button
         data-hint={"위로"}
@@ -148,7 +152,11 @@ export default function PageUtilities() {
           });
         }}
       >
-        <img src="/assets/pictures/utils/upper.svg" />
+        <img
+          src={`/assets/pictures/utils/upper-${
+            isDarkMode ? "white" : "black"
+          }.svg`}
+        />
       </button>
     </PageUtilitiesDiv>
   );
