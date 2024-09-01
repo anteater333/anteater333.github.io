@@ -1,5 +1,3 @@
-import { type Author } from "./author";
-
 export type Category = "meta" | "hack" | "memoir" | "micro" | "ndev" | "reddit";
 
 export type Post = {
@@ -8,7 +6,6 @@ export type Post = {
   title: string;
   date: string;
   coverImage: string;
-  author: Author;
   excerpt: string;
   ogImage: {
     url: string;

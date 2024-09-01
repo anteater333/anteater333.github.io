@@ -47,22 +47,6 @@ export default function Index() {
           <Catchphrase />
         </PostListContainer>
       </Container>
-
-      {/* Legacy 코드 */}
-      {/* <Container>
-        <Intro />
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          category={heroPost.category}
-          excerpt={heroPost.excerpt}
-          id={heroPost.id}
-        />
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container> */}
     </div>
   );
 }
