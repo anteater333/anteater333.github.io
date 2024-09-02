@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const lightTheme = {
   colors: {
-    bgMain: "#F1F1E9",
+    bgMain: "#fbfbf8",
     textMain: "#222222",
     shadow: "#d4d4d4",
     textSub: "#797981",
@@ -15,7 +15,7 @@ export const lightTheme = {
 export const darkTheme: CustomTheme = {
   colors: {
     bgMain: "#222222",
-    textMain: "#F1F1E9",
+    textMain: "#fbfbf8",
     shadow: "#1b1b1b",
     textSub: "#c7c7b8",
     border: "#4a4a4a",
