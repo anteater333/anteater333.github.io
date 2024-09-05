@@ -34,7 +34,11 @@ const ReadingHeaderHeader = styled.header`
 
     ${defaultBoxShadow};
 
-    background-color: color-mix(in srgb, var(--bg-color-main) 75%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--bg-color-main) 100%,
+      transparent
+    );
 
     .header-left {
       padding-left: 1rem;
@@ -100,11 +104,26 @@ const ReadingHeaderHeader = styled.header`
             background-size: contain;
             background-repeat: repeat-x;
             opacity: 0.8;
-            margin-top: 0.8rem;
             height: 100%;
-            width: 285px;
+            width: 380px;
+            margin-top: 0.75rem;
 
-            animation: wave 6s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            position: absolute;
+
+            animation: wave 7s linear infinite;
+          }
+
+          .ice {
+            object-fit: contain;
+            width: 80%;
+            left: 0.33rem;
+            margin-top: 0.33rem;
+
+            position: absolute;
+
+            &.swell {
+              animation: swell 3.5s ease-in-out 0s infinite;
+            }
           }
         }
 
@@ -113,13 +132,6 @@ const ReadingHeaderHeader = styled.header`
           height: 105%;
           top: -0.4rem;
           overflow: visible;
-        }
-
-        .ice {
-          object-fit: contain;
-          width: 80%;
-          left: 0.33rem;
-          top: -0.4rem;
         }
       }
     }
@@ -144,10 +156,19 @@ const ReadingHeaderHeader = styled.header`
 
   @keyframes wave {
     0% {
-      margin-left: 0;
+      left: 0;
     }
     100% {
-      margin-left: -205px;
+      left: -95px;
+    }
+  }
+  @keyframes swell {
+    0%,
+    100% {
+      transform: translate3d(0, -1px, 0);
+    }
+    50% {
+      transform: translate3d(0, 1px, 0);
     }
   }
 `;
@@ -162,6 +183,9 @@ const ReadingHeader = function ({
   const [isVisible, setIsVisible] = useState(false);
 
   const { isDarkMode } = useDarkMode();
+
+  const [scrollPercent, setScrollPercent] = useState(0);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   useEffect(() => {
     const threshold = 100;
@@ -186,6 +210,26 @@ const ReadingHeader = function ({
     };
   }, []);
 
+  useEffect(() => {
+    const handleScrollProgress = (event: Event) => {
+      const scrollTop = window.document.documentElement.scrollTop;
+      const scrollBottom =
+        window.document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const scrollPercent = (scrollTop / scrollBottom) * 100;
+
+      setScrollPercent(scrollPercent);
+      setIsCompleted(scrollPercent > 90);
+    };
+
+    window.addEventListener("scroll", handleScrollProgress);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollProgress);
+    };
+  }, []);
+
   return (
     <ReadingHeaderHeader className={isVisible ? "visible" : "hidden"}>
       <div className="container">
@@ -198,10 +242,15 @@ const ReadingHeader = function ({
         <div className="header-right">
           <a href="http://buymeacoffee.com/anteater333" target="_blank">
             <div className="progress-coffee-container">
-              <img
-                src="/assets/pictures/coffee/coffee-ice.png"
-                className="ice"
-              />
+              <div className="mask-container">
+                <img
+                  src="/assets/pictures/coffee/coffee-ice.png"
+                  className={`ice ${scrollPercent < 70 ? "swell" : ""}`}
+                  style={{
+                    top: `${Math.min(scrollPercent, 70) * 0.5}px`,
+                  }}
+                />
+              </div>
               <img
                 className="straw"
                 src={`/assets/pictures/coffee/coffee-straw-${
@@ -209,7 +258,12 @@ const ReadingHeader = function ({
                 }.png`}
               />
               <div className="mask-container">
-                <div className="liquid" />
+                <div
+                  className="liquid"
+                  style={{
+                    top: `${scrollPercent * 0.5}px`,
+                  }}
+                />
               </div>
               <img
                 className="frame"
