@@ -2,11 +2,16 @@
 
 import styled from "styled-components";
 import DateFormatter from "./DateFormatter";
-import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
+import {
+  defaultBoxShadow,
+  rainbowColor,
+  scOnHalf,
+  scOnPalm,
+} from "@/styles/values";
 import { useEffect, useState } from "react";
 import { useDarkMode } from "@/lib/store";
 
-const ReadingHeaderHeader = styled.header`
+const ReadingHeaderHeader = styled.header<{ $isCompleted: boolean }>`
   @media ${scOnHalf} {
     width: 100%;
   }
@@ -125,6 +130,25 @@ const ReadingHeaderHeader = styled.header`
               animation: swell 3.5s ease-in-out 0s infinite;
             }
           }
+
+          .sheen {
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            bottom: -50%;
+            left: -50%;
+
+            width: 1.5rem;
+
+            background: ${rainbowColor};
+            background-size: 300% 100%;
+            opacity: 0.9;
+            transform: rotateZ(70deg) translate(8rem, 4rem);
+            animation: ${({ $isCompleted }) =>
+              $isCompleted
+                ? "sheen cubic-bezier(0.17, 0.67, 0.83, 0.67) 2.5s"
+                : "none"};
+          }
         }
 
         .straw {
@@ -169,6 +193,11 @@ const ReadingHeaderHeader = styled.header`
     }
     50% {
       transform: translate3d(0, 1px, 0);
+    }
+  }
+  @keyframes sheen {
+    100% {
+      transform: rotateZ(70deg) translate(-8rem, -4rem);
     }
   }
 `;
@@ -231,7 +260,10 @@ const ReadingHeader = function ({
   }, []);
 
   return (
-    <ReadingHeaderHeader className={isVisible ? "visible" : "hidden"}>
+    <ReadingHeaderHeader
+      className={isVisible ? "visible" : "hidden"}
+      $isCompleted={isCompleted}
+    >
       <div className="container">
         <div className="header-left">
           <DateFormatter dateString={date} />
@@ -271,6 +303,9 @@ const ReadingHeader = function ({
                   isDarkMode ? "white" : "black"
                 }.png`}
               />
+              <div className="mask-container">
+                <div className="sheen" />
+              </div>
             </div>
           </a>
         </div>
