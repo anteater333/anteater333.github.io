@@ -10,6 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
+import AutoRefresh from "./dev/AutoRefresh";
 
 const PostToCNav = styled.nav`
   @media ${scOnHalf} {
@@ -462,13 +463,15 @@ export function PostBody({ content }: { content: string }) {
   }, []);
 
   return (
-    <PostBodySection>
-      <div
-        className="post-content"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-      <PostToC headings={headings} />
-    </PostBodySection>
+    <AutoRefresh>
+      <PostBodySection>
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+        <PostToC headings={headings} />
+      </PostBodySection>
+    </AutoRefresh>
   );
 }
 

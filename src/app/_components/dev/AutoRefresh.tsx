@@ -14,7 +14,13 @@ if (process.env.NODE_ENV === "development") {
     useEffect(() => {
       console.log("[MarkdownWatcher] :: agent working 🤖");
       const ws = new WebSocket(`ws://localhost:${WS_PORT}`);
+
+      ws.onopen = (event) => {
+        console.log("[MarkdownWatcher] :: Connection opened");
+      };
+
       ws.onmessage = (event) => {
+        console.log(`[MarkdownWatcher] :: Data from server : ${event.data}`);
         if (event.data === "refresh") {
           router.refresh();
         }
