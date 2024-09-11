@@ -377,6 +377,11 @@ const PostBodySection = styled.section`
       font-size: 0.5rem;
     }
 
+    /* font align */
+    .align-right {
+      text-align: right;
+    }
+
     /* image width */
     .w-half img {
       width: 50%;
