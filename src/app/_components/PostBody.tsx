@@ -430,6 +430,13 @@ const PostBodySection = styled.section`
       min-width: 0;
       width: 100%;
     }
+
+    /* codesandbox 임베드 코드 */
+    .sandbox-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 
