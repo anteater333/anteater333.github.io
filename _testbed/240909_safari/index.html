@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div style="position: fixed">
+      오늘은
+      <span id="today"></span>
+
+      <br />
+
+      Scroll : <span id="scroll"></span>
+    </div>
+
+    <div style="height: 5000px"></div>
+    <script>
+      const today = document.getElementById("today");
+
+      today.textContent = new Date("2024-08-17 11:02:00 +0900");
+
+      const scrollIndicator = document.getElementById("scroll");
+
+      window.addEventListener("scroll", (e) => {
+        scrollIndicator.textContent = window.scrollY;
+      });
+    </script>
+  </body>
+</html>

@@ -10,6 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import styled from "styled-components";
+import AutoRefresh from "./dev/AutoRefresh";
 
 const PostToCNav = styled.nav`
   @media ${scOnHalf} {
@@ -376,6 +377,11 @@ const PostBodySection = styled.section`
       font-size: 0.5rem;
     }
 
+    /* font align */
+    .align-right {
+      text-align: right;
+    }
+
     /* image width */
     .w-half img {
       width: 50%;
@@ -424,6 +430,13 @@ const PostBodySection = styled.section`
       min-width: 0;
       width: 100%;
     }
+
+    /* codesandbox 임베드 코드 */
+    .sandbox-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 
@@ -462,13 +475,15 @@ export function PostBody({ content }: { content: string }) {
   }, []);
 
   return (
-    <PostBodySection>
-      <div
-        className="post-content"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-      <PostToC headings={headings} />
-    </PostBodySection>
+    <AutoRefresh>
+      <PostBodySection>
+        <div
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+        <PostToC headings={headings} />
+      </PostBodySection>
+    </AutoRefresh>
   );
 }
 

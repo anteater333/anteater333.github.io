@@ -16,7 +16,10 @@ chokidar.watch(["./_posts", "./_now"]).on("all", (event) => {
 });
 
 wss.on("connection", (ws) => {
+  console.log(`[MarkdownWatcher] :: ws connected`);
+
   function onChange() {
+    console.log("[MarkdownWatcher] :: file changed");
     ws.send("refresh");
   }
 
@@ -24,6 +27,7 @@ wss.on("connection", (ws) => {
 
   watchCallbacks.push(onChange);
   ws.on("close", function close() {
+    console.log(`[MarkdownWatcher] :: ws closed`);
     const index = watchCallbacks.findIndex(onChange);
     watchCallbacks.splice(index, 1);
   });
