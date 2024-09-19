@@ -92,7 +92,10 @@ const BlogSidebar = styled.nav<{
         display: none;
       }
 
+      aspect-ratio: 16 / 9;
+
       width: 100%;
+      height: auto;
     }
 
     .profile-pic {
@@ -101,6 +104,7 @@ const BlogSidebar = styled.nav<{
       }
 
       width: 7.5rem;
+      height: 7.5rem;
       border-radius: 100%;
 
       margin-top: -4rem;
