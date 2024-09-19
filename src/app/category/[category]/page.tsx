@@ -1,6 +1,7 @@
 import Catchphrase from "@/app/_components/Catchphrase";
 import Container from "@/app/_components/containers/Container";
 import PostListContainer from "@/app/_components/containers/PostListContainer";
+import LoadingPlaceholder from "@/app/_components/LoadingPlaceholder";
 import PostList from "@/app/_components/PostList";
 import Sidebar from "@/app/_components/Sidebar";
 import { Category } from "@/interfaces/post";
@@ -34,7 +35,7 @@ export default async function IndexByCategory({ params }: Params) {
         recentPosts={allPosts.slice(0, 3)}
       />
       <PostListContainer>
-        <Suspense>
+        <Suspense fallback={<LoadingPlaceholder />}>
           <PostList posts={catPosts} />
         </Suspense>
         <Catchphrase category={params.category as Category} />
