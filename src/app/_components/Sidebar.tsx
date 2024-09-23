@@ -23,8 +23,8 @@ const BlogSidebar = styled.nav<{
     right: 0;
     bottom: 0;
 
-    -webkit-transition: opacity 0.33s;
-    transition: opacity 0.33s;
+    -webkit-transition: opacity 0.33s, z-index 0.33s;
+    transition: opacity 0.33s, z-index 0.33s;
 
     z-index: ${({ $isMenuVisible }) => ($isMenuVisible ? "150" : "-50")};
     opacity: ${({ $isMenuVisible }) => ($isMenuVisible ? "1" : "0")};
@@ -32,7 +32,8 @@ const BlogSidebar = styled.nav<{
     max-width: unset;
     min-width: unset;
 
-    background-color: color-mix(in srgb, var(--bg-color-main) 95%, transparent);
+    background-color: color-mix(in srgb, var(--bg-color-main) 80%, transparent);
+    backdrop-filter: blur(8px);
   }
 
   @media ${scOnPalm} {
