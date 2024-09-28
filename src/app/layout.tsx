@@ -82,6 +82,12 @@ export default function RootLayout({
           content="b7a2697a52c55e85d02c998617f376eff9cf032b"
         />
 
+        {/* Google Search Console */}
+        <meta
+          name="google-site-verification"
+          content="xkt-c8HpH7HVWXkJLnGtNZ7dmF3BEDqy0e7ZQzE2cGs"
+        />
+
         {/* Google Analytics */}
         <GoogleAnalytics gaId="G-XY1FSXXJM2" />
       </head>
