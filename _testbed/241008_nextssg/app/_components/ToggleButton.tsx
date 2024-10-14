@@ -7,7 +7,7 @@ function ToggleButton() {
 
   return (
     <button
-      className={`toggle-button ${isDarkMode ? "light" : "dark"}`}
+      className={`toggle-button ${isDarkMode ? "dark" : "light"}`}
       onClick={toggleDark}
     >
       토글
