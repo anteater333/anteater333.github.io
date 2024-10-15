@@ -262,7 +262,8 @@ const PostBodySection = styled.section`
     /** 인라인 코드 하이라이팅 */
     p > code,
     li > code,
-    a > code {
+    a > code,
+    strong > code {
       background-color: var(--bg-color-inline) !important;
       color: var(--text-color-inline) !important;
       padding: 0 0.25rem;
