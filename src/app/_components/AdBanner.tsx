@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
 const AdBannerDiv = styled.div`
@@ -19,10 +20,39 @@ const AdBannerDiv = styled.div`
   }
 `;
 
+const adItems = [
+  { id: 0, image: "", link: "" },
+  { id: 1, image: "", link: "" },
+  { id: 2, image: "", link: "" },
+  { id: 3, image: "", link: "" },
+];
+
 export default function AdBanner() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextBanner = useCallback(() => {
+    setCurrentIndex((prevIndex) => {
+      return (prevIndex + 1) % adItems.length;
+    });
+  }, [currentIndex]);
+
+  const prevBanner = useCallback(() => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + (adItems.length + 2)) % adItems.length
+    );
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextBanner, 5000);
+
+    return () => clearInterval(interval);
+  });
+
   return (
     <AdBannerDiv>
-      <div className="ad-banner-container"></div>
+      <div className="ad-banner-container">{adItems[currentIndex].id}</div>
+      <button onClick={prevBanner}>이전</button>
+      <button onClick={nextBanner}>다음</button>
     </AdBannerDiv>
   );
 }
