@@ -17,6 +17,7 @@ const BlogSidebar = styled.nav<{
     display: flex;
 
     overflow: scroll;
+    overscroll-behavior: none;
 
     position: fixed;
     top: 0;
