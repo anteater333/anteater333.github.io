@@ -90,10 +90,6 @@ export default function AdBanner() {
     return () => clearInterval(interval);
   });
 
-  useEffect(() => {
-    console.log(currentIndex);
-  }, [currentIndex]);
-
   return (
     <AdBannerDiv>
       <span>sponsored by</span>
