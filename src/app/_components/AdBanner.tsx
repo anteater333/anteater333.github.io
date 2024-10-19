@@ -17,7 +17,7 @@ const AdBannerDiv = styled.div`
     margin-bottom: 0.1rem;
   }
 
-  .ad-banner-container {
+  .my-links-container {
     width: 75%;
     height: 4rem;
     max-width: 20rem;
@@ -25,7 +25,7 @@ const AdBannerDiv = styled.div`
     border-radius: 0.5rem;
     overflow: hidden;
 
-    .ad-banner-placeholder {
+    .my-links-placeholder {
       width: 100%;
       height: 100%;
 
@@ -93,9 +93,9 @@ export default function AdBanner() {
   return (
     <AdBannerDiv>
       <span>sponsored by</span>
-      <div className="ad-banner-container">
+      <div className="my-links-container">
         {currentIndex < 0 ? (
-          <div className="ad-banner-placeholder"></div>
+          <div className="my-links-placeholder"></div>
         ) : (
           <a href={adItems[currentIndex].link}>
             <img src={adItems[currentIndex].image} />
