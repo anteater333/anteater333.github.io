@@ -8,6 +8,7 @@ import DateFormatter from "./DateFormatter";
 import { useRouter } from "next/navigation";
 import { defaultBoxShadow, scOnHalf, scOnPalm } from "@/styles/values";
 import { useDarkMode } from "@/lib/store";
+import AdBanner from "./AdBanner";
 
 const BlogSidebar = styled.nav<{
   $isMenuVisible: boolean;
@@ -398,6 +399,8 @@ export default function Sidebar({
         })}
       </div>
       <div className="border" />
+      <AdBanner></AdBanner>
+      <div className="border"></div>
       <div className="sidebar-footer-container">
         <a href="/">Anteater's laboratory</a>
         <br />
