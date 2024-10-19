@@ -30,29 +30,34 @@ const adItems = [
 export default function AdBanner() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextBanner = useCallback(() => {
+  const nextAd = useCallback(() => {
     setCurrentIndex((prevIndex) => {
       return (prevIndex + 1) % adItems.length;
     });
-  }, [currentIndex]);
+  }, []);
 
-  const prevBanner = useCallback(() => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + (adItems.length + 2)) % adItems.length
+  const prevAd = useCallback(() => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? adItems.length - 1 : prevIndex - 1
     );
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(nextBanner, 5000);
+    const interval = setInterval(nextAd, 5000);
 
     return () => clearInterval(interval);
   });
 
   return (
     <AdBannerDiv>
-      <div className="ad-banner-container">{adItems[currentIndex].id}</div>
-      <button onClick={prevBanner}>이전</button>
-      <button onClick={nextBanner}>다음</button>
+      <span>sponsored by</span>
+      <div className="ad-banner-container">
+        <a href={adItems[currentIndex].link}>
+          <img src={adItems[currentIndex].image} />
+        </a>
+      </div>
+      <button onClick={prevAd}>이전</button>
+      <button onClick={nextAd}>다음</button>
     </AdBannerDiv>
   );
 }
