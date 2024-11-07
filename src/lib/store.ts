@@ -11,13 +11,7 @@ type Store = {
 const useStore = create<Store>()(
   persist(
     (set) => ({
-      isDarkMode:
-        typeof window !== "undefined" &&
-        typeof localStorage.getItem("theme-storage") === "string"
-          ? JSON.parse(localStorage.getItem("theme-storage") as string)[
-              "state"
-            ]["isDarkMode"]
-          : false,
+      isDarkMode: false,
       toggleDark: () => set((state) => ({ isDarkMode: !state.isDarkMode })),
       setIsDarkMode: (isDarkMode) => set((state) => ({ isDarkMode })),
     }),
