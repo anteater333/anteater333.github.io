@@ -10,7 +10,11 @@ const DateFormatter = ({ dateString }: Props) => {
     Date.parse(dateString.replace(" ", "T").replace(" ", ""))
   );
 
-  return <time dateTime={dateString}>{format(date, "LLLL	d, yyyy")}</time>;
+  return (
+    <time dateTime={dateString} suppressHydrationWarning>
+      {format(date, "LLLL	d, yyyy")}
+    </time>
+  );
 };
 
 export default DateFormatter;
