@@ -36,6 +36,7 @@ const BlogSidebar = styled.nav<{
 
     background-color: color-mix(in srgb, var(--bg-color-main) 80%, transparent);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   @media ${scOnPalm} {
