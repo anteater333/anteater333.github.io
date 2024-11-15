@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <style>
+      .console {
+        border-top: solid black;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .console.error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="1. h1">- my id is "1. h1"</div>
+    <div id="2. h2">- my id is "2. h2"</div>
+    <div class="console info"></div>
+    <div class="console error"></div>
+    <script type="text/javascript">
+      const cnslErr = document.querySelector(".console.error");
+      const cnsl = document.querySelector(".console.info");
+
+      try {
+        const result = document.querySelector("#1. h1");
+      } catch (e) {
+        cnslErr.textContent += e;
+      }
+
+      try {
+        const result = document.querySelector(`#${CSS.escape("2. h2")}`);
+
+        cnsl.textContent += result.textContent;
+      } catch (e) {
+        cnslErr.textContent += e;
+      }
+    </script>
+  </body>
+</html>
