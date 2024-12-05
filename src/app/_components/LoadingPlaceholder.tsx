@@ -7,24 +7,24 @@ const SpinnerContainerDiv = styled.span`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 15rem;
+  padding-bottom: 15rem;
 
-  opacity: 0.05;
+  opacity: 0.1;
 
   .message {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
     font-family: Galmuri7, sans-serif;
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
 
   .loader {
-    width: 48px;
-    height: 48px;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     display: inline-block;
-    border-top: 3px solid var(--text-color-main);
-    border-right: 3px solid transparent;
+    border-top: 8px solid var(--text-color-main);
+    border-right: 8px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
