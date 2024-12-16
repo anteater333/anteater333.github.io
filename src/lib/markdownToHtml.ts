@@ -10,6 +10,7 @@ import { visit } from "unist-util-visit";
 
 /**
  * Rehype 커스텀 플러그인, 코드 블록에 복사 버튼을 추가
+ * TBD: 이벤트 이름 상수화
  * @returns
  */
 function appendCopyBtn() {
