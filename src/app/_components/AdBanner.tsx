@@ -1,5 +1,6 @@
 "use client";
 
+import { AD_ITEMS } from "@/constants/constants";
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -41,46 +42,23 @@ const AdBannerDiv = styled.div`
   }
 `;
 
-const adItems = [
-  {
-    title: "domado",
-    image: "/assets/pictures/ads/ad-1-domado.png",
-    link: "https://domado.vercel.app/",
-  },
-  {
-    title: "soup",
-    image: "/assets/pictures/ads/ad-2-soup.png",
-    link: "https://blog.anteater-lab.link/namu-soup/",
-  },
-  {
-    title: "watchunduck",
-    image: "/assets/pictures/ads/ad-3-watchunduck.png",
-    link: "https://watchunduck.tistory.com/",
-  },
-  {
-    title: "buymeacoffee",
-    image: "/assets/pictures/ads/ad-4-bmc.png",
-    link: "http://buymeacoffee.com/anteater333",
-  },
-];
-
 export default function AdBanner() {
   const [currentIndex, setCurrentIndex] = useState(-1);
 
   /** 초기 인덱스 랜덤 설정 */
   useEffect(() => {
-    setCurrentIndex(Math.floor(Math.random() * adItems.length));
+    setCurrentIndex(Math.floor(Math.random() * AD_ITEMS.length));
   }, []);
 
   const nextAd = useCallback(() => {
     setCurrentIndex((prevIndex) => {
-      return (prevIndex + 1) % adItems.length;
+      return (prevIndex + 1) % AD_ITEMS.length;
     });
   }, []);
 
   const prevAd = useCallback(() => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? adItems.length - 1 : prevIndex - 1
+      prevIndex === 0 ? AD_ITEMS.length - 1 : prevIndex - 1
     );
   }, []);
 
@@ -97,8 +75,8 @@ export default function AdBanner() {
         {currentIndex < 0 ? (
           <div className="my-links-placeholder"></div>
         ) : (
-          <a href={adItems[currentIndex].link}>
-            <img src={adItems[currentIndex].image} />
+          <a href={AD_ITEMS[currentIndex].link}>
+            <img src={AD_ITEMS[currentIndex].image} />
           </a>
         )}
       </div>
