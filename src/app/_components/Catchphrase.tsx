@@ -1,7 +1,7 @@
 "use client";
 
-import { CATEGORY_PHRASES, RANDOM_PHRASES } from "@/constants/constants";
 import { Category } from "@/interfaces/post";
+import { CATEGORY_PHRASES, RANDOM_PHRASES } from "@/lib/constants";
 import { scOnHalf, scOnPalm } from "@/styles/values";
 import { useEffect, useState } from "react";
 import styled from "styled-components";

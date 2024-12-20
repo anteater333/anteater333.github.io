@@ -1,6 +1,6 @@
 "use client";
 
-import { AD_ITEMS } from "@/constants/constants";
+import { AD_ITEMS } from "@/lib/constants";
 import { useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 
