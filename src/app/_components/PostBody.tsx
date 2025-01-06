@@ -266,11 +266,11 @@ const PostBodySection = styled.section`
     }
 
     .mw-1-quarter img {
-      max-width: 25vw;
+      max-width: 25%;
     }
 
     .mw-3-quarter img {
-      max-width: 75vw;
+      max-width: 75%;
     }
 
     .w-expand img {
