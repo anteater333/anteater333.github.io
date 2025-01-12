@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import TagItem from "./TagItem";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { scOnHalf, scOnPalm } from "@/styles/values";
 
@@ -57,23 +57,20 @@ const TagFilter = function ({ tags }: { tags: string[] }) {
     setSelectedTags(manuallySelected);
   }, [searchParams]);
 
-  /** Query Param을 사용해 Filtering을 구현하기 위한 PJAX 영역 */
-  useEffect(() => {
-    const tags = searchParams.get("tags");
-    // 선택된 태그 없음 && 기존 Query Param도 없음 ==> 초기 상태
-    // 불필요한 PJAX 방지
-    if (selectedTags.size === 0 && !tags) {
-      return;
-    }
-
-    // selectedTags의 변화를 Query Param에 적용
-    router.push(
-      selectedTags.size === 0
-        ? "/"
-        : `/?tags=${Array.from(selectedTags).join(",")}`,
-      { scroll: false }
-    );
-  }, [selectedTags]);
+  /** Query Param을 사용해 Filtering을 구현하기 위한 PJAX */
+  const handleOnClickTagItem = useCallback(
+    (tag: string) => {
+      const newSet = new Set(selectedTags);
+      if (newSet.has(tag)) newSet.delete(tag);
+      else newSet.add(tag);
+      setSelectedTags(newSet);
+      router.push(
+        newSet.size === 0 ? "/" : `/?tags=${Array.from(newSet).join(",")}`,
+        { scroll: false }
+      );
+    },
+    [selectedTags]
+  );
 
   return (
     <TagFilterDiv>
@@ -82,12 +79,7 @@ const TagFilter = function ({ tags }: { tags: string[] }) {
           <TagItem
             key={`tag-filter-item-${idx}`}
             tag={tag}
-            onClick={(tag) => {
-              const newSet = new Set(selectedTags);
-              if (newSet.has(tag)) newSet.delete(tag);
-              else newSet.add(tag);
-              setSelectedTags(newSet);
-            }}
+            onClick={handleOnClickTagItem}
             selected={selectedTags.has(tag)}
             isFilter={true}
           />
