@@ -265,6 +265,10 @@ const PostBodySection = styled.section`
       width: 75%;
     }
 
+    .mw-half img {
+      max-width: 50%;
+    }
+
     .mw-1-quarter img {
       max-width: 25%;
     }
