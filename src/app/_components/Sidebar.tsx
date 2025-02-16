@@ -200,6 +200,7 @@ const BlogSidebar = styled.nav<{
         flex-direction: column;
         justify-content: center;
         font-weight: normal;
+        font-size: 0.9rem;
 
         > p {
           margin: 0;
@@ -392,7 +393,7 @@ export default function Sidebar({
               <img
                 className="recent-post-img"
                 src={
-                  post.coverImage ??
+                  post.ogImage.url ??
                   "/assets/pictures/placeholder-main-image.png"
                 }
               />

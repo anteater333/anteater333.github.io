@@ -246,7 +246,7 @@ const PostListItem = function ({ post }: { post: Post }) {
           <img
             className="postlist-item-img"
             src={
-              post.coverImage ?? "/assets/pictures/placeholder-main-image.png"
+              post.ogImage?.url ?? "/assets/pictures/placeholder-main-image.png"
             }
           />
         </div>
