@@ -7,7 +7,7 @@ import { PostBody } from "../_components/PostBody";
 import markdownToHtml from "@/lib/markdownToHtml";
 import PostContainer from "../_components/containers/PostContainer";
 
-export default async function AboutPage() {
+export default async function NowPage() {
   const allPosts = getAllPosts();
   /** 카테고리 별 게시글 수 */
   const categoriesCount: Record<Category, number> = {
@@ -44,3 +44,4 @@ export const metadata: Metadata = {
   title: `Anteater's laboratory`,
   description: `용케도 여기를 찾아내셨습니다.`,
 };
+
