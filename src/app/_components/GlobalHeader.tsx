@@ -8,6 +8,7 @@ import {
 } from "@/styles/values";
 import Link from "next/link";
 import styled from "styled-components";
+import RouterObserver from "./RouterObserver";
 
 const GlobalHeaderHeader = styled.header`
   position: relative;
@@ -88,6 +89,7 @@ const GlobalHeaderHeader = styled.header`
 export default function GlobalHeader() {
   return (
     <GlobalHeaderHeader>
+      <RouterObserver />
       <div className="header-left">
         <Link href={"/now"}>
           <img src={"/assets/pictures/placeholder-blog-logo.png"} />
