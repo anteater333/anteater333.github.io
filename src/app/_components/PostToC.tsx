@@ -1,4 +1,5 @@
 import { scOnHalf, scOnPalm } from "@/styles/values";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
@@ -123,7 +124,7 @@ export function PostToC({ headings }: { headings: ToCItem[] }) {
                         ></p>
                       );
                     })}
-                    <a href={`#${heading.id}`}>{heading.text}</a>
+                    <Link href={`#${heading.id}`}>{heading.text}</Link>
                   </li>
                 );
               })
