@@ -43,7 +43,7 @@ fs.readdir(POSTS).then((dirList) => {
             await finished(Readable.fromWeb(response.body).pipe(fileStream));
           } catch (err) {
             console.error(`Failed to process ${imgUrl}:`, err);
-            failedList.push(`${failedCount++}${targetPath},${idx},${imgUrl}`);
+            failedList.push(`${failedCount++},${targetPath},${idx},${imgUrl}`);
           }
         }
       });
