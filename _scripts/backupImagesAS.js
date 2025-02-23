@@ -3,14 +3,12 @@ const path = require("path");
 const { Readable } = require("stream");
 const { finished } = require("stream/promises");
 
-const failedListPath = "../_backup/failedList.csv";
-
-const filePath = path.resolve(__dirname, failedListPath);
+const failedListPath = "./_backup/failedList.csv";
 
 const failedList = [];
 let failedCount = 0;
 
-fs.readFile(filePath, "utf8", (err, data) => {
+fs.readFile(failedListPath, "utf8", (err, data) => {
   if (err) {
     console.error("Error reading the file:", err);
     return;
@@ -25,7 +23,7 @@ fs.readFile(filePath, "utf8", (err, data) => {
 
     const [_, _posts, category, fileName] = post.split("/");
 
-    const backupDirPath = `../_backupAS/${category}/${fileName.split(".")[0]}`;
+    const backupDirPath = `./_backupAS/${category}/${fileName.split(".")[0]}`;
 
     if (!fs.existsSync(backupDirPath))
       fs.mkdirSync(backupDirPath, { recursive: true });
@@ -51,7 +49,7 @@ fs.readFile(filePath, "utf8", (err, data) => {
 
 process.on("exit", () => {
   if (failedList.length > 0) {
-    const failedFilePath = `../_backupAS/failedList_as.csv`;
+    const failedFilePath = `./_backupAS/failedList_as.csv`;
     try {
       fs.writeFileSync(failedFilePath, failedList.join("\n"), "utf8");
       console.log(`Failed list saved to ${failedFilePath}, (${failedCount})`);
