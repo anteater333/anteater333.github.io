@@ -9,7 +9,9 @@
     "dev:watch": "node ./_scripts/watcher.js",
     "post": "node ./_scripts/genFilenameToSlugMap.js",
     "postbuild": "next-sitemap",
-    "migrate": "node ./_scripts/migrate.js"
+    "migrate": "node ./_scripts/migrate.js",
+    "backup:img": "node ./_scripts/backupImages.js",
+    "backup:img:as": "node ./_scripts/backupImagesAS.js"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.5",
@@ -50,3 +52,4 @@
     "typescript": "^5"
   }
 }
+

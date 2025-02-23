@@ -3,8 +3,8 @@ const fsSync = require("fs");
 const { Readable } = require("stream");
 const { finished } = require("stream/promises");
 
-const POSTS = "../_posts";
-const BACKUP = "../_backup";
+const POSTS = "./_posts";
+const BACKUP = "./_backup";
 
 const failedList = [];
 let failedCount = 0;
