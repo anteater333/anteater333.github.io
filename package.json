@@ -11,7 +11,8 @@
     "postbuild": "next-sitemap",
     "migrate": "node ./_scripts/migrate.js",
     "backup:img": "node ./_scripts/backupImages.js",
-    "backup:img:as": "node ./_scripts/backupImagesAS.js"
+    "backup:img:as": "node ./_scripts/backupImagesAS.js",
+    "backup:img:list": "node ./_scripts/backupImagesList.js"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.5",
@@ -52,4 +53,3 @@
     "typescript": "^5"
   }
 }
-
