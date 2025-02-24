@@ -12,6 +12,7 @@ import { toast } from "react-toastify";
 import styled from "styled-components";
 import AutoRefresh from "./dev/AutoRefresh";
 import PostToC, { ToCItem } from "./PostToC";
+import { CUSTOM_EVENTS } from "@/lib/constants";
 
 const PostBodySection = styled.section`
   display: flex;
@@ -350,9 +351,9 @@ export function PostBody({ content }: { content: string }) {
       });
     };
 
-    document.addEventListener("toast", toastHandler);
+    document.addEventListener(CUSTOM_EVENTS.toast, toastHandler);
     return () => {
-      document.removeEventListener("toast", toastHandler);
+      document.removeEventListener(CUSTOM_EVENTS.toast, toastHandler);
     };
   }, []);
 

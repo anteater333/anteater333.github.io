@@ -51,7 +51,7 @@ export const RANDOM_PHRASES = [
   "As seeon on TV!",
   "BOTY!",
   "Git과 Github는 달라요",
-  "is a water buffalo horn-based composite reflex...",
+  "El blog de José",
   "You Ain't Gonna Need It",
   "그대는... 그뭐냐... 그거다.",
   "버그가 아니라 기능입니다.",
@@ -75,4 +75,8 @@ export const CATEGORY_PHRASES: Record<Category, string> = {
   memoir: "- 후회중독 -",
   ndev: "- 개발자 출입 금지 -",
   reddit: "- I read it ! -",
+};
+
+export const CUSTOM_EVENTS = {
+  toast: "toast",
 };

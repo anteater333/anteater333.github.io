@@ -7,6 +7,7 @@ import stringify from "rehype-stringify";
 import externalLinks from "rehype-external-links";
 import { ElementContent, Root } from "hast";
 import { visit } from "unist-util-visit";
+import { CUSTOM_EVENTS } from "./constants";
 
 /**
  * Rehype 커스텀 플러그인, 코드 블록에 복사 버튼을 추가
@@ -36,7 +37,7 @@ function appendCopyBtn() {
             const textToCopy = target.innerText;
             navigator.clipboard.writeText(textToCopy).then(() => {});
             document.dispatchEvent(
-                new Event("toast")
+                new Event("${CUSTOM_EVENTS.toast}")
             );
           `,
           },
