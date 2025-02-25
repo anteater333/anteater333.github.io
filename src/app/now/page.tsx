@@ -6,6 +6,7 @@ import Sidebar from "../_components/Sidebar";
 import { PostBody } from "../_components/PostBody";
 import markdownToHtml from "@/lib/markdownToHtml";
 import PostContainer from "../_components/containers/PostContainer";
+import Catchphrase from "../_components/Catchphrase";
 
 export default async function NowPage() {
   const allPosts = getAllPosts();
@@ -34,6 +35,9 @@ export default async function NowPage() {
           <div className="post-body">
             <PostBody content={nowContent} />
           </div>
+          <div className="post-tail">
+            <Catchphrase />
+          </div>
         </article>
       </PostContainer>
     </Container>
@@ -44,4 +48,3 @@ export const metadata: Metadata = {
   title: `Anteater's laboratory`,
   description: `용케도 여기를 찾아내셨습니다.`,
 };
-

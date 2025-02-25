@@ -35,7 +35,7 @@ export const AD_ITEMS = [
   },
 ];
 
-export const RANDOM_PHRASES = [
+const phrasesList = [
   "CATCHPHRASE!!",
   "멋있는 대사!!",
   "절찬 개발 중",
@@ -61,12 +61,19 @@ export const RANDOM_PHRASES = [
   "Anteater's laboratory",
   "Firefox > Chrome",
   "새로 고침 하면 바껴요.",
+  "귀하의 새로 고침이 본 블로그의 방문자 수에 보템이 되고 있습니다.",
   "뚜루뚜 빠라빠라!",
   "비슬산 맑은바람 가슴에 안고",
   "만들기 위해 배우지 말고 배우기 위해 만들어라. {실용주의 사고와 학습}",
   "당신은 멀리서 민달팽이가 분노로 울부짖는 소리를 들었다!",
-  "이 메시지를 볼 확률은 약 3.3% !!",
+  "/now 페이지를 찾아 주세요",
 ];
+
+phrasesList.push(
+  `이 메시지를 볼 확률은 약 ${(1 / (phrasesList.length + 1)) * 100}% !!`
+);
+
+export const RANDOM_PHRASES = phrasesList;
 
 export const CATEGORY_PHRASES: Record<Category, string> = {
   micro: "- 자잘하다 -",
