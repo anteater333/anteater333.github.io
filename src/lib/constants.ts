@@ -38,6 +38,7 @@ export const AD_ITEMS = [
 const phrasesList = [
   "CATCHPHRASE!!",
   "멋있는 대사!!",
+  "대서특필!!",
   "절찬 개발 중",
   "취미는 영화 보기입니다.",
   "취미는 웹 서핑입니다.",
@@ -48,7 +49,7 @@ const phrasesList = [
   "I'm sorry Dave, I'm afraid I can't do that.",
   "웅나?",
   "난, 해적왕이 될 거야!",
-  "As seeon on TV!",
+  "As seen on TV!",
   "BOTY!",
   "Git과 Github는 달라요",
   "El blog de José",
