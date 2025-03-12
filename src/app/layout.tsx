@@ -1,4 +1,3 @@
-import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 
 import "../styles/statics/initialize.scss";
@@ -16,9 +15,6 @@ export const metadata: Metadata = {
   authors: {
     name: "Anteater",
     url: "https://github.com/anteater333",
-  },
-  openGraph: {
-    images: [HOME_OG_IMAGE_URL],
   },
 };
 
