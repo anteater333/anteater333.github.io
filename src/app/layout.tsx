@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     name: "Anteater",
     url: "https://github.com/anteater333",
   },
+  openGraph: {
+    images: ["/assets/pictures/placeholder-og.png"],
+  },
 };
 
 export default function RootLayout({
@@ -67,11 +70,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#000" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
 
-        <meta
-          property="og:image"
-          content="/assets/pictures/placeholder-og.png"
-        />
-
         {/* Naver Search Advisor */}
         <meta
           name="naver-site-verification"
@@ -98,3 +96,4 @@ export default function RootLayout({
     </html>
   );
 }
+
