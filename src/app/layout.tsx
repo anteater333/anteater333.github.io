@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
-  description: `anteater1056, anteater333, anteater's laboratory, anteater_lab, Anteater's laboratory, hack the, 소프트웨어 개발자, Anteater 이지훈, https://blog.anteater-lab.link/, 자잘한 도움말, Next.js SSG 블로그`,
+  description: `Anteater의 연구소, Next.js로 구축한 블로그입니다. 소프트웨어 개발과 관련된 이야기를 합니다.`,
   authors: {
     name: "Anteater",
     url: "https://github.com/anteater333",
@@ -96,4 +96,3 @@ export default function RootLayout({
     </html>
   );
 }
-
