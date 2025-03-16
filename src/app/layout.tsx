@@ -11,7 +11,7 @@ import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
-  description: `Anteater의 연구소, Next.js로 구축한 블로그입니다. 소프트웨어 개발과 관련된 이야기를 합니다.`,
+  description: `Anteater의 연구소, React와 Next.js로 구축한 블로그입니다. 소프트웨어 개발과 관련된 이야기를 합니다.`,
   authors: {
     name: "Anteater",
     url: "https://github.com/anteater333",
