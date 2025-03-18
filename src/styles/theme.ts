@@ -6,7 +6,7 @@ export const lightTheme = {
     textMain: "#222222",
     shadow: "#d4d4d4",
     textSub: "#797981",
-    border: "#848484",
+    border: "#adadad",
     bgInlineCode: "#22272e",
     textInlineCode: "#adbac7",
   },
