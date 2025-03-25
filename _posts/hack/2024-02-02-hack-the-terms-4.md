@@ -316,7 +316,7 @@ CSS에 대한 최적화는 이뿐만이 아니다. 다음과 같은 최적화 �
 - <a href="https://github.com/im-d-team/Dev-Docs/blob/master/Browser/%EC%9B%B9%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98%20%EC%9E%91%EB%8F%99%20%EC%9B%90%EB%A6%AC.md">웹 브라우저의 작동 원리.md</a>, <a href="https://github.com/im-d-team/Dev-Docs/blob/master/Browser/Layer_Model.md">Layer_Model.md</a>
 - <a href="https://cabulous.medium.com/how-does-browser-work-in-2019-part-iii-rendering-phase-i-850c8935958f">How does browser work step by step </a>
 - <a href="https://dev.to/gopal1996/understanding-reflow-and-repaint-in-the-browser-1jbg">Understanding Reflow and Repaint in the browser</a>
-- <a href="https://blinders.tistory.com/93"></a>
+- <a href="https://blinders.tistory.com/93">[CSS] opacity는 reflow가 발생 안 한다구요...? 정말??</a>
 - <a href="https://wiki.mozilla.org/Gecko:Overview">Gecko:Overview</a>
 - <a href="https://ko.javascript.info/script-async-defer">defer, async</a>
 - <a href="https://d2.naver.com/helloworld/59361">이쪽 주제의 바이블 같은 존재</a>
