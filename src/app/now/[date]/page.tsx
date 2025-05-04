@@ -1,5 +1,9 @@
 import { Category } from "@/interfaces/post";
-import { getAllPosts, getNowPage } from "@/lib/api";
+import {
+  getAllArcivedNowPages,
+  getAllPosts,
+  getArchivedNowPageByDate,
+} from "@/lib/api";
 import { Metadata } from "next";
 import Container from "@/app/_components/containers/Container";
 import Sidebar from "@/app/_components/Sidebar";
@@ -8,7 +12,7 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import PostContainer from "@/app/_components/containers/PostContainer";
 import Catchphrase from "@/app/_components/Catchphrase";
 
-export default async function NowPage() {
+export default async function NowPage({ params }: Params) {
   const allPosts = getAllPosts();
   /** 카테고리 별 게시글 수 */
   const categoriesCount: Record<Category, number> = {
@@ -21,7 +25,9 @@ export default async function NowPage() {
   };
   allPosts.forEach((post) => categoriesCount[post.category]++);
 
-  const nowPage = getNowPage();
+  const { date } = params;
+
+  const nowPage = getArchivedNowPageByDate(date);
   const nowContent = await markdownToHtml(nowPage);
 
   return (
@@ -44,7 +50,19 @@ export default async function NowPage() {
   );
 }
 
+type Params = {
+  params: {
+    date: string;
+  };
+};
+
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
   description: `용케도 여기를 찾아내셨습니다.`,
 };
+
+export async function generateStaticParams() {
+  const dates = getAllArcivedNowPages();
+
+  return dates.map((date) => ({ date: date }));
+}
