@@ -1,5 +1,5 @@
 import { Category } from "@/interfaces/post";
-import { getAllPosts, getNowPage } from "@/lib/api";
+import { getAllArcivedNowPages, getAllPosts, getNowPage } from "@/lib/api";
 import { Metadata } from "next";
 import Container from "@/app/_components/containers/Container";
 import Sidebar from "@/app/_components/Sidebar";
@@ -7,6 +7,7 @@ import { PostBody } from "@/app/_components/PostBody";
 import markdownToHtml from "@/lib/markdownToHtml";
 import PostContainer from "@/app/_components/containers/PostContainer";
 import Catchphrase from "@/app/_components/Catchphrase";
+import NowPagination from "../_components/NowPagination";
 
 export default async function NowPage() {
   const allPosts = getAllPosts();
@@ -24,6 +25,8 @@ export default async function NowPage() {
   const nowPage = getNowPage();
   const nowContent = await markdownToHtml(nowPage);
 
+  const latestArchivedNowPage = getAllArcivedNowPages().pop();
+
   return (
     <Container>
       <Sidebar
@@ -36,6 +39,7 @@ export default async function NowPage() {
             <PostBody content={nowContent} />
           </div>
           <div className="post-tail">
+            <NowPagination prev={latestArchivedNowPage} />
             <Catchphrase />
           </div>
         </article>
@@ -48,3 +52,4 @@ export const metadata: Metadata = {
   title: `Anteater's laboratory`,
   description: `용케도 여기를 찾아내셨습니다.`,
 };
+

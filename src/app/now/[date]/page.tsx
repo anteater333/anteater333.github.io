@@ -11,6 +11,7 @@ import { PostBody } from "@/app/_components/PostBody";
 import markdownToHtml from "@/lib/markdownToHtml";
 import PostContainer from "@/app/_components/containers/PostContainer";
 import Catchphrase from "@/app/_components/Catchphrase";
+import NowPagination from "@/app/_components/NowPagination";
 
 export default async function NowPage({ params }: Params) {
   const allPosts = getAllPosts();
@@ -28,6 +29,8 @@ export default async function NowPage({ params }: Params) {
   const { date } = params;
 
   const nowPage = getArchivedNowPageByDate(date);
+  const archivedNowPage = getAllArcivedNowPages();
+  const currentIndex = archivedNowPage.findIndex((d) => d === date);
   const nowContent = await markdownToHtml(nowPage);
 
   return (
@@ -42,6 +45,14 @@ export default async function NowPage({ params }: Params) {
             <PostBody content={nowContent} />
           </div>
           <div className="post-tail">
+            <NowPagination
+              prev={archivedNowPage[currentIndex - 1]}
+              next={
+                currentIndex + 1 === archivedNowPage.length
+                  ? "head"
+                  : archivedNowPage[currentIndex + 1]
+              }
+            />
             <Catchphrase />
           </div>
         </article>
@@ -52,6 +63,7 @@ export default async function NowPage({ params }: Params) {
 
 type Params = {
   params: {
+    index: number;
     date: string;
   };
 };
@@ -64,5 +76,6 @@ export const metadata: Metadata = {
 export async function generateStaticParams() {
   const dates = getAllArcivedNowPages();
 
-  return dates.map((date) => ({ date: date }));
+  return dates.map((date) => ({ date }));
 }
+
