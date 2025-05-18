@@ -1,5 +1,9 @@
 import { Category } from "@/interfaces/post";
-import { getAllArcivedNowPages, getAllPosts, getNowPage } from "@/lib/api";
+import {
+  getAllArcivedNowPages,
+  getAllPosts,
+  getArchivedNowPageByDate,
+} from "@/lib/api";
 import { Metadata } from "next";
 import Container from "@/app/_components/containers/Container";
 import Sidebar from "@/app/_components/Sidebar";
@@ -7,9 +11,9 @@ import { PostBody } from "@/app/_components/PostBody";
 import markdownToHtml from "@/lib/markdownToHtml";
 import PostContainer from "@/app/_components/containers/PostContainer";
 import Catchphrase from "@/app/_components/Catchphrase";
-import NowPagination from "../_components/NowPagination";
+import NowPagination from "@/app/_components/NowPagination";
 
-export default async function NowPage() {
+export default async function NowPage({ params }: Params) {
   const allPosts = getAllPosts();
   /** 카테고리 별 게시글 수 */
   const categoriesCount: Record<Category, number> = {
@@ -22,10 +26,12 @@ export default async function NowPage() {
   };
   allPosts.forEach((post) => categoriesCount[post.category]++);
 
-  const nowPage = getNowPage();
-  const nowContent = await markdownToHtml(nowPage);
+  const { date } = params;
 
-  const latestArchivedNowPage = getAllArcivedNowPages().pop();
+  const nowPage = getArchivedNowPageByDate(date);
+  const archivedNowPage = getAllArcivedNowPages();
+  const currentIndex = archivedNowPage.findIndex((d) => d === date);
+  const nowContent = await markdownToHtml(nowPage);
 
   return (
     <Container>
@@ -39,7 +45,14 @@ export default async function NowPage() {
             <PostBody content={nowContent} />
           </div>
           <div className="post-tail">
-            <NowPagination prev={latestArchivedNowPage} />
+            <NowPagination
+              prev={archivedNowPage[currentIndex - 1]}
+              next={
+                currentIndex + 1 === archivedNowPage.length
+                  ? "head"
+                  : archivedNowPage[currentIndex + 1]
+              }
+            />
             <Catchphrase />
           </div>
         </article>
@@ -48,8 +61,21 @@ export default async function NowPage() {
   );
 }
 
+type Params = {
+  params: {
+    index: number;
+    date: string;
+  };
+};
+
 export const metadata: Metadata = {
   title: `Anteater's laboratory`,
   description: `용케도 여기를 찾아내셨습니다.`,
 };
+
+export async function generateStaticParams() {
+  const dates = getAllArcivedNowPages();
+
+  return dates.map((date) => ({ date }));
+}
 

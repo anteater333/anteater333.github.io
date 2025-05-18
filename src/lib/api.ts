@@ -73,3 +73,14 @@ export function getPostsByCategory(category: string): Post[] {
 export function getNowPage() {
   return fs.readFileSync(join(process.cwd(), "_now/now.md")).toString();
 }
+
+export function getAllArcivedNowPages() {
+  return fs
+    .readdirSync(join(process.cwd(), "_now"))
+    .filter((file) => file.startsWith("now_") && file.endsWith(".md"))
+    .map((file) => file.replace("now_", "").replace(".md", ""));
+}
+
+export function getArchivedNowPageByDate(date: string) {
+  return fs.readFileSync(join(process.cwd(), `_now/now_${date}.md`)).toString();
+}
