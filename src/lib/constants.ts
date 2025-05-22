@@ -31,6 +31,11 @@ export const AD_ITEMS = [
     image: "/assets/pictures/ads/ad-4-bmc.png",
     link: "http://buymeacoffee.com/anteater333",
   },
+  {
+    title: "weworkforfood",
+    image: "/assets/pictures/ads/ad-5-wwff.png",
+    link: "http://blog.anteater-lab.link/we-work-for-food/",
+  },
 ];
 
 const phrasesList = [
