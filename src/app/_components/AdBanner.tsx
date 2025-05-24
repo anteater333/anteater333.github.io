@@ -22,7 +22,6 @@ const AdBannerDiv = styled.div`
     width: 75%;
     height: 4rem;
     max-width: 20rem;
-    background-color: var(--static-black);
     border-radius: 0.5rem;
     overflow: hidden;
 
@@ -83,3 +82,4 @@ export default function AdBanner() {
     </AdBannerDiv>
   );
 }
+
