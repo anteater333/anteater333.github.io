@@ -76,9 +76,10 @@ const ReadingHeaderHeader = styled.header<{ $isCompleted: boolean }>`
       width: 20%;
 
       .progress-coffee-container {
-        height: 3.75rem;
-        width: 2.5rem;
-        margin-bottom: 0.25rem;
+        height: 3rem;
+        width: 2rem;
+        margin-top: 0.25rem;
+        margin-right: 0.25rem;
 
         position: relative;
         overflow: visible;
@@ -315,3 +316,4 @@ const ReadingHeader = function ({
 };
 
 export default ReadingHeader;
+
