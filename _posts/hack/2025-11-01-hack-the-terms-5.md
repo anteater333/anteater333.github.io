@@ -1,12 +1,12 @@
 ---
 layout: post
 title: "Hack🪓 the #5 브라우저 개발자 도구"
-description: 
+description: tmp
 date: 2025-11-01 01:24:00 +0900
 category: hack
 
 id: 5
-slug: 
+slug: devtools
 tags: [🪓, Front-end, Web Browser]
 
 coverImage: "/assets/blog/coverImages/hack-5.png"
@@ -21,4 +21,7 @@ ogImage:
 - 개발자 도구는 네트워크 모킹이 가능하다.
   - 네트워크 블록
   - 네트워크 오버라이드
+    - 정적 파일 교체하기
+  - 기초적인 프록시 동작
 - 개발자 도구는 타임존을 변경할 수 있다.
+- 개발자 도구는 에이전트 변경이 가능하다.
