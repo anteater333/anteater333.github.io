@@ -26,7 +26,14 @@ ogImage:
 - 개발자 도구는 타임존을 변경할 수 있다.
 - 개발자 도구는 에이전트 변경이 가능하다.
 
-## 장인은 도구를 가리지 않는다.
+<h2 id="장인은-도구를-가리지-않는다." class="center">장인은 도구를 가리지 않는다.</h2>
+
+<p class="center rounded-edge-16 w-3-quarter">
+  <img src="https://i.postimg.cc/vTMR7BCk/image.png" alt="장인은 도구를 가리지 않는다"/>
+</p>
+
+
+유명한 
 
 ## 개발자 도구
 
