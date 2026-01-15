@@ -1,7 +1,7 @@
 import { css, keyframes } from "styled-components";
 
 /** styled-component on-half, tablet */
-export const scOnHalf = "screen and (max-width: 1023px)";
+export const scOnHalf = "screen and (max-width: 1280px)";
 /** styled-component on-palm, mobile */
 export const scOnPalm = "screen and (max-width: 767px)";
 
