@@ -56,13 +56,36 @@ https://flailingmonkey.com/the-history-of-firebug/
 
 ## 개발자 도구의 탭 톺아보기
 
+### 개발자 도구 시작하기
+
+Windows: F12 또는 Ctrl + Shift + I
+Mac: Cmd + Option + I
+
+크롬 기준으로 설명
+
+엄청나게 광범위한 도구라서 모든걸 설명할 순 없고... 그래도 최대한 다양하게.
+
+### Elements
+
+### Console
+
+### Sources
+
+### Network
+
+### Performance
+
+### Memory
+
+### Application
+
 ## 개발자 도구 응용 사례
 
 ## 조금은 더 진일보한 도구들
 
 - 프록시
 
-- 리액트 개발자 도구 
+- 프레임워크(Vue/리액트) 개발자 도구
 
 - LocatorJS
 
