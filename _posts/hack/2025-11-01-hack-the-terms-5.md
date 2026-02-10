@@ -56,8 +56,6 @@ https://flailingmonkey.com/the-history-of-firebug/
 
 ## 개발자 도구의 탭 톺아보기
 
-### 개발자 도구 시작하기
-
 Windows: F12 또는 Ctrl + Shift + I
 Mac: Cmd + Option + I
 
