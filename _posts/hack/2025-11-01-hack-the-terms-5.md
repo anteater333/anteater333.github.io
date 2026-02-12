@@ -54,6 +54,8 @@ ogImage:
 
 https://flailingmonkey.com/the-history-of-firebug/
 
+Joe Hewitt
+
 ## 개발자 도구의 탭 톺아보기
 
 Windows: F12 또는 Ctrl + Shift + I
