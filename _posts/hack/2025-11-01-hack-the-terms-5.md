@@ -54,6 +54,8 @@ ogImage:
 
 https://flailingmonkey.com/the-history-of-firebug/
 
+(좀 더 자세한 역사 공부를 원한다면 위 글을 읽어보자.)
+
 Joe Hewitt
 
 ## 개발자 도구의 탭 톺아보기
