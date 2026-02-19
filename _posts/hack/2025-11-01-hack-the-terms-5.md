@@ -15,17 +15,6 @@ ogImage:
   url: "/assets/blog/coverImages/hack-5.png"
 ---
 
-- 개발자 도구는 자바스크립트 실행 환경이다,
-- 개발자 도구는 네트워크 모킹이 가능하다.
-  - 네트워크 블록
-  - 네트워크 오버라이드
-    - 정적 파일 교체하기
-  - 기초적인 프록시 동작
-- 개발자 도구는 타임존을 변경할 수 있다.
-- 개발자 도구는 에이전트 변경이 가능하다.
-
------
-
 <h2 id="장인은-도구를-가리지-않는다." class="center">장인은 도구를 가리지 않는다.</h2>
 
 <p class="center rounded-edge-16 w-3-quarter">
@@ -52,9 +41,12 @@ ogImage:
 
 ## 개발자 도구의 역사
 
-https://flailingmonkey.com/the-history-of-firebug/
+<div class="center">
+  <a href="https://flailingmonkey.com/the-history-of-firebug/">Firebug의 역사</a>
+<br/>(좀 더 자세한 역사 공부를 원한다면 위 글을 읽어보자.)
+</div>
 
-(좀 더 자세한 역사 공부를 원한다면 위 글을 읽어보자.)
+지금이야 사실상의 업계 표준이 되었지만, 그렇다고 개발자 도구가 하루아침에 하늘에서 뚝 떨어진 마법의 소라고동 같은 물건은 아니었다.
 
 Joe Hewitt
 
@@ -92,3 +84,14 @@ Mac: Cmd + Option + I
 - LocatorJS
 
 ## 마무리
+
+
+- 개발자 도구는 자바스크립트 실행 환경이다,
+- 개발자 도구는 네트워크 모킹이 가능하다.
+  - 네트워크 블록
+  - 네트워크 오버라이드
+    - 정적 파일 교체하기
+  - 기초적인 프록시 동작
+- 개발자 도구는 타임존을 변경할 수 있다.
+- 개발자 도구는 에이전트 변경이 가능하다.
+
