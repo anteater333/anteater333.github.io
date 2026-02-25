@@ -65,9 +65,21 @@ ogImage:
 
 ### Elements
 
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/xdvr1SXW/image.png" alt="elements"/>
+</p>
+
 ### Console
 
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/yYMrgb4m/image.png" alt="console"/>
+</p>
+
 ### Sources
+
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/mg4Jp5X8/image.png" alt="sources"/>
+</p>
 
 ### Network
 
