@@ -59,43 +59,51 @@ ogImage:
 
 혹은 페이지에 마우스 오른쪽 클릭을 한 다음 "검사" 메뉴를 누르거나, 브라우저마다 제공하는 메뉴를 열심히 찾다 보면 "개발자 도구" 항목을 발견할 수 있을 것이다.
 
-앞서 역사를 짧게 설명하면서 말했듯 개발자 도구는 브라우저 무관 동일한 뿌리를 갖고 있기 때문에 서로 다른 브라우저들도 대부분의 UI는 공유하고 있을 것이다. 다만 조금씩은 다른 부분도 있긴 할거니까 미리 가장 점유율이 높은 크롬 브라우저 기준으로 설명한다는 점은 언급하고 넘어가겠다.
+앞서 역사를 짧게 설명하면서 말했듯 개발자 도구는 브라우저 무관 동일한 뿌리를 갖고 있기 때문에 서로 다른 브라우저들도 대부분의 UI는 공유하고 있을 것이다. 다만 조금씩은 다른 부분도 있긴 할거니까 이 글에선 가장 점유율이 높은 크롬 브라우저 기준으로 설명한다는 점은 미리 언급하고 넘어가겠다.
 
 또, 이름에 걸맞게 개발자 도구는 광범위한 기능을 제공하고 있기 때문에 아마 이 글 만으론 100% 설명이 되긴 어려울 것이다. 이 글에선 주로 사용하는 기능들 위주로 살펴볼 예정이다. 당연한 이야기겠지만 <a href="https://developer.chrome.com/docs/devtools?hl=ko">공식 문서</a>에서 잘 설명하고 있으니 더 깊고 자세히 알아보고 싶다면 공식 문서를 읽도록 하자.
 
-### Elements
+### 요소(Elements)
 
 <p class="center rounded-edge-16">
   <img src="https://i.postimg.cc/xdvr1SXW/image.png" alt="elements"/>
 </p>
 
-### Console
+### 콘솔(Console)
 
 <p class="center rounded-edge-16">
   <img src="https://i.postimg.cc/yYMrgb4m/image.png" alt="console"/>
 </p>
 
-### Sources
+### 소스(Sources)
 
 <p class="center rounded-edge-16">
   <img src="https://i.postimg.cc/mg4Jp5X8/image.png" alt="sources"/>
 </p>
 
-### Network
+### 네트워크(Network)
 
-https://i.postimg.cc/8zd5j28L/image.png
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/8zd5j28L/image.png" alt="network"/>
+</p>
 
-### Performance
+### 성능(Performance)
 
-https://i.postimg.cc/t4b6Stp2/image.png
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/t4b6Stp2/image.png" alt="performance"/>
+</p>
 
-### Memory
+### 메모리(Memory)
 
-https://i.postimg.cc/qvptXJx5/image.png
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/qvptXJx5/image.png" alt="memory"/>
+</p>
 
-### Application
+### 애플리케이션(Application)
 
-https://i.postimg.cc/j2V2Wtjm/image.png
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/j2V2Wtjm/image.png" alt="application"/>
+</p>
 
 ## 개발자 도구 응용 사례
 
