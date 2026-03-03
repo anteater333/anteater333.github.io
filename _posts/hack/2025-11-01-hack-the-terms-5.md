@@ -69,6 +69,10 @@ ogImage:
   <img src="https://i.postimg.cc/xdvr1SXW/image.png" alt="elements"/>
 </p>
 
+첫 번째로 소개할 기능은 <strong>"요소(Elements)"</strong> 탭이다. 요소 탭은 기본 설정 기준 가장 첫 번째로 노출되는 탭으로, 만약 프론트엔드 개발을 한다면 가장 자주 찾게 되는 주력 무기 같은 기능이 될 것이다.
+
+Element란 무엇인가.
+
 ### 콘솔(Console)
 
 <p class="center rounded-edge-16">
