@@ -2,7 +2,7 @@
 layout: post
 title: "Hack🪓 the #5 브라우저 개발자 도구"
 description: tmp
-date: 2025-11-01 01:24:00 +0900
+date: 2026-04-01 01:24:00 +0900
 category: hack
 
 id: 5
