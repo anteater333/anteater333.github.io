@@ -71,11 +71,14 @@ ogImage:
 
 첫 번째로 소개할 기능은 <strong>"요소(Elements)"</strong> 탭이다. 요소 탭은 기본 설정 기준 가장 첫 번째로 노출되는 탭으로, 만약 프론트엔드 개발을 한다면 가장 자주 찾게 되는 주력 무기 같은 기능이 될 것이다. 이때 요소(Elements)란 HTML 문서를 구성하는 각각의 일부분들을 의미한다. 현재 글에서 이 단락도 요소, 바로 위에 첨부된 이미지도 요소, 화면 오른쪽 하단에 있는 버튼들도 요소이다.
 
-https://i.postimg.cc/zDyPq1jY/image.png
-사용례1
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/zDyPq1jY/image.png" alt="요소 사용례1"/>
+</p>
 
-https://i.postimg.cc/W3F6csP0/image.png
-사용례2
+<p class="center rounded-edge-16">
+  <img src="https://i.postimg.cc/W3F6csP0/image.png" alt="요소 사용례2"/>
+</p>
+
 
 
 ### 콘솔(Console)
