@@ -77,7 +77,7 @@ ogImage:
   <img src="https://i.postimg.cc/zDyPq1jY/image.png" alt="요소 사용례1"/>
 </p>
 
-짠, 제목이 사라졌다.
+짠, 제목이 사라졌다. 왼쪽의 HTML에서 요소 하나를 선택해 `delete`키를 눌러 삭제가 가능하다. 삭제 뿐만이 아니라 요소를 마우스 오른쪽 버튼으로 눌러보면 다양한 편집 메뉴가 나타날 것이다. HTML 형태 그대로 편집도 가능하고, 속성만 추가하는 것도 가능하다. 예를 들어 최상단 `<html>` 태그에 사이트 언어를 의미하는 `lang` 속성을 추가하거나 `dark`/`theme` 같은 임의로 사이트 테마를 나타내는 속성을 추가해 동작을 확인해볼 수도 있다.
 
 <p class="center rounded-edge-16">
   <img src="https://i.postimg.cc/W3F6csP0/image.png" alt="요소 사용례2"/>
