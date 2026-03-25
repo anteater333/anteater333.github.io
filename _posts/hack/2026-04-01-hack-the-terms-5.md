@@ -83,7 +83,7 @@ ogImage:
   <img src="https://i.postimg.cc/W3F6csP0/image.png" alt="요소 사용례2"/>
 </p>
 
-엘레먼트 편집 사례 (노란색으로 변경)
+스타일 편집 사례 (노란색으로 변경)
 
 ### 콘솔(Console)
 
