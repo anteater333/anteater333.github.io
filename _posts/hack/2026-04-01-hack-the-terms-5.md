@@ -85,11 +85,15 @@ ogImage:
 
 HTML 뿐만이 아니라 스타일을 수정해볼 수도 있다. 요소 탭 내부에서 요소 하나를 선택하면 우측에 해당 요소에 적용된 스타일들이 나타난다. 해당 값들은 직접 수정이 가능하며 수정 즉시 현재 화면에 반영된다.
 
+(요소 탭 마무리)
+
 ### 콘솔(Console)
 
 <p class="center rounded-edge-16">
   <img src="https://i.postimg.cc/yYMrgb4m/image.png" alt="console"/>
 </p>
+
+(자바스크립트 실행 환경임)
 
 ### 소스(Sources)
 
@@ -97,11 +101,21 @@ HTML 뿐만이 아니라 스타일을 수정해볼 수도 있다. 요소 탭 내
   <img src="https://i.postimg.cc/mg4Jp5X8/image.png" alt="sources"/>
 </p>
 
+(사이트를 구성하는 리소스의 소스를 확인 가능)
+(소스맵)
+(다음 탭과 연계)
+
 ### 네트워크(Network)
 
 <p class="center rounded-edge-16">
   <img src="https://i.postimg.cc/8zd5j28L/image.png" alt="network"/>
 </p>
+
+(네트워크 요청)
+  (각 요청 응답 읽기)
+(요청 막기 -> Request conditions)
+(에이전트 변경 -> Network conditions)
+(요청 가로채기 -> Override -> Sources)
 
 ### 성능(Performance)
 
