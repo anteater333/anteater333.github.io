@@ -32,7 +32,7 @@ function appendCopyBtn() {
           properties: {
             className: ["code-copy-btn"],
             onclick: `
-            const target = document.getElementById('code-block-${i}');
+            const target = document.querySelector('#code-block-${i} code');
             if (!target) return;
             const textToCopy = target.innerText;
             navigator.clipboard.writeText(textToCopy).then(() => {});
